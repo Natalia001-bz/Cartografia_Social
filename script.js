@@ -11,7 +11,7 @@ const PIN_POSITIONS = {
   cuba:      { left: '45%', top: '10%' },
   guatemala: { left: '25%', top: '21%' },
   costarica: { left: '27%', top: '27%' },
-  panama:    { left: '30%', top: '31%' },
+  panama:    { left: '40%', top: '31%' },
   colombia:  { left: '31%', top: '38%' },
   venezuela: { left: '42%', top: '34%' },
   peru:      { left: '27%', top: '53%' },
