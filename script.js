@@ -7,19 +7,19 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 /* ─── DATOS DE CARTOGRAFÍA ───────────────────────────────────────────────── */
 
 const PIN_POSITIONS = {
-  mexico:    { left: '22%', top: '12%' },
-  cuba:      { left: '45%', top: '10%' },
-  guatemala: { left: '25%', top: '21%' },
-  costarica: { left: '27%', top: '27%' },
-  panama:    { left: '40%', top: '31%' },
-  colombia:  { left: '31%', top: '38%' },
-  venezuela: { left: '42%', top: '34%' },
-  peru:      { left: '27%', top: '53%' },
-  brasil:    { left: '57%', top: '50%' },
-  bolivia:   { left: '38%', top: '59%' },
-  chile:     { left: '26%', top: '76%' },
-  argentina: { left: '37%', top: '76%' },
-  uruguay:   { left: '46%', top: '72%' },
+  mexico:    { left: '20%', top: '13%' },
+  cuba:      { left: '45%', top: '14%' },
+  guatemala: { left: '31%', top: '20%' },
+  costarica: { left: '39%', top: '25%' },
+  panama:    { left: '44%', top: '27%' },
+  colombia:  { left: '54%', top: '33%' },
+  venezuela: { left: '63%', top: '29%' },
+  peru:      { left: '52%', top: '48%' },
+  brasil:    { left: '78%', top: '40%' },
+  bolivia:   { left: '63%', top: '53%' },
+  chile:     { left: '56%', top: '66%' },
+  argentina: { left: '59%', top: '78%' },
+  uruguay:   { left: '74%', top: '67%' },
 };
 
 const mapData = {
@@ -272,7 +272,7 @@ function initCarousel() {
   const slides = $$('.slide', track);
   let current = 0;
 
-  // Crear dots
+  // Crear dots 
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'dot' + (i === 0 ? ' active' : '');

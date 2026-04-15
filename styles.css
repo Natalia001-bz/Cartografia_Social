@@ -136,7 +136,7 @@ body.dark-mode .slide { background: #1D3347; }
 .nav-link.active {
   background: rgba(31,94,122,0.10);
   color: var(--color-primary);
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .nav-icon {
@@ -156,12 +156,12 @@ body.dark-mode .slide { background: #1D3347; }
 
 .btn-config {
   background: none; border: none; cursor: pointer;
-  font-size: 1.3rem; color: var(--color-text-light);
+  font-size: 1.5r00000000000000000000em; color: var(--color-text-light);
   transition: color var(--transition);
   padding: 4px;
 }
 .btn-config:hover { color: var(--color-primary); }
-
+  
 /* Hamburger (móvil) */
 .hamburger {
   display: none;
@@ -187,8 +187,7 @@ body.dark-mode .slide { background: #1D3347; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* Nav overlay móvil */
+* Nav overlay móvil */
 .nav-overlay {
   display: none;
   position: fixed; inset: 0;
@@ -1250,16 +1249,17 @@ input:checked + .toggle-slider::after { transform: translateX(20px); }
 
 /* imagen */
 .logo-img {
-  width: 42px;
-  height: 42px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  border-radius: 8px; /* opcional, quítalo si no quieres */
+  border-radius: 50%; 
+  
 }
 
 /* texto (mantiene tu estilo) */
 .logo-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-text);
   line-height: 1.2;
