@@ -26,7 +26,8 @@ const mapData = {
 
   /* 1930–1950 */
   '1920': {
-    description: '1930–1950',
+    description: '1930–1950 ',
+    contexto: 'La Gran Depresión y la Segunda Guerra Mundial impulsaron la ISI. Golpes militares interrumpieron la democracia en Brasil y Argentina. La Ciencia Política seguía ligada al Derecho y la Sociología, centrada en estudios constitucionales.',
     pins: [
       {
         id: 'mexico',
@@ -54,6 +55,7 @@ const mapData = {
   /* 1960–1970 */
   '1960': {
     description: '1960–1970',
+    contexto: 'La expansión universitaria y la influencia estadounidense consolidaron programas de Ciencia Política. Surgió la Teoría de la Dependencia como crítica al desarrollismo, en un contexto de dictaduras y análisis de partidos y autoritarismo.',
     pins: [
       { id: 'argentina', label: 'Argentina', info: `Se crean licenciaturas y doctorados; la dictadura de Onganía (1966) provoca exilios y parálisis académica.` },
       { id: 'chile', label: 'Chile', info: `Fundación de la ELACP en FLACSO (1966) y del Instituto de Ciencia Política en la Universidad Católica (1969). El golpe de 1973 cierra la ELACP.` },
@@ -69,6 +71,7 @@ const mapData = {
   /* 1980–1990 */
   '1980': {
     description: '1980–1990',
+    contexto: 'Las transiciones democráticas tras las dictaduras marcaron la agenda. La disciplina se institucionalizó y los temas centrales fueron democratización, gobernabilidad y participación, con metodologías comparativas y cuantitativas.',
     pins: [
       { id: 'argentina', label: 'Argentina', info: `Retorno democrático en 1983; en 1984 se presenta el Informe Strasser en la UBA para institucionalizar la carrera.` },
       { id: 'chile', label: 'Chile', info: `Fundación del Instituto de Ciencia Política en la Universidad de Chile (1981), posgrados en la Católica (1982) y la Asociación Chilena de Ciencia Política (1986).` },
@@ -82,6 +85,7 @@ const mapData = {
   /* Siglo XXI */
   '2000': {
     description: 'Siglo XXI',
+    contexto: 'La Ciencia Política se consolidó en la región con programas académicos. Se incorporaron Epistemologías del Sur y críticas al eurocentrismo. Los temas clave son populismo, calidad democrática, movimientos sociales, género y participación digital.',
     pins: [
       { id: 'mexico', label: 'México', info: `Consolidación de FLACSO-México y expansión de posgrados en UNAM y UAM; fuerte producción en políticas públicas y democracia.` },
       { id: 'argentina', label: 'Argentina', info: `Expansión de programas en UBA y universidades privadas; fortalecimiento de la Asociación Argentina de Ciencia Política.` },
@@ -99,6 +103,8 @@ function initMap() {
   const pinsEl   = $('#mapPins');
   const periodEl = $('#periodDesc');
   const legendEl = $('#legendItems');
+  const contextoEl = $('#periodContext');
+  
 
   let activePeriod = '1920';
 
@@ -110,6 +116,7 @@ function initMap() {
     if (!data) return;
 
     periodEl.textContent = data.description;
+    contextoEl.textContent = data.contexto;
 
     data.pins.forEach(pin => {
       const pos = PIN_POSITIONS[pin.id];
@@ -181,23 +188,8 @@ function initCountryModal() {
 }
 
 /* ─── RESTO IGUAL ─── */
-function initActiveNav(){/* igual */}
-function initHamburger(){/* igual */}
-function initSmoothScroll(){/* igual */}
-function initCarousel(){/* igual */}
-function initConfig(){/* igual */}
-function initAnimations(){/* igual */}
 
-document.addEventListener('DOMContentLoaded', () => {
-  initActiveNav();
-  initHamburger();
-  initSmoothScroll();
-  initCarousel();
-  initMap();
-  initCountryModal();
-  initConfig();
-  initAnimations();
-});
+
 
 
 /* ─── NAVEGACIÓN ACTIVA (IntersectionObserver) ─── */

@@ -156,7 +156,7 @@ body.dark-mode .slide { background: #1D3347; }
 
 .btn-config {
   background: none; border: none; cursor: pointer;
-  font-size: 1.5r00000000000000000000em; color: var(--color-text-light);
+  font-size: 1.5rem; color: var(--color-text-light);
   transition: color var(--transition);
   padding: 4px;
 }
@@ -187,7 +187,8 @@ body.dark-mode .slide { background: #1D3347; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-* Nav overlay móvil */
+
+/* Nav overlay móvil */
 .nav-overlay {
   display: none;
   position: fixed; inset: 0;
@@ -1268,4 +1269,25 @@ input:checked + .toggle-slider::after { transform: translateX(20px); }
 .logo-text small {
   font-size: 0.7rem;
   color: var(--color-text-light);
+}
+
+/* EStilos para contexto en leyenda_ mapa */
+.period-context {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/*Ajuste modo oscuro*/
+.nav-link-config {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }

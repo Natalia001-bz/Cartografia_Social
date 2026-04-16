@@ -43,11 +43,19 @@
       <li><a href="#bibliografia" class="nav-link" data-section="bibliografia"> <i class="nav-icon">≡</i>
           Bibliografía</a></li>
       <li><a href="#equipo" class="nav-link" data-section="equipo"> <i class="nav-icon">◎</i> Equipo</a></li>
+    
+      <li>
+  <button class="nav-link nav-link-config" id="btnConfig" aria-label="Abrir configuración">
+    <i class="nav-icon">⚙</i> Configuración
+  </button>
+</li>
+    
     </ul>
 
-    <div class="sidebar-footer">
+    <!-- <div class="sidebar-footer">
       <button class="btn-config" id="btnConfig" title="Configuración">⚙</button>
-    </div>
+    </div> -->
+
   </nav>
 
   <!-- ===== OVERLAY MENÚ MÓVIL ===== -->
@@ -62,7 +70,8 @@
       <!-- HERO -->
       <div class="hero">
         <div class="hero-bg"
-          style="background-image: url('https://images.unsplash.com/photo-1760264585857-fff3517f6bfa?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+          style="background-image: url('https://images.unsplash.com/photo-1760264585857-fff3517f6bfa?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <span class="hero-eyebrow"> Trabajo Colaborativo · UNAD 2026</span>
@@ -403,12 +412,12 @@
 
         <!-- Mapa interactivo con imagen de fondo -->
         <div class="map-container">
-
           <!-- Contenedor del mapa imagen + pines -->
           <div class="map-bg">
             <img id="latamMapImg" class="latam-map-img"
               src="https://i.pinimg.com/564x/8f/d3/99/8fd3999764a2b2f78c4b658a58e8270d.jpg"
               alt="Mapa político de Latinoamérica con división de países" />
+
             <!-- Los pines se insertan aquí por JS -->
             <div id="mapPins" class="map-pins-layer"></div>
           </div>
@@ -417,6 +426,7 @@
             <h4>Leyenda</h4>
             <p class="period-description" id="periodDesc">Selecciona un período para ver los hitos de la ciencia
               política latinoamericana.</p>
+              <p id="periodContext" class="period-context"></p>
             <div class="legend-items" id="legendItems"></div>
           </div>
         </div>
@@ -740,6 +750,7 @@
       <h3>Configuración</h3>
       <button class="config-close" id="configClose">×</button>
     </div>
+    
     <div class="config-body">
       <label class="config-label">
         <span>Modo oscuro</span>
@@ -755,6 +766,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <script src="script.js"></script>
