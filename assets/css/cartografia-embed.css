@@ -1,0 +1,36 @@
+/* =============================================================
+   INTEGRACIÓN CARTOGRAFÍA ↔ NAVBAR GLOBAL
+   Ajustes MÍNIMOS para que la navbar global fija no tape el
+   contenido. NO modifica styles.css / script.js / el HTML:
+   solo desplaza el sidebar, compensa el scroll por anclas y
+   reubica la hamburguesa interna. Se carga después de styles.css.
+   ============================================================= */
+
+/* Altura de la navbar como variable (sigue el breakpoint de navbar.css: 860px) */
+body.has-global-nav { --gnav-offset: 64px; }
+@media (max-width: 860px) { body.has-global-nav { --gnav-offset: 56px; } }
+
+/* El sidebar arranca debajo de la navbar global fija */
+body.has-global-nav .sidebar {
+  top: var(--gnav-offset);
+  height: calc(100vh - var(--gnav-offset));
+}
+
+/* El hero queda a sangre completa bajo la navbar translúcida
+   (su contenido está centrado y nunca queda oculto). Se anula el
+   padding-top superior original que empujaba el contenido. */
+body.has-global-nav .main-content { padding-top: 0; }
+
+/* CLAVE: la navegación por anclas del sidebar usa scrollInto,
+   que lleva la sección al tope (0) y la mete bajo la navbar.
+   scroll-margin-top hace que aterrice JUSTO debajo de ella.
+   El hero (#inicio) se deja a 0 para que quede a sangre completa. */
+body.has-global-nav .section { scroll-margin-top: var(--gnav-offset); }
+body.has-global-nav #inicio { scroll-margin-top: 0; }
+
+/* El overlay móvil interno debe quedar bajo la navbar global */
+body.has-global-nav .nav-overlay { z-index: 180; }
+
+/* La hamburguesa interna (aparece <900px) baja para no solaparse
+   con la navbar global; sigue su altura en todos los anchos. */
+body.has-global-nav .hamburger { top: calc(var(--gnav-offset) + 12px); }

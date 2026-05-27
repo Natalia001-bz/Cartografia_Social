@@ -1,0 +1,180 @@
+/* =============================================================
+   NAVBAR GLOBAL — componente autocontenido
+   Todo vive bajo .global-nav con variables --gnav-* propias,
+   sin tocar el :root ni los estilos de Cartografía Social.
+   ============================================================= */
+.global-nav {
+  --gnav-h: 64px;
+  --gnav-bg: rgba(10, 16, 28, 0.72);
+  --gnav-border: rgba(198, 169, 114, 0.22);
+  --gnav-gold: #c6a972;
+  --gnav-text: #e9e4d8;
+  --gnav-muted: #9aa3b2;
+
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--gnav-h);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 clamp(16px, 4vw, 48px);
+
+  background: var(--gnav-bg);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--gnav-border);
+  font-family: 'Poppins', 'Open Sans', system-ui, sans-serif;
+  transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.global-nav.is-scrolled {
+  background: rgba(6, 11, 22, 0.86);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Marca ── */
+.gnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gnav-text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.gnav-logo {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--gnav-border);
+}
+.gnav-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-weight: 600;
+  font-size: .96rem;
+  letter-spacing: .02em;
+}
+.gnav-brand-text small {
+  font-size: .64rem;
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gnav-gold);
+}
+
+/* ── Menú ── */
+.gnav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.gnav-menu a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--gnav-muted);
+  text-decoration: none;
+  font-size: .92rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  transition: color .25s ease, background-color .25s ease;
+}
+.gnav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 16px; right: 16px; bottom: 4px;
+  height: 2px;
+  background: var(--gnav-gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .28s ease;
+}
+.gnav-menu a:hover,
+.gnav-menu a:focus-visible { color: var(--gnav-text); }
+.gnav-menu a:hover::after,
+.gnav-menu a:focus-visible::after { transform: scaleX(1); }
+
+.gnav-menu a.is-active {
+  color: #060b16;
+  background: var(--gnav-gold);
+  font-weight: 600;
+}
+.gnav-menu a.is-active::after { display: none; }
+
+/* ── Botón hamburguesa ── */
+.gnav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px; height: 44px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid var(--gnav-border);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.gnav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--gnav-text);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.global-nav.is-open .gnav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.global-nav.is-open .gnav-toggle span:nth-child(2) { opacity: 0; }
+.global-nav.is-open .gnav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Backdrop móvil ── */
+.gnav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+  background: rgba(2, 5, 12, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.gnav-backdrop.is-visible { opacity: 1; visibility: visible; }
+
+body.gnav-locked { overflow: hidden; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .global-nav { --gnav-h: 56px; }
+  .gnav-toggle { display: flex; }
+
+  .gnav-menu {
+    position: fixed;
+    top: var(--gnav-h);
+    right: 0;
+    width: min(80vw, 320px);
+    height: calc(100vh - var(--gnav-h));
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 24px;
+    background: rgba(6, 11, 22, 0.96);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--gnav-border);
+    transform: translateX(110%);
+    transition: transform .32s cubic-bezier(.4, 0, .2, 1);
+    z-index: 1001;
+  }
+  .global-nav.is-open .gnav-menu { transform: translateX(0); }
+
+  .gnav-menu a { padding: 14px 18px; font-size: 1rem; }
+  .gnav-menu a::after { display: none; }
+  .gnav-menu a.is-active { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-nav, .gnav-menu, .gnav-menu a::after,
+  .gnav-toggle span, .gnav-backdrop { transition: none; }
+}
