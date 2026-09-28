@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia y Teoría de las Relaciones Internacionales · UNAD</title>
   <meta name="description"
-    content="Recurso académico interactivo del curso Historia y Teoría de las Relaciones Internacionales (252005), UNAD. Línea de tiempo de doce hitos del sistema internacional desde 1914 y análisis de caso sobre Siria y el régimen internacional de asilo." />
+    content="Recurso académico interactivo del curso Historia y Teoría de las Relaciones Internacionales (252005), UNAD. Línea de tiempo de trece hitos del sistema internacional desde 1914 y estudio de caso sobre la crisis venezolana y el régimen internacional de asilo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -109,7 +109,7 @@
 
     /* ── Línea de tiempo ── */
     .linea-tiempo { background: var(--blanco); border: 1px solid var(--linea); border-radius: 24px; padding: 8px clamp(12px, 3vw, 36px); box-shadow: 0 30px 60px -40px rgba(0, 58, 92, .35); }
-    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(12, 1fr); height: 360px; }
+    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(13, 1fr); height: 360px; }
     .tl::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: linear-gradient(90deg, transparent, var(--azul) 6%, var(--azul) 94%, transparent); opacity: .85; }
     .tl-item { position: relative; transition: opacity .3s var(--ease); }
     .tl-item.atenuado { opacity: .22; }
@@ -223,11 +223,19 @@
     .actores div { padding: 18px 0; border-bottom: 1px solid var(--linea); }
     .actores h4 { font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
     .actores p { margin: 6px 0 0; font-size: .94rem; }
+    .caso-intro { display: grid; grid-template-columns: 1fr 1.6fr; gap: 20px 48px; align-items: start; margin-bottom: 44px; }
+    .caso-intro p:last-child { color: #2c3645; font-size: 1.02rem; }
+    .pregunta { padding: 20px 24px; border-radius: 16px; background: var(--amarillo-suave); border-left: 3px solid var(--amarillo); font-family: var(--serif); font-size: 1.18rem; line-height: 1.45; color: var(--azul-profundo); }
+    .pregunta span { display: block; margin-bottom: 8px; font-family: var(--sans); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .conclusiones { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: c; }
+    .conclusiones li { counter-increment: c; position: relative; padding: 18px 0 18px 48px; border-top: 1px solid var(--linea); color: #2c3645; }
+    .conclusiones li::before { content: counter(c); position: absolute; left: 0; top: 14px; font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--amarillo-texto); }
+    .tesis.tesis-inicio { margin-top: 0; margin-bottom: 8px; }
     .tesis { margin-top: 28px; padding: 24px 28px; border-radius: 16px; background: var(--azul-suave); border-left: 3px solid var(--amarillo); font-family: var(--serif); font-size: 1.12rem; line-height: 1.6; color: var(--azul-profundo); }
 
     /* ── Referencias y pie ── */
     .referencias h2 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--azul-profundo); margin-bottom: 18px; }
-    .referencias li { list-style: none; padding-left: 2em; text-indent: -2em; margin-bottom: 10px; font-size: .92rem; color: #2c3645; }
+    .referencias li { overflow-wrap: anywhere; list-style: none; padding-left: 2em; text-indent: -2em; margin-bottom: 10px; font-size: .92rem; color: #2c3645; }
     .nota { margin-top: 24px; font-size: .8rem; color: var(--gris); }
     .pie { background: var(--azul-profundo); color: rgba(255, 255, 255, .72); font-size: .86rem; }
     .pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 28px; padding-bottom: 28px; }
@@ -240,6 +248,7 @@
       .portada .contenedor { grid-template-columns: 1fr; align-items: start; }
       .hito-grid { grid-template-columns: 1fr; }
       .cifras { grid-template-columns: 1fr 1fr; }
+      .caso-intro { grid-template-columns: 1fr; }
       .cifras div:nth-child(3) { padding-left: 0; border-left: 0; }
       .cifras div:nth-child(n+3) { border-top: 1px solid var(--linea); }
     }
@@ -322,22 +331,22 @@
         <p class="antetitulo">Curso 252005 · Escenario 2</p>
         <h1>Historia y Teoría de las Relaciones Internacionales <em>Una mirada evolutiva, 1914 – presente</em></h1>
         <div class="regla"></div>
-        <p class="intro">Del orden eurocéntrico que se derrumbó en 1914 a un sistema internacional policéntrico, donde
-          los Estados comparten escena con organismos multilaterales, redes civiles y actores armados no estatales.
-          Doce hitos para entender cómo cambió el mundo y cómo cambió la disciplina que lo estudia.</p>
+        <p class="intro">Del orden eurocéntrico y estatalizado que se derrumbó en 1914 al sistema internacional
+          globalizado de hoy, donde los Estados comparten escena con organismos multilaterales, redes civiles y actores
+          armados no estatales. Trece hitos para entender cómo se ha estructurado el poder mundial y cómo cambió la
+          disciplina que lo estudia.</p>
         <div class="acciones no-imprimir">
           <button class="boton" id="btnIniciar" type="button" aria-controls="recurso" aria-expanded="false">
             Iniciar recorrido <span class="flecha" aria-hidden="true">↓</span>
           </button>
-          <button class="boton-texto" id="btnCaso" type="button">Ir al análisis de caso</button>
+          <button class="boton-texto" id="btnCaso" type="button">Ir al estudio de caso</button>
         </div>
       </div>
 
       <div>
         <dl class="ficha">
           <div><dt>Estudiante</dt><dd>Natalia Berrío Zuleta</dd></div>
-          <!-- PENDIENTE: escribir el nombre del tutor o tutora -->
-          <div><dt>Tutor del curso</dt><dd>Leonardo Andrey Barreto Gómez</dd></div>
+          <div><dt>Director del curso</dt><dd>Leonardo Andrey Barreto Gómez</dd></div>
           <div><dt>Código</dt><dd>252005</dd></div>
           <div><dt>Escenario</dt><dd>2 · Historia de las Relaciones Internacionales</dd></div>
         </dl>
@@ -361,7 +370,7 @@
             <div class="encabezado">
               <div>
                 <p class="antetitulo">Línea de tiempo</p>
-                <h2 id="titulo-recorrido">Doce hitos del sistema internacional</h2>
+                <h2 id="titulo-recorrido">Trece hitos del sistema internacional</h2>
               </div>
               <p class="no-imprimir">Selecciona un año para abrir su ficha. Dentro de ella puedes avanzar al siguiente
                 hito o volver al anterior.</p>
@@ -376,7 +385,7 @@
             <div class="pie-tl no-imprimir">
               <div class="avance">
                 <div class="avance-barra"><span id="avanceBarra"></span></div>
-                <span id="avanceTexto">0 de 12 hitos explorados</span>
+                <span id="avanceTexto">0 de 13 hitos explorados</span>
               </div>
               <button class="boton-secundario" id="btnComenzar" type="button">Comenzar por el hito 1 →</button>
             </div>
@@ -386,121 +395,149 @@
           </div>
         </section>
 
-        <!-- Análisis de caso -->
+        <!-- Estudio de caso -->
         <section class="seccion caso" id="caso" aria-labelledby="titulo-caso">
           <div class="contenedor">
             <div class="encabezado">
               <div>
-                <p class="antetitulo">Análisis de caso de profundización</p>
-                <h2 id="titulo-caso">La Primavera Árabe, la Guerra Civil Siria y la Crisis de Refugiados: interpelación
-                  al régimen internacional de asilo del siglo XXI</h2>
+                <p class="antetitulo">Estudio de caso · La crisis de los refugiados en el siglo XXI</p>
+                <h2 id="titulo-caso">La crisis venezolana: inoperancia de la Convención de 1951 y la instrumentalización
+                  del derecho internacional</h2>
               </div>
             </div>
 
-            <div class="cifras">
-              <div><strong>2011</strong><span>Protestas en Deraa y comienzo del conflicto</span></div>
-              <div><strong>+6 millones</strong><span>de personas refugiadas sirias fuera del país (ACNUR)</span></div>
-              <div><strong>≈ 7 millones</strong><span>de desplazados internos en los años más críticos</span></div>
-              <div><strong>+3,5 millones</strong><span>acogidos por Turquía, principal país receptor</span></div>
+            <div class="caso-intro">
+              <p class="pregunta"><span>Pregunta orientadora</span>¿Cómo ha influido este suceso en la configuración del
+                sistema internacional?</p>
+              <p>El éxodo venezolano pone a prueba la capacidad de la estructura institucional y legal del régimen
+                internacional para responder a una crisis humanitaria atravesada por el intervencionismo coercitivo. Este
+                análisis examina las falencias de un marco normativo que se muestra inoperante frente a la migración
+                masiva y sistemática, la instrumentalización geopolítica de la crisis por parte de potencias hegemónicas
+                y la cooptación de los poderes internos.</p>
             </div>
 
-            <div class="pestanas no-imprimir" role="tablist" aria-label="Bloques del análisis de caso" id="pestanas">
-              <button class="pestana" role="tab" id="pestana-1" aria-controls="panel-1" aria-selected="true"><span>1</span>Contexto y estallido</button>
-              <button class="pestana" role="tab" id="pestana-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span>2</span>Mapeo de actores</button>
-              <button class="pestana" role="tab" id="pestana-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span>3</span>Intereses en disputa</button>
-              <button class="pestana" role="tab" id="pestana-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span>4</span>Impacto y Convención de 1951</button>
+            <div class="cifras">
+              <div><strong>1984</strong><span>La Declaración de Cartagena amplía la definición regional de refugiado</span></div>
+              <div><strong>2014</strong><span>La caída de los precios del petróleo desata el colapso económico</span></div>
+              <div><strong>2015</strong><span>La Orden Ejecutiva 13692 declara a Venezuela «amenaza inusual y extraordinaria»</span></div>
+              <div><strong>2017 – 2019</strong><span>Sanciones financieras y petroleras de EE. UU.</span></div>
+            </div>
+
+            <div class="pestanas no-imprimir" role="tablist" aria-label="Bloques del estudio de caso" id="pestanas">
+              <button class="pestana" role="tab" id="pestana-1" aria-controls="panel-1" aria-selected="true"><span>1</span>Contexto histórico</button>
+              <button class="pestana" role="tab" id="pestana-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span>2</span>Actores e intereses</button>
+              <button class="pestana" role="tab" id="pestana-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span>3</span>Análisis: la Convención de 1951</button>
+              <button class="pestana" role="tab" id="pestana-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span>4</span>Conclusiones</button>
             </div>
 
             <article class="panel" id="panel-1" role="tabpanel" aria-labelledby="pestana-1" tabindex="0">
-              <h3>Contexto histórico y estallido (2011)</h3>
-              <p>A finales de 2010, la autoinmolación de Mohamed Bouazizi en Túnez encendió una ola de protestas que
-                recorrió el norte de África y Oriente Medio. Las consignas eran compartidas: desempleo juvenil,
-                corrupción, represión policial y regímenes que llevaban décadas en el poder. Túnez y Egipto vieron caer a
-                sus presidentes en semanas; en Libia, la intervención de la OTAN amparada en la Resolución 1973 del
-                Consejo de Seguridad terminó con Gadafi.</p>
-              <p>Siria siguió otro camino. En marzo de 2011, la detención y tortura de adolescentes que habían pintado
-                consignas en Deraa desató manifestaciones que el gobierno de Bashar al-Ásad reprimió con fuego real. La
-                represión militarizó a la oposición, fracturó al ejército y, hacia 2012, el levantamiento ya era una
-                guerra civil con dimensiones sectarias (una élite alauí en el poder frente a una mayoría suní) y rápida
-                internacionalización.</p>
-              <p>La lección politológica es que la <strong>estructura del régimen</strong> importa: donde las fuerzas
-                armadas se separaron del gobernante hubo transición; donde el aparato de seguridad permaneció fiel y
-                contó con aliados externos, la protesta derivó en guerra.</p>
+              <h3>Contexto histórico</h3>
+              <p>Para comprender el origen del éxodo venezolano y la consecuente crisis humanitaria es necesario analizar
+                dos fenómenos: uno vinculado al sistema político interno y otro a la política exterior.</p>
+              <p>En el plano interno, Venezuela vivió un conjunto de acontecimientos críticos que determinaron la evolución
+                y la crisis del Estado: un gasto público sostenido casi por completo en las exportaciones de petróleo, la
+                corrupción generalizada, una burocracia que alcanza al propio Gobierno y el aumento de la delincuencia y la
+                violencia en las calles. A partir de 2014, la caída de los precios del petróleo tuvo un impacto devastador
+                en la economía: llegaron la hiperinflación, la escasez de productos básicos y un deterioro generalizado de
+                las condiciones de vida.</p>
+              <p>En el plano externo, este escenario de vulnerabilidad fue aprovechado por <strong>Estados Unidos y sus
+                  aliados</strong>, que aplicaron una estrategia de «presión máxima» e intervencionismo geopolítico: una
+                campaña de asfixia económica orientada a socavar los ingresos del Estado y, posiblemente, a forzar la caída
+                del Gobierno. La <strong>Orden Ejecutiva 13692 de 2015</strong>, que declaró a Venezuela una «amenaza
+                inusual y extraordinaria», y las sanciones financieras y petroleras aplicadas entre 2017 y 2019 excluyeron
+                en la práctica al país del sistema financiero mundial, provocaron la pérdida de activos clave en el
+                extranjero y contribuyeron al colapso de su economía.</p>
+              <p>El bloqueo económico y la pérdida de soberanía sobre recursos estratégicos, como la posibilidad de comerciar
+                libremente su petróleo, redujeron la capacidad de importar alimentos, medicamentos y repuestos para los
+                sistemas de agua y electricidad (Weisbrot y Sachs, 2019). La intervención extranjera, encubierta o directa,
+                presentada como una restauración democrática, terminó por socavar la vida cotidiana en el país y llevó a
+                individuos, familias y comunidades enteras a buscar en la migración una salida económica.</p>
             </article>
 
             <article class="panel" id="panel-2" role="tabpanel" aria-labelledby="pestana-2" tabindex="0" hidden>
-              <h3>Mapeo de actores</h3>
+              <h3>Actores e intereses en conflicto</h3>
               <div class="actores">
                 <div>
-                  <h4>Gobierno de Ásad</h4>
-                  <p>Buscó la supervivencia del régimen a cualquier costo: asedios, bombardeo de zonas civiles y uso de
-                    armas químicas (Guta, 2013). Se sostuvo gracias a Rusia, Irán y Hezbolá, hasta su caída en diciembre
-                    de 2024.</p>
+                  <h4>Gobierno de la República Bolivariana de Venezuela</h4>
+                  <p>Su objetivo principal fue mantenerse en el poder junto con su partido. Aunque las sanciones dañaron la
+                    economía, también se evidencian corrupción sistemática, cooptación por grupos delincuenciales y
+                    desgobierno: malversación de fondos, persecución política y negación de las libertades democráticas e
+                    incluso de los medios de subsistencia.</p>
                 </div>
                 <div>
-                  <h4>Oposición</h4>
-                  <p>Muy fragmentada: del Ejército Libre Sirio y los comités civiles a milicias islamistas. El Estado
-                    Islámico proclamó su “califato” en 2014, y las fuerzas kurdas (FDS) controlaron el noreste.</p>
+                  <h4>Estados Unidos y sus aliados occidentales</h4>
+                  <p>Se presentan como apoyo a la población venezolana, pero tienen intereses geopolíticos en una región
+                    estratégica y en las grandes reservas de petróleo del país. A las presiones políticas y las sanciones
+                    económicas se suman acciones militares y un discurso de promoción de la democracia en el que la atención
+                    a las personas refugiadas y migrantes queda subordinada a esos objetivos.</p>
                 </div>
                 <div>
-                  <h4>Potencias externas</h4>
-                  <p>Rusia intervino militarmente en 2015 a favor del régimen; Irán aportó asesores y milicias; EE. UU.
-                    lideró la coalición contra el Estado Islámico y apoyó a las FDS; Turquía y las monarquías del Golfo
-                    respaldaron a distintas facciones opositoras.</p>
+                  <h4>Países vecinos de América Latina</h4>
+                  <p>Colombia, Perú, Ecuador y Chile, entre otros, han tenido que responder a las solicitudes de protección
+                    de la población venezolana. Hubo medidas para facilitar su regularización, como el Estatuto Temporal
+                    de Protección para Migrantes Venezolanos (ETPV) de Colombia o la flexibilización de visados, pero
+                    también restricciones impulsadas por una opinión pública que percibe la migración masiva como una
+                    amenaza.</p>
                 </div>
                 <div>
-                  <h4>ACNUR</h4>
-                  <p>Coordinó la respuesta a la mayor población refugiada del mundo en la década de 2010, con planes
-                    regionales en Turquía, Líbano, Jordania, Irak y Egipto, casi siempre con financiación
-                    insuficiente.</p>
-                </div>
-                <div>
-                  <h4>Unión Europea</h4>
-                  <p>Pasó de la apertura alemana de 2015 (“Wir schaffen das”, Angela Merkel), que llevó a cerca de un
-                    millón de solicitantes de asilo a Alemania, a la externalización del control fronterizo mediante la
-                    Declaración UE–Turquía de marzo de 2016.</p>
+                  <h4>Organismos internacionales</h4>
+                  <p>ACNUR, la OIM y el sistema de Naciones Unidas trabajan en los países de acogida y dentro de Venezuela
+                    para prestar ayuda humanitaria. Sin embargo, no han logrado una solución significativa ni reunido la
+                    financiación necesaria para una respuesta coordinada, como sí ocurrió en Ucrania, y el apoyo de las
+                    organizaciones no gubernamentales ha sido muy limitado.</p>
                 </div>
               </div>
             </article>
 
             <article class="panel" id="panel-3" role="tabpanel" aria-labelledby="pestana-3" tabindex="0" hidden>
-              <h3>Intereses geopolíticos en disputa</h3>
-              <p>Siria se convirtió en un tablero donde se cruzaron varias rivalidades a la vez. Para
-                <strong>Rusia</strong>, sostener a Ásad significaba conservar su base naval de Tartus, su única salida al
-                Mediterráneo, y demostrar que podía frenar los cambios de régimen promovidos por Occidente después de
-                Libia. <strong>Irán</strong> defendía el corredor terrestre que lo conecta con Hezbolá en Líbano, pieza
-                central de su proyección regional frente a Arabia Saudita e Israel.</p>
-              <p><strong>Turquía</strong> priorizó impedir la consolidación de una autonomía kurda en su frontera sur,
-                mientras que <strong>EE. UU.</strong> osciló entre la “línea roja” de las armas químicas, el acuerdo de
-                desarme químico negociado con Rusia en 2013 y una lucha contra el Estado Islámico que evitaba
-                comprometerse con la caída del régimen.</p>
-              <p>Desde el <strong>realismo</strong>, el conflicto se explica como una guerra por delegación que buscaba
-                reequilibrar el poder regional. Desde el <strong>institucionalismo liberal</strong>, revela la parálisis
-                del Consejo de Seguridad: Rusia (a menudo junto a China) vetó más de una decena de resoluciones sobre
-                Siria, y la Responsabilidad de Proteger quedó sin aplicación.</p>
+              <h3>Inoperancia de la Convención de 1951 y la instrumentalización del derecho internacional</h3>
+              <p>La Convención de 1951 define como refugiada a la persona que, «debido a fundados temores de ser perseguida
+                por motivos de raza, religión, nacionalidad, pertenencia a determinado grupo social u opiniones políticas»,
+                se encuentra fuera de su país (Naciones Unidas, 1951). Esta definición, centrada en la persecución
+                individual, no abarca con claridad a quienes huyen del colapso económico y de la violencia generalizada.
+                Por eso la <strong>Declaración de Cartagena</strong> amplió el concepto en América Latina: también es
+                refugiada la persona que huye porque su vida, seguridad o libertad están amenazadas por la violencia
+                generalizada, la agresión extranjera, los conflictos internos o la violación masiva de los derechos humanos
+                (<em>Declaración de Cartagena sobre Refugiados</em>, 1984).</p>
+              <p>Sin embargo, la Declaración de Cartagena no es un tratado vinculante y muchos Estados latinoamericanos no
+                la aplican plenamente, por las consecuencias legales que conlleva reconocer la condición de refugiado. En
+                la práctica, se ofrecen permisos de estancia temporal o se clasifica a las personas como migrantes
+                económicos, lo que les niega la protección internacional y las deja expuestas a la explotación.</p>
+              <p>Se configura así una paradoja: algunos Estados invocan la crisis política y humanitaria para promover sus
+                objetivos geopolíticos, pero rechazan las solicitudes de protección de quienes huyen de ella. El derecho
+                internacional de los refugiados se convierte en un instrumento discursivo más que en una garantía
+                efectiva.</p>
+              <p>En el siglo XXI, como señala Grasa (2021), las crisis de seguridad humana revelan que los marcos de
+                análisis centrados en Estados Unidos y Europa resultan insuficientes para abordar las formas emergentes de
+                violencia difusa. El caso venezolano puede leerse también como expresión de una dominación hegemónica
+                ejercida mediante la intervención en asuntos que afectan a varios Estados y a sus ciudadanos, en el marco
+                de la disputa por un nuevo orden internacional (Ramírez Montañez y Sarmiento Suárez, 2021).</p>
             </article>
 
             <article class="panel" id="panel-4" role="tabpanel" aria-labelledby="pestana-4" tabindex="0" hidden>
-              <h3>Impacto en el sistema internacional y en la Convención de 1951</h3>
-              <p>La Convención de 1951 y su Protocolo de 1967 se diseñaron para un mundo de persecuciones individuales y
-                cifras manejables. Siria puso a prueba ese diseño en tres frentes. Primero, la <strong>carga
-                  desigual</strong>: la inmensa mayoría de los refugiados permaneció en países vecinos (Líbano, Jordania,
-                Turquía), y ni Líbano ni Jordania son parte de la Convención, mientras que Turquía la aplica con
-                limitación geográfica y otorgó a los sirios solo “protección temporal”.</p>
-              <p>Segundo, la <strong>securitización</strong>: en Europa, la migración pasó del lenguaje humanitario al de
-                la seguridad (la Escuela de Copenhague lo explica como un acto de habla que justifica medidas de
-                excepción). Se suspendió en la práctica el Sistema de Dublín, se levantaron vallas en los Balcanes y el
-                acuerdo con Turquía condicionó el acceso al asilo a la cooperación de un tercer Estado. Todo ello
-                tensionó el principio de <em>non-refoulement</em>.</p>
-              <p>Tercero, la <strong>respuesta normativa</strong>: el Pacto Mundial sobre los Refugiados (2018) propuso
-                repartir responsabilidades, pero sin obligaciones vinculantes. La caída del régimen de Ásad en diciembre
-                de 2024 abrió el debate sobre los retornos, que según el derecho internacional deben ser voluntarios,
-                seguros y dignos.</p>
-              <blockquote class="tesis">
-                <strong>Tesis del caso.</strong> La crisis siria no dejó obsoleta la Convención de 1951, pero sí dejó en
-                evidencia que un régimen de protección sin mecanismos de responsabilidad compartida traslada el costo
-                del desplazamiento a los Estados vecinos y convierte el asilo en moneda de negociación geopolítica.
+              <h3>Conclusiones</h3>
+              <blockquote class="tesis tesis-inicio">
+                La crisis migratoria venezolana ha influido en el sistema internacional al poner en evidencia la
+                inadecuación del régimen de asilo del siglo XX, el fracaso de las intervenciones coercitivas para
+                resolverla y la necesidad de un cambio de paradigma hacia la seguridad humana desde el Sur.
               </blockquote>
+              <ol class="conclusiones">
+                <li>La crisis migratoria, impulsada por la violencia política, el colapso económico y las sanciones
+                  internacionales, supera la capacidad de respuesta del marco normativo de Ginebra, concebido en el siglo
+                  XX. Esto expone las limitaciones de la teoría y la práctica internacional en materia migratoria: un
+                  conjunto de normas que solo cubre parcialmente la compleja variedad de situaciones de urgencia.</li>
+                <li>Las sanciones económicas, unilaterales o multilaterales, empleadas para forzar cambios de régimen por
+                  medios supuestamente pacíficos, son una práctica heredada de la Guerra Fría que ha demostrado ser
+                  fallida. Su impacto sobre la población de los países en desarrollo es devastador y genera una
+                  inestabilidad política y una violencia que pueden afectar a toda una región e incluso al sistema
+                  internacional.</li>
+                <li>La intervención internacional inspirada en el realismo, con sus prácticas de intimidación y coerción,
+                  debería dar paso a una aproximación pragmática y centrada en las personas, que reconozca la complejidad
+                  de las crisis humanitarias contemporáneas. En lugar de imponer nuevas restricciones a los países del Sur
+                  Global, es necesario promover la seguridad humana desde el Sur mediante el multilateralismo, la rendición
+                  de cuentas, la financiación de la protección y el abandono de las sanciones y otras medidas
+                  restrictivas.</li>
+              </ol>
             </article>
           </div>
         </section>
@@ -512,10 +549,22 @@
             <ul>
               <li>Carr, E. H. (1939). <em>The twenty years’ crisis, 1919–1939: An introduction to the study of
                   international relations</em>. Macmillan.</li>
+              <li><em>Declaración de Cartagena sobre Refugiados</em>. (1984). Coloquio sobre la Protección Internacional de
+                los Refugiados en América Central, México y Panamá.</li>
+              <li>Grasa, R. (2021). <em>Las relaciones internacionales, un siglo después: estado de la disciplina y de la
+                  sociedad internacional</em>. Sello Editorial UNAD.
+                https://libros.unad.edu.co/index.php/selloeditorial/catalog/view/7/6/121</li>
+              <li>Kennedy-Pipe, C. (2000). International history and international relations theory: A dialogue beyond the
+                Cold War. <em>International Affairs, 76</em>(4), 741–754.</li>
+              <li>Lesmes-Guerrero, M. (2026). Las mujeres y la diplomacia cultural en la historia en las relaciones
+                internacionales. <em>Nuevo Mundo Mundos Nuevos</em>.</li>
               <li>Naciones Unidas. (1945). <em>Carta de las Naciones Unidas</em>.</li>
               <li>Naciones Unidas. (1951). <em>Convención sobre el Estatuto de los Refugiados</em>.</li>
-              <!-- PENDIENTE: agregar en APA 7 las referencias completas de Lesmes-Guerrero (2026),
-                   Kennedy-Pipe (2000), Grasa (2021) y Ramírez y Sarmiento (2021), citadas en los hitos. -->
+              <li>Ramírez Montañez, J., y Sarmiento Suárez, J. (2021). Nuevo orden internacional a inicios de la segunda
+                década del siglo XXI. <em>Estudios Internacionales, 52</em>(197), 153–166.
+                https://doi.org/10.5354/0719-3769.2020.55138</li>
+              <li>Weisbrot, M., y Sachs, J. (2019). <em>Economic sanctions as collective punishment: The case of
+                  Venezuela</em>. Center for Economic and Policy Research.</li>
             </ul>
             <p class="nota">Imágenes: Wikimedia Commons (dominio público y licencias Creative Commons; autoría indicada
               en cada pie de foto).</p>
@@ -536,7 +585,7 @@
   <!-- ===== Modal de hitos ===== -->
   <dialog class="modal" id="modal" aria-labelledby="modalTitulo">
     <div class="modal-cabecera">
-      <p><strong id="modalContador">Hito 1 de 12</strong> <span id="modalFiltro"></span></p>
+      <p><strong id="modalContador">Hito 1 de 13</strong> <span id="modalFiltro"></span></p>
       <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar ficha">×</button>
     </div>
     <div class="modal-cuerpo" id="modalCuerpo"></div>
@@ -571,7 +620,8 @@
       9: ['1989', 'Caída del Muro'],
       10: ['2001', 'Atentados del 11-S'],
       11: ['2011', 'Primavera Árabe y Siria'],
-      12: ['2016', 'Desglobalización']
+      12: ['2014', 'Crisis venezolana'],
+      13: ['2016', 'Desglobalización']
     };
 
     const hitosData = [
@@ -727,10 +777,24 @@
         contexto: 'Los levantamientos de la Primavera Árabe degeneraron en conflictos armados complejos y desplazamientos masivos hacia Europa.',
         actores: 'Gobierno sirio (Ásad), oposición armada, ACNUR, Unión Europea (Angela Merkel) y Turquía.',
         intereses: 'Población civil: salvaguardar la vida. UE: contener los flujos y equilibrar los derechos humanos con la seguridad nacional.',
-        consecuencias: 'La mayor crisis de refugiados desde la Segunda Guerra Mundial y una tensión directa sobre la Convención de Ginebra de 1951. Ver el análisis de caso más abajo.'
+        consecuencias: 'La mayor crisis de refugiados desde la Segunda Guerra Mundial y una tensión directa sobre la Convención de Ginebra de 1951.'
       },
       {
         id: 12,
+        periodo: '2014 – presente',
+        titulo: 'La Crisis Venezolana, las Sanciones Internacionales y el Éxodo Migratorio',
+        categoria: 'GobernanzaYRefugiados',
+        sintesis: 'El colapso económico venezolano, agravado por sanciones internacionales, provocó el mayor éxodo de la historia reciente de América Latina y puso a prueba los regímenes regionales de protección.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Frontera_San_Antonio_-_C%C3%BAcuta_%282018%29_02.jpg/960px-Frontera_San_Antonio_-_C%C3%BAcuta_%282018%29_02.jpg',
+        pie: 'Personas venezolanas cruzan la frontera entre San Antonio del Táchira y Cúcuta, 12 de mayo de 2018.',
+        credito: 'Provea · Wikimedia Commons · Dominio público',
+        contexto: 'La dependencia de la renta petrolera, la corrupción y el deterioro institucional se agravaron con la caída de los precios del petróleo en 2014, que desató hiperinflación y escasez.',
+        actores: 'Gobierno venezolano; EE. UU. y sus aliados; países receptores como Colombia, Perú, Ecuador y Chile; ACNUR y la OIM.',
+        intereses: 'El Gobierno buscó mantenerse en el poder; EE. UU. aplicó una estrategia de «presión máxima» con sanciones (Orden Ejecutiva 13692 de 2015); los países vecinos procuraron gestionar los flujos migratorios.',
+        consecuencias: 'Millones de personas migraron por la región; surgieron respuestas como el Estatuto Temporal de Protección en Colombia (2021) y se evidenciaron los límites de la Convención de 1951. Es el hito elegido para el estudio de caso.'
+      },
+      {
+        id: 13,
         periodo: '2016 – presente',
         titulo: 'Desglobalización, Neoproteccionismo y Crisis del Multilateralismo',
         categoria: 'NuevoOrdenSigloXXI',
@@ -738,7 +802,7 @@
         imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Poll_card_from_the_UK%27s_EU_membership_referendum%2C_2016.jpg/960px-Poll_card_from_the_UK%27s_EU_membership_referendum%2C_2016.jpg',
         pie: 'Tarjeta de votación del referendo sobre la permanencia del Reino Unido en la UE, 23 de junio de 2016.',
         credito: 'Philip Stevens · Wikimedia Commons · CC BY-SA 4.0',
-        contexto: 'Reacción política y social en las potencias desarrolladas contra una integración económica desregulada (Ramírez y Sarmiento, 2021).',
+        contexto: 'Reacción política y social en las potencias desarrolladas contra una integración económica desregulada (Ramírez Montañez y Sarmiento Suárez, 2021).',
         actores: 'EE. UU. (Donald Trump), Reino Unido (Brexit), China (Xi Jinping) y la Unión Europea.',
         intereses: 'Recuperar la soberanía comercial y fronteriza frente a la defensa china de un libre comercio regulado.',
         consecuencias: 'Procesos de “desglobalización” y “desregionalización”, restricción de los marcos de asilo y fragmentación del orden global.'
