@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generación de Energía Eléctrica con Limones · Informe de Laboratorio</title>
+  <meta name="description"
+    content="Informe experimental: generación de energía eléctrica mediante celdas electroquímicas caseras con limones, alambre de cobre y tornillos metálicos. SENA — Análisis y Desarrollo de Software." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER INSTITUCIONAL
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="#inicio" class="brand" aria-label="Inicio del proyecto">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/img/logo sena.png" alt="Logo del SENA">
+        </span>
+        <span class="brand__text">
+          <span class="brand__title">Servicio Nacional de Aprendizaje</span>
+          <span class="brand__sub">SENA · Centro de Procesos Industriales y Construcción</span>
+        </span>
+      </a>
+
+      <ul class="meta-list" aria-label="Información académica">
+        <li>
+          <span>Programa</span>
+          <strong>Análisis y Desarrollo de Software</strong>
+        </li>
+        <li>
+          <span>Evidencia</span>
+          <strong>GA3-220201501-AA3</strong>
+        </li>
+        <li>
+          <span>Tipo</span>
+          <strong>Informe experimental</strong>
+        </li>
+        <li>
+          <span>Fecha</span>
+          <strong>2026 · Manizales</strong>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__text reveal">
+            <span class="eyebrow">Experimento</span>
+            <h1 class="hero__title">
+              Generación de Energía Eléctrica con Limones
+            </h1>
+            <p class="hero__subtitle">
+              Análisis de la transformación de energía química en energía eléctrica
+              mediante celdas electroquímicas caseras.
+            </p>
+            <a href="assets/Informe de Laboratorio2 _Fisica.pdf" class="btn btn--primary">
+              Ver Informe 
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero__visual reveal">
+            <figure class="hero__figure">
+              <img
+                src="assets/img/img_hero.png"
+                alt="Limones utilizados como celdas electroquímicas en el experimento." />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DASHBOARD — 3 columnas: materiales | video | resultados
+         ============================================================ -->
+    <section class="dashboard">
+      <div class="wrap">
+        <div class="dashboard__grid">
+
+          <!-- ===== COLUMNA IZQUIERDA: OBJETIVO + MATERIALES ===== -->
+          <aside class="side-left">
+            <div class="card reveal">
+              <div class="card__head">
+                <span class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6"></path>
+                  </svg>
+                </span>
+                <span class="card__title">Objetivo</span>
+              </div>
+              <div class="card__body">
+                Demostrar la generación de energía eléctrica mediante un experimento
+                electroquímico con limones, cobre y tornillos metálicos, comprendiendo
+                la transformación de energía química en eléctrica.
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <div class="card__head">
+                <span class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="16" height="10" rx="2"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                    <line x1="6" y1="11" x2="6" y2="13"></line>
+                    <line x1="10" y1="11" x2="10" y2="13"></line>
+                  </svg>
+                </span>
+                <span class="card__title">Materiales</span>
+              </div>
+              <ul class="card__list">
+                <li>3 limones</li>
+                <li>Tornillos metálicos (zinc)</li>
+                <li>Alambre de cobre</li>
+                <li>Cables conductores</li>
+                <li>Multímetro digital</li>
+                <li>Diodo LED</li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- ===== COLUMNA CENTRAL: VIDEO ===== -->
+          <div class="video-block" id="video">
+            <div class="video-frame reveal">
+              <div class="video-frame__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/L3jYIyH4DIc"
+                  title="Experimento: Generación de Energía Eléctrica con Limones"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="video-caption reveal">
+              <h3>Experimento: Generación de Energía Eléctrica con Limones</h3>
+              <p>
+                Demostración del procedimiento completo: preparación de las celdas con
+                tornillo y cobre, conexión en serie de tres limones, medición con multímetro
+                y encendido del LED a partir de la corriente generada.
+              </p>
+            </div>
+          </div>
+
+          <!-- ===== COLUMNA DERECHA: RESULTADOS ===== -->
+          <aside class="side-right">
+            <div class="voltage-grid">
+              <article class="voltage-card reveal">
+                <div class="voltage-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                  </svg>
+                </div>
+                <p class="voltage-card__label">Voltaje inicial</p>
+                <p class="voltage-card__value">0.97 V</p>
+                <p class="voltage-card__hint">1 limón</p>
+              </article>
+
+              <article class="voltage-card reveal">
+                <div class="voltage-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4"></path>
+                    <path d="M12 18v4"></path>
+                    <path d="M4.93 4.93l2.83 2.83"></path>
+                    <path d="M16.24 16.24l2.83 2.83"></path>
+                    <path d="M2 12h4"></path>
+                    <path d="M18 12h4"></path>
+                    <path d="M4.93 19.07l2.83-2.83"></path>
+                    <path d="M16.24 7.76l2.83-2.83"></path>
+                  </svg>
+                </div>
+                <p class="voltage-card__label">Voltaje final</p>
+                <p class="voltage-card__value">2.78 V</p>
+                <p class="voltage-card__hint">3 limones en serie</p>
+              </article>
+            </div>
+
+            <div class="fact-row reveal">
+              <span class="fact-row__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <polyline points="13 6 19 12 13 18"></polyline>
+                </svg>
+              </span>
+              <span class="fact-row__text">
+                <span class="fact-row__label">Transformación</span>
+                <span class="fact-row__value">Química → Eléctrica</span>
+              </span>
+            </div>
+
+            <div class="fact-row reveal">
+              <span class="fact-row__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="12" r="2.5"></circle>
+                  <circle cx="18" cy="12" r="2.5"></circle>
+                  <line x1="8.5" y1="12" x2="15.5" y2="12"></line>
+                </svg>
+              </span>
+              <span class="fact-row__text">
+                <span class="fact-row__label">Tipo de circuito</span>
+                <span class="fact-row__value">Serie electroquímica</span>
+              </span>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPLICATIVA — 4 bloques + galería
+         ============================================================ -->
+    <section class="explain" id="explicacion">
+      <div class="wrap">
+        <div class="explain__grid">
+
+          <article class="explain-card reveal">
+            <div class="explain-card__head">
+              <span class="explain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </span>
+              <span class="explain-card__title">¿Cómo funciona?</span>
+            </div>
+            <p>
+              El ácido cítrico del limón actúa como electrolito. El tornillo (zinc) libera
+              electrones y el cobre los recibe, generando una diferencia de potencial
+              eléctrico medible.
+            </p>
+          </article>
+
+          <article class="explain-card reveal">
+            <div class="explain-card__head">
+              <span class="explain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h4l3-9 4 18 3-9h4"></path>
+                </svg>
+              </span>
+              <span class="explain-card__title">Reacción electroquímica</span>
+            </div>
+            <p>
+              Reacción redox espontánea entre el ánodo (zinc) y el cátodo (cobre)
+              sumergidos en el electrolito.
+            </p>
+            <span class="formula-inline">Zn → Zn²⁺ + 2e⁻ &nbsp;|&nbsp; 2H⁺ + 2e⁻ → H₂</span>
+          </article>
+
+          <article class="explain-card reveal">
+            <div class="explain-card__head">
+              <span class="explain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="12" x2="15" y2="12"></line>
+                  <line x1="3" y1="18" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span class="explain-card__title">Variables principales</span>
+            </div>
+            <ul>
+              <li>Voltaje (V)</li>
+              <li>Corriente eléctrica</li>
+              <li>Conductividad iónica</li>
+              <li>Acidez del electrolito</li>
+            </ul>
+          </article>
+
+          <article class="explain-card reveal">
+            <div class="explain-card__head">
+              <span class="explain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="6" y="2" width="12" height="20" rx="2" ry="2"></rect>
+                  <line x1="10" y1="6" x2="14" y2="6"></line>
+                  <line x1="10" y1="18" x2="14" y2="18"></line>
+                </svg>
+              </span>
+              <span class="explain-card__title">Aplicaciones reales</span>
+            </div>
+            <p>
+              El mismo principio rige las pilas comerciales, baterías recargables y
+              sistemas modernos de almacenamiento energético.
+            </p>
+          </article>
+
+          <article class="explain-card reveal">
+            <div class="explain-card__head">
+              <span class="explain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </span>
+              <span class="explain-card__title">Galería</span>
+            </div>
+            <div class="mini-gallery__grid">
+              <div class="mini-gallery__item">Materiales</div>
+              <div class="mini-gallery__item">Montaje</div>
+              <div class="mini-gallery__item">Medición</div>
+              <div class="mini-gallery__item">LED</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONCLUSIONES
+         ============================================================ -->
+    <section class="conclusion" id="conclusiones">
+      <div class="wrap">
+        <div class="conclusion__box reveal">
+          <div class="conclusion__head">
+            <span class="conclusion__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="conclusion__title">Conclusiones</span>
+          </div>
+          <p>
+            El experimento permitió verificar el principio de funcionamiento de una celda
+            galvánica utilizando recursos cotidianos. El voltaje individual obtenido
+            (<strong>0.97 V</strong>) es coherente con los valores teóricos esperados para
+            una celda Zn–Cu con electrolito ácido débil, y la conexión en serie de tres
+            limones permitió alcanzar <strong>2.78 V</strong>, suficientes para encender
+            un LED de bajo consumo.
+          </p>
+          <p>
+            El mismo principio electroquímico sustenta el funcionamiento de las baterías
+            comerciales, evidenciando la importancia tecnológica de comprender los
+            procesos de óxido-reducción. El proyecto demuestra cómo la experimentación
+            accesible puede convertirse en una herramienta pedagógica para introducir
+            conceptos de física, química y energía sostenible en el contexto social y
+            productivo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="footer-meta">
+        <span><em>Aprendiz</em><strong>Natalia Berrío Zuleta</strong></span>
+        <span><em>Instructor</em><strong>César Augusto Restrepo</strong></span>
+        <span><em>Programa</em><strong>Análisis y Desarrollo de Software</strong></span>
+        <span><em>SENA</em><strong>Manizales · 2026</strong></span>
+      </div>
+
+      <a class="legacy-link" href="../../index.html"
+        title="Volver al portafolio académico">
+        Ver portafolio académico
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17L17 7"></path>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

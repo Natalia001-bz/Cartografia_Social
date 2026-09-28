@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia y Teoría de las Relaciones Internacionales · UNAD</title>
+  <meta name="description"
+    content="Recurso académico interactivo del curso Historia y Teoría de las Relaciones Internacionales (252005), UNAD. Línea de tiempo de doce hitos del sistema internacional desde 1914 y análisis de caso sobre Siria y el régimen internacional de asilo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       Paleta institucional tomada del logo de la UNAD
+       Azul #005484 · Amarillo #FCB400
+       ========================================================= */
+    :root {
+      --azul: #005484;
+      --azul-profundo: #003a5c;
+      --azul-suave: #e8f0f6;
+      --amarillo: #fcb400;
+      --amarillo-texto: #8a6200;
+      --amarillo-suave: #fff6dc;
+      --papel: #fbfaf7;
+      --blanco: #ffffff;
+      --tinta: #1a2433;
+      --gris: #5b6675;
+      --linea: #e4e1d8;
+      --linea-fuerte: #c9cfd8;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --ancho: 1120px;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--papel); color: var(--tinta); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--amarillo); outline-offset: 3px; }
+
+    .contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
+    .antetitulo { font-size: .72rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .regla { width: 44px; height: 3px; background: var(--amarillo); border-radius: 2px; }
+    .serif { font-family: var(--serif); }
+
+    /* ── Barra institucional ── */
+    .barra { background: var(--blanco); border-bottom: 1px solid var(--linea); }
+    .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+    .marca { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+    .marca img { width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0; }
+    .marca span { font-size: .82rem; line-height: 1.3; color: var(--gris); }
+    .marca strong { display: block; color: var(--azul-profundo); font-weight: 600; font-size: .9rem; }
+    .barra-acciones { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .enlace-sutil { background: none; border: 0; padding: 8px 12px; border-radius: 8px; font-size: .86rem; color: var(--gris); text-decoration: none; transition: color .2s, background-color .2s; }
+    .enlace-sutil:hover { color: var(--azul); background: var(--azul-suave); }
+
+    /* ── Portada ── */
+    .portada { padding: clamp(48px, 7vw, 84px) 0 clamp(56px, 8vw, 96px); }
+    .portada .contenedor { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
+    .portada .antetitulo { color: var(--azul); }
+    .portada h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 1.08; letter-spacing: -.015em; color: var(--azul-profundo); margin: 22px 0 0; }
+    .portada h1 em { display: block; font-style: italic; font-weight: 400; color: var(--azul); }
+    .portada .regla { margin: 30px 0; }
+    .intro { font-size: 1.08rem; color: var(--gris); max-width: 56ch; }
+    .acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 36px; }
+    .boton {
+      display: inline-flex; align-items: center; gap: 12px; padding: 15px 28px; border: 0; border-radius: 999px;
+      background: var(--azul); color: #fff; font-weight: 600; font-size: .98rem; text-decoration: none;
+      box-shadow: 0 10px 24px -12px rgba(0, 84, 132, .7);
+      transition: background-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .boton:hover { background: var(--azul-profundo); transform: translateY(-2px); }
+    .boton .flecha { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--amarillo); color: var(--azul-profundo); font-size: .9rem; transition: transform .3s var(--ease); }
+    .boton:hover .flecha { transform: translateY(2px); }
+    .boton-texto { background: none; border: 0; font-weight: 600; font-size: .95rem; color: var(--azul); text-decoration: underline; text-decoration-color: var(--amarillo); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+    .ficha { border-top: 1px solid var(--linea-fuerte); }
+    .ficha div { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: .92rem; }
+    .ficha dt { color: var(--gris); }
+    .ficha dd { font-weight: 600; color: var(--tinta); }
+    .ra { margin-top: 28px; padding-left: 18px; border-left: 3px solid var(--amarillo); }
+    .ra p:last-child { margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.6; color: var(--tinta); }
+
+    /* ── Recurso desplegable ── */
+    .recurso { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .7s var(--ease), opacity .5s var(--ease); }
+    .recurso > div { overflow: hidden; min-width: 0; }
+    .recurso.abierto { grid-template-rows: 1fr; opacity: 1; }
+    .recurso.abierto > div { overflow: visible; }
+
+    .seccion { padding: clamp(64px, 9vw, 110px) 0; }
+    .seccion-blanca { background: var(--blanco); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+    .encabezado { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-bottom: 44px; }
+    .encabezado h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.15; color: var(--azul-profundo); margin-top: 12px; }
+    .encabezado p { color: var(--gris); max-width: 46ch; }
+
+    /* Filtros */
+    .filtros { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-bottom: 20px; }
+    .filtro { background: none; border: 0; padding: 6px 0; font-size: .86rem; color: var(--gris); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .filtro:hover { color: var(--azul); }
+    .filtro[aria-pressed="true"] { color: var(--azul-profundo); font-weight: 600; border-bottom-color: var(--amarillo); }
+
+    /* ── Línea de tiempo ── */
+    .linea-tiempo { background: var(--blanco); border: 1px solid var(--linea); border-radius: 24px; padding: 8px clamp(12px, 3vw, 36px); box-shadow: 0 30px 60px -40px rgba(0, 58, 92, .35); }
+    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(12, 1fr); height: 360px; }
+    .tl::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: linear-gradient(90deg, transparent, var(--azul) 6%, var(--azul) 94%, transparent); opacity: .85; }
+    .tl-item { position: relative; transition: opacity .3s var(--ease); }
+    .tl-item.atenuado { opacity: .22; }
+    .tl-item.atenuado .tl-boton { pointer-events: none; }
+    .tl-boton { position: absolute; inset: 0; background: none; border: 0; border-radius: 12px; }
+    .tl-boton:focus-visible { outline: none; }
+    .tl-punto {
+      position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; border-radius: 50%;
+      transform: translate(-50%, -50%); background: var(--blanco); border: 2px solid var(--azul);
+      transition: transform .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .tl-tallo { position: absolute; left: 50%; width: 1px; height: 30px; background: var(--linea-fuerte); }
+    .tl-texto { position: absolute; left: 50%; width: 150px; transform: translateX(-50%); text-align: center; }
+    .tl-anio { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.45rem; line-height: 1; color: var(--azul-profundo); transition: color .3s; }
+    .tl-titulo { display: block; margin-top: 8px; font-size: .8rem; line-height: 1.35; color: var(--gris); transition: color .3s; }
+    .tl-item:nth-child(odd) .tl-tallo { bottom: calc(50% + 12px); }
+    .tl-item:nth-child(odd) .tl-texto { bottom: calc(50% + 50px); }
+    .tl-item:nth-child(even) .tl-tallo { top: calc(50% + 12px); }
+    .tl-item:nth-child(even) .tl-texto { top: calc(50% + 50px); }
+    .tl-boton:hover .tl-punto, .tl-boton:focus-visible .tl-punto { transform: translate(-50%, -50%) scale(1.35); background: var(--amarillo); border-color: var(--amarillo); box-shadow: 0 0 0 8px rgba(252, 180, 0, .18); }
+    .tl-boton:hover .tl-titulo, .tl-boton:focus-visible .tl-titulo { color: var(--tinta); }
+    .tl-boton:hover .tl-anio { color: var(--azul); }
+    .tl-item.visto .tl-punto { background: var(--azul); }
+    .tl-item.actual .tl-punto { box-shadow: 0 0 0 6px rgba(252, 180, 0, .45); }
+
+    .pie-tl { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; }
+    .avance { display: flex; align-items: center; gap: 14px; font-size: .88rem; color: var(--gris); }
+    .avance-barra { width: 160px; height: 4px; border-radius: 4px; background: var(--linea); overflow: hidden; }
+    .avance-barra span { display: block; height: 100%; width: 0; background: var(--amarillo); transition: width .4s var(--ease); }
+    .boton-secundario { display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--azul); background: var(--blanco); color: var(--azul); font-weight: 600; font-size: .92rem; transition: background-color .25s, color .25s; }
+    .boton-secundario:hover { background: var(--azul); color: #fff; }
+
+    /* ── Modal del hito ── */
+    dialog.modal {
+      width: min(1080px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); inset: 0; margin: auto; padding: 0; border: 0;
+      border-radius: 22px; background: var(--blanco); color: var(--tinta); overflow: hidden;
+      box-shadow: 0 40px 80px -30px rgba(0, 26, 51, .55);
+    }
+    dialog.modal[open] { display: flex; flex-direction: column; animation: aparecer .35s var(--ease); }
+    dialog.modal::backdrop { background: rgba(0, 32, 54, .55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    @keyframes aparecer { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+
+    .modal-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--linea); }
+    .modal-cabecera p { font-size: .82rem; color: var(--gris); }
+    .modal-cabecera strong { color: var(--azul-profundo); }
+    .cerrar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--linea); background: var(--blanco); font-size: 1.3rem; line-height: 1; color: var(--gris); transition: background-color .2s, color .2s; }
+    .cerrar:hover { background: var(--azul-suave); color: var(--azul); }
+
+    .modal-cuerpo { overflow-y: auto; padding: clamp(20px, 4vw, 40px); }
+    .modal-contenido { animation: fundido .35s var(--ease); }
+    @keyframes fundido { from { opacity: 0; transform: translateX(var(--desde, 0)); } to { opacity: 1; transform: none; } }
+    .hito-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
+    .hito-figura img, .sin-imagen { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; background: var(--azul-suave); }
+    .sin-imagen { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; border: 1px solid var(--linea); }
+    .sin-imagen span { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .sin-imagen strong { font-family: var(--serif); font-weight: 600; color: var(--azul-profundo); line-height: 1.3; }
+    .hito-figura figcaption { margin-top: 12px; font-size: .78rem; line-height: 1.5; color: var(--gris); }
+    .hito-figura figcaption small { display: block; margin-top: 4px; color: #8a93a0; font-size: .74rem; }
+    .hito-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+    .categoria { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .periodo { font-size: .8rem; font-weight: 600; color: var(--amarillo-texto); background: var(--amarillo-suave); padding: 3px 12px; border-radius: 999px; }
+    .hito-titulo { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.2; color: var(--azul-profundo); margin: 14px 0 20px; }
+    .sintesis { padding: 4px 0 4px 18px; border-left: 3px solid var(--amarillo); }
+    .sintesis p:first-child { font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); }
+    .sintesis p:last-child { margin-top: 6px; font-size: 1.08rem; line-height: 1.65; }
+
+    .desplegar { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--azul); background: var(--blanco); color: var(--azul); font-weight: 600; font-size: .92rem; transition: background-color .25s, color .25s; }
+    .desplegar:hover, .desplegar[aria-expanded="true"] { background: var(--azul); color: #fff; }
+    .desplegar svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+    .desplegar[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .analisis { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+    .analisis > div { overflow: hidden; }
+    .analisis.abierto { grid-template-rows: 1fr; }
+    .ejes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; margin-top: 28px; border-top: 1px solid var(--linea); }
+    .eje { padding: 20px 0; border-bottom: 1px solid var(--linea); }
+    .eje h4 { display: flex; align-items: baseline; gap: 10px; font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .eje h4 span { font-family: var(--serif); font-size: 1rem; letter-spacing: 0; color: var(--amarillo-texto); }
+    .eje p { margin-top: 8px; font-size: .94rem; line-height: 1.65; color: var(--tinta); }
+
+    .modal-pie { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 24px; border-top: 1px solid var(--linea); background: var(--papel); }
+    .nav-hito { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--linea-fuerte); background: var(--blanco); font-size: .88rem; font-weight: 600; color: var(--azul-profundo); transition: border-color .2s, background-color .2s; }
+    .nav-hito:hover { border-color: var(--azul); background: var(--azul-suave); }
+    .nav-hito:disabled { opacity: .35; pointer-events: none; }
+    .nav-hito.principal { background: var(--azul); border-color: var(--azul); color: #fff; }
+    .nav-hito.principal:hover { background: var(--azul-profundo); }
+    .puntos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .puntos button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: var(--linea-fuerte); transition: background-color .2s, transform .2s; }
+    .puntos button:hover { background: var(--azul); }
+    .puntos button[aria-current="true"] { background: var(--amarillo); transform: scale(1.35); }
+    .puntos button:disabled { opacity: .3; pointer-events: none; }
+    body.modal-abierto { overflow: hidden; }
+
+    /* ── Análisis de caso ── */
+    .caso h2 { max-width: 30ch; }
+    .cifras { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--linea-fuerte); border-bottom: 1px solid var(--linea); margin-bottom: 48px; }
+    .cifras div { padding: 24px 24px 24px 0; }
+    .cifras div + div { padding-left: 24px; border-left: 1px solid var(--linea); }
+    .cifras strong { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.1; color: var(--azul-profundo); }
+    .cifras span { display: block; margin-top: 8px; font-size: .86rem; color: var(--gris); }
+    .pestanas { display: flex; gap: 28px; overflow-x: auto; border-bottom: 1px solid var(--linea); margin-bottom: 36px; scrollbar-width: none; }
+    .pestana { flex-shrink: 0; background: none; border: 0; padding: 12px 0; margin-bottom: -1px; font-size: .92rem; color: var(--gris); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .pestana:hover { color: var(--azul); }
+    .pestana[aria-selected="true"] { color: var(--azul-profundo); font-weight: 600; border-bottom-color: var(--amarillo); }
+    .pestana span { font-family: var(--serif); color: var(--amarillo-texto); margin-right: 6px; }
+    .panel { max-width: 72ch; }
+    .panel[hidden] { display: none; }
+    .panel h3 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--azul-profundo); margin-bottom: 18px; }
+    .panel p { margin-bottom: 16px; color: #2c3645; }
+    .panel p strong { color: var(--azul-profundo); }
+    .actores { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; border-top: 1px solid var(--linea); }
+    .actores div { padding: 18px 0; border-bottom: 1px solid var(--linea); }
+    .actores h4 { font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .actores p { margin: 6px 0 0; font-size: .94rem; }
+    .tesis { margin-top: 28px; padding: 24px 28px; border-radius: 16px; background: var(--azul-suave); border-left: 3px solid var(--amarillo); font-family: var(--serif); font-size: 1.12rem; line-height: 1.6; color: var(--azul-profundo); }
+
+    /* ── Referencias y pie ── */
+    .referencias h2 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--azul-profundo); margin-bottom: 18px; }
+    .referencias li { list-style: none; padding-left: 2em; text-indent: -2em; margin-bottom: 10px; font-size: .92rem; color: #2c3645; }
+    .nota { margin-top: 24px; font-size: .8rem; color: var(--gris); }
+    .pie { background: var(--azul-profundo); color: rgba(255, 255, 255, .72); font-size: .86rem; }
+    .pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 28px; padding-bottom: 28px; }
+    .pie-franja { height: 4px; background: var(--amarillo); }
+
+    .solo-impresion { display: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .portada .contenedor { grid-template-columns: 1fr; align-items: start; }
+      .hito-grid { grid-template-columns: 1fr; }
+      .cifras { grid-template-columns: 1fr 1fr; }
+      .cifras div:nth-child(3) { padding-left: 0; border-left: 0; }
+      .cifras div:nth-child(n+3) { border-top: 1px solid var(--linea); }
+    }
+    @media (max-width: 820px) {
+      /* Línea de tiempo vertical */
+      .linea-tiempo { padding: 16px 20px; }
+      .tl { display: block; height: auto; padding-left: 30px; }
+      .tl::before { left: 8px; right: auto; top: 12px; bottom: 12px; width: 2px; height: auto; transform: none; background: var(--azul); }
+      .tl-item { padding: 6px 0; }
+      .tl-boton { position: relative; inset: auto; display: block; width: 100%; padding: 12px 8px; text-align: left; }
+      .tl-punto { left: -22px; }
+      .tl-tallo { display: none; }
+      .tl-item .tl-texto { position: static; width: auto; transform: none; text-align: left; }
+      .tl-anio { font-size: 1.25rem; }
+      .tl-titulo { margin-top: 4px; font-size: .9rem; }
+    }
+    @media (max-width: 640px) {
+      .marca span { display: none; }
+      .marca strong { display: block; }
+      .ficha div { grid-template-columns: 1fr; gap: 2px; }
+      .ejes, .actores { grid-template-columns: 1fr; }
+      dialog.modal { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
+      .modal-cabecera { padding: 12px 16px; }
+      .modal-pie { padding: 12px 14px; }
+      .puntos button { width: 7px; height: 7px; }
+      .nav-hito .texto { display: none; }
+      .puntos { gap: 5px; }
+      .cifras { grid-template-columns: 1fr; }
+      .cifras div, .cifras div + div { padding: 18px 0; border-left: 0; }
+      .cifras div + div { border-top: 1px solid var(--linea); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ── Informe imprimible / PDF (A4) ── */
+    @media print {
+      @page { size: A4; margin: 16mm 15mm; }
+      body { background: #fff; font-size: 10.5pt; }
+      .no-imprimir, dialog { display: none !important; }
+      .solo-impresion { display: block !important; }
+      .portada { padding: 0 0 12pt; }
+      .portada .contenedor { grid-template-columns: 1fr; gap: 14pt; }
+      .recurso { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      .recurso > div { overflow: visible !important; }
+      .seccion { padding: 12pt 0; }
+      .seccion-blanca { border: 0; }
+      .linea-tiempo { display: none; }
+      .hito-impreso { break-inside: avoid; page-break-inside: avoid; padding: 12pt 0; border-top: 1px solid var(--linea-fuerte); }
+      .hito-impreso .hito-grid { grid-template-columns: 32% 1fr; gap: 14pt; }
+      .hito-impreso img { max-height: 46mm; }
+      .hito-impreso .ejes { grid-template-columns: 1fr 1fr; margin-top: 10pt; }
+      .panel, .panel[hidden] { display: block !important; max-width: none; break-inside: avoid; margin-bottom: 14pt; }
+      .pestanas { display: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Barra institucional ===== -->
+  <header class="barra">
+    <div class="contenedor">
+      <a class="marca" href="#portada">
+        <img src="assets/img/logo-unad.jpg" alt="Logo de la UNAD" />
+        <span><strong>Universidad Nacional Abierta y a Distancia</strong>Escuela de Ciencias Jurídicas y Políticas · Ciencia Política</span>
+      </a>
+      <div class="barra-acciones no-imprimir">
+        <button class="enlace-sutil" id="btnPdf" type="button" title="En el diálogo de impresión elige «Guardar como PDF»">Exportar resumen PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Portada ===== -->
+  <section class="portada" id="portada">
+    <div class="contenedor">
+      <div>
+        <p class="antetitulo">Curso 252005 · Escenario 2</p>
+        <h1>Historia y Teoría de las Relaciones Internacionales <em>Una mirada evolutiva, 1914 – presente</em></h1>
+        <div class="regla"></div>
+        <p class="intro">Del orden eurocéntrico que se derrumbó en 1914 a un sistema internacional policéntrico, donde
+          los Estados comparten escena con organismos multilaterales, redes civiles y actores armados no estatales.
+          Doce hitos para entender cómo cambió el mundo y cómo cambió la disciplina que lo estudia.</p>
+        <div class="acciones no-imprimir">
+          <button class="boton" id="btnIniciar" type="button" aria-controls="recurso" aria-expanded="false">
+            Iniciar recorrido <span class="flecha" aria-hidden="true">↓</span>
+          </button>
+          <button class="boton-texto" id="btnCaso" type="button">Ir al análisis de caso</button>
+        </div>
+      </div>
+
+      <div>
+        <dl class="ficha">
+          <div><dt>Estudiante</dt><dd>Natalia Berrío Zuleta</dd></div>
+          <!-- PENDIENTE: escribir el nombre del tutor o tutora -->
+          <div><dt>Tutor del curso</dt><dd>Leonardo Andrey Barreto Gómez</dd></div>
+          <div><dt>Código</dt><dd>252005</dd></div>
+          <div><dt>Escenario</dt><dd>2 · Historia de las Relaciones Internacionales</dd></div>
+        </dl>
+        <div class="ra">
+          <p class="antetitulo">Resultado de aprendizaje · RA1</p>
+          <p>“Comprender los hitos de la historia global en el marco de los Estudios Internacionales, mediante la
+            elaboración de análisis escritos y argumentativos que expliquen la evolución y actualidad del sistema
+            internacional.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Recurso (se despliega con «Iniciar recorrido») ===== -->
+  <div class="recurso" id="recurso">
+    <div>
+      <main>
+        <!-- Línea de tiempo -->
+        <section class="seccion seccion-blanca" id="recorrido" aria-labelledby="titulo-recorrido">
+          <div class="contenedor">
+            <div class="encabezado">
+              <div>
+                <p class="antetitulo">Línea de tiempo</p>
+                <h2 id="titulo-recorrido">Doce hitos del sistema internacional</h2>
+              </div>
+              <p class="no-imprimir">Selecciona un año para abrir su ficha. Dentro de ella puedes avanzar al siguiente
+                hito o volver al anterior.</p>
+            </div>
+
+            <div class="filtros no-imprimir" id="filtros" role="group" aria-label="Filtrar hitos por categoría"></div>
+
+            <div class="linea-tiempo">
+              <ol class="tl" id="tl"></ol>
+            </div>
+
+            <div class="pie-tl no-imprimir">
+              <div class="avance">
+                <div class="avance-barra"><span id="avanceBarra"></span></div>
+                <span id="avanceTexto">0 de 12 hitos explorados</span>
+              </div>
+              <button class="boton-secundario" id="btnComenzar" type="button">Comenzar por el hito 1 →</button>
+            </div>
+
+            <!-- Versión para imprimir: todos los hitos con su análisis completo -->
+            <div class="solo-impresion" id="impresion"></div>
+          </div>
+        </section>
+
+        <!-- Análisis de caso -->
+        <section class="seccion caso" id="caso" aria-labelledby="titulo-caso">
+          <div class="contenedor">
+            <div class="encabezado">
+              <div>
+                <p class="antetitulo">Análisis de caso de profundización</p>
+                <h2 id="titulo-caso">La Primavera Árabe, la Guerra Civil Siria y la Crisis de Refugiados: interpelación
+                  al régimen internacional de asilo del siglo XXI</h2>
+              </div>
+            </div>
+
+            <div class="cifras">
+              <div><strong>2011</strong><span>Protestas en Deraa y comienzo del conflicto</span></div>
+              <div><strong>+6 millones</strong><span>de personas refugiadas sirias fuera del país (ACNUR)</span></div>
+              <div><strong>≈ 7 millones</strong><span>de desplazados internos en los años más críticos</span></div>
+              <div><strong>+3,5 millones</strong><span>acogidos por Turquía, principal país receptor</span></div>
+            </div>
+
+            <div class="pestanas no-imprimir" role="tablist" aria-label="Bloques del análisis de caso" id="pestanas">
+              <button class="pestana" role="tab" id="pestana-1" aria-controls="panel-1" aria-selected="true"><span>1</span>Contexto y estallido</button>
+              <button class="pestana" role="tab" id="pestana-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span>2</span>Mapeo de actores</button>
+              <button class="pestana" role="tab" id="pestana-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span>3</span>Intereses en disputa</button>
+              <button class="pestana" role="tab" id="pestana-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span>4</span>Impacto y Convención de 1951</button>
+            </div>
+
+            <article class="panel" id="panel-1" role="tabpanel" aria-labelledby="pestana-1" tabindex="0">
+              <h3>Contexto histórico y estallido (2011)</h3>
+              <p>A finales de 2010, la autoinmolación de Mohamed Bouazizi en Túnez encendió una ola de protestas que
+                recorrió el norte de África y Oriente Medio. Las consignas eran compartidas: desempleo juvenil,
+                corrupción, represión policial y regímenes que llevaban décadas en el poder. Túnez y Egipto vieron caer a
+                sus presidentes en semanas; en Libia, la intervención de la OTAN amparada en la Resolución 1973 del
+                Consejo de Seguridad terminó con Gadafi.</p>
+              <p>Siria siguió otro camino. En marzo de 2011, la detención y tortura de adolescentes que habían pintado
+                consignas en Deraa desató manifestaciones que el gobierno de Bashar al-Ásad reprimió con fuego real. La
+                represión militarizó a la oposición, fracturó al ejército y, hacia 2012, el levantamiento ya era una
+                guerra civil con dimensiones sectarias (una élite alauí en el poder frente a una mayoría suní) y rápida
+                internacionalización.</p>
+              <p>La lección politológica es que la <strong>estructura del régimen</strong> importa: donde las fuerzas
+                armadas se separaron del gobernante hubo transición; donde el aparato de seguridad permaneció fiel y
+                contó con aliados externos, la protesta derivó en guerra.</p>
+            </article>
+
+            <article class="panel" id="panel-2" role="tabpanel" aria-labelledby="pestana-2" tabindex="0" hidden>
+              <h3>Mapeo de actores</h3>
+              <div class="actores">
+                <div>
+                  <h4>Gobierno de Ásad</h4>
+                  <p>Buscó la supervivencia del régimen a cualquier costo: asedios, bombardeo de zonas civiles y uso de
+                    armas químicas (Guta, 2013). Se sostuvo gracias a Rusia, Irán y Hezbolá, hasta su caída en diciembre
+                    de 2024.</p>
+                </div>
+                <div>
+                  <h4>Oposición</h4>
+                  <p>Muy fragmentada: del Ejército Libre Sirio y los comités civiles a milicias islamistas. El Estado
+                    Islámico proclamó su “califato” en 2014, y las fuerzas kurdas (FDS) controlaron el noreste.</p>
+                </div>
+                <div>
+                  <h4>Potencias externas</h4>
+                  <p>Rusia intervino militarmente en 2015 a favor del régimen; Irán aportó asesores y milicias; EE. UU.
+                    lideró la coalición contra el Estado Islámico y apoyó a las FDS; Turquía y las monarquías del Golfo
+                    respaldaron a distintas facciones opositoras.</p>
+                </div>
+                <div>
+                  <h4>ACNUR</h4>
+                  <p>Coordinó la respuesta a la mayor población refugiada del mundo en la década de 2010, con planes
+                    regionales en Turquía, Líbano, Jordania, Irak y Egipto, casi siempre con financiación
+                    insuficiente.</p>
+                </div>
+                <div>
+                  <h4>Unión Europea</h4>
+                  <p>Pasó de la apertura alemana de 2015 (“Wir schaffen das”, Angela Merkel), que llevó a cerca de un
+                    millón de solicitantes de asilo a Alemania, a la externalización del control fronterizo mediante la
+                    Declaración UE–Turquía de marzo de 2016.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel" id="panel-3" role="tabpanel" aria-labelledby="pestana-3" tabindex="0" hidden>
+              <h3>Intereses geopolíticos en disputa</h3>
+              <p>Siria se convirtió en un tablero donde se cruzaron varias rivalidades a la vez. Para
+                <strong>Rusia</strong>, sostener a Ásad significaba conservar su base naval de Tartus, su única salida al
+                Mediterráneo, y demostrar que podía frenar los cambios de régimen promovidos por Occidente después de
+                Libia. <strong>Irán</strong> defendía el corredor terrestre que lo conecta con Hezbolá en Líbano, pieza
+                central de su proyección regional frente a Arabia Saudita e Israel.</p>
+              <p><strong>Turquía</strong> priorizó impedir la consolidación de una autonomía kurda en su frontera sur,
+                mientras que <strong>EE. UU.</strong> osciló entre la “línea roja” de las armas químicas, el acuerdo de
+                desarme químico negociado con Rusia en 2013 y una lucha contra el Estado Islámico que evitaba
+                comprometerse con la caída del régimen.</p>
+              <p>Desde el <strong>realismo</strong>, el conflicto se explica como una guerra por delegación que buscaba
+                reequilibrar el poder regional. Desde el <strong>institucionalismo liberal</strong>, revela la parálisis
+                del Consejo de Seguridad: Rusia (a menudo junto a China) vetó más de una decena de resoluciones sobre
+                Siria, y la Responsabilidad de Proteger quedó sin aplicación.</p>
+            </article>
+
+            <article class="panel" id="panel-4" role="tabpanel" aria-labelledby="pestana-4" tabindex="0" hidden>
+              <h3>Impacto en el sistema internacional y en la Convención de 1951</h3>
+              <p>La Convención de 1951 y su Protocolo de 1967 se diseñaron para un mundo de persecuciones individuales y
+                cifras manejables. Siria puso a prueba ese diseño en tres frentes. Primero, la <strong>carga
+                  desigual</strong>: la inmensa mayoría de los refugiados permaneció en países vecinos (Líbano, Jordania,
+                Turquía), y ni Líbano ni Jordania son parte de la Convención, mientras que Turquía la aplica con
+                limitación geográfica y otorgó a los sirios solo “protección temporal”.</p>
+              <p>Segundo, la <strong>securitización</strong>: en Europa, la migración pasó del lenguaje humanitario al de
+                la seguridad (la Escuela de Copenhague lo explica como un acto de habla que justifica medidas de
+                excepción). Se suspendió en la práctica el Sistema de Dublín, se levantaron vallas en los Balcanes y el
+                acuerdo con Turquía condicionó el acceso al asilo a la cooperación de un tercer Estado. Todo ello
+                tensionó el principio de <em>non-refoulement</em>.</p>
+              <p>Tercero, la <strong>respuesta normativa</strong>: el Pacto Mundial sobre los Refugiados (2018) propuso
+                repartir responsabilidades, pero sin obligaciones vinculantes. La caída del régimen de Ásad en diciembre
+                de 2024 abrió el debate sobre los retornos, que según el derecho internacional deben ser voluntarios,
+                seguros y dignos.</p>
+              <blockquote class="tesis">
+                <strong>Tesis del caso.</strong> La crisis siria no dejó obsoleta la Convención de 1951, pero sí dejó en
+                evidencia que un régimen de protección sin mecanismos de responsabilidad compartida traslada el costo
+                del desplazamiento a los Estados vecinos y convierte el asilo en moneda de negociación geopolítica.
+              </blockquote>
+            </article>
+          </div>
+        </section>
+
+        <!-- Referencias -->
+        <section class="seccion seccion-blanca referencias" id="referencias">
+          <div class="contenedor">
+            <h2>Referencias</h2>
+            <ul>
+              <li>Carr, E. H. (1939). <em>The twenty years’ crisis, 1919–1939: An introduction to the study of
+                  international relations</em>. Macmillan.</li>
+              <li>Naciones Unidas. (1945). <em>Carta de las Naciones Unidas</em>.</li>
+              <li>Naciones Unidas. (1951). <em>Convención sobre el Estatuto de los Refugiados</em>.</li>
+              <!-- PENDIENTE: agregar en APA 7 las referencias completas de Lesmes-Guerrero (2026),
+                   Kennedy-Pipe (2000), Grasa (2021) y Ramírez y Sarmiento (2021), citadas en los hitos. -->
+            </ul>
+            <p class="nota">Imágenes: Wikimedia Commons (dominio público y licencias Creative Commons; autoría indicada
+              en cada pie de foto).</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="pie">
+    <div class="pie-franja"></div>
+    <div class="contenedor">
+      <p>Natalia Berrío Zuleta · Historia y Teoría de las Relaciones Internacionales (252005)</p>
+      <p>UNAD · ECJP · Ciencia Política · 2026</p>
+    </div>
+  </footer>
+
+  <!-- ===== Modal de hitos ===== -->
+  <dialog class="modal" id="modal" aria-labelledby="modalTitulo">
+    <div class="modal-cabecera">
+      <p><strong id="modalContador">Hito 1 de 12</strong> <span id="modalFiltro"></span></p>
+      <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar ficha">×</button>
+    </div>
+    <div class="modal-cuerpo" id="modalCuerpo"></div>
+    <div class="modal-pie">
+      <button class="nav-hito" id="btnAnterior" type="button">← <span class="texto">Anterior</span></button>
+      <div class="puntos" id="puntos" aria-label="Ir a un hito"></div>
+      <button class="nav-hito principal" id="btnSiguiente" type="button"><span class="texto">Siguiente</span> →</button>
+    </div>
+  </dialog>
+
+  <script>
+    'use strict';
+
+    const categorias = {
+      GénesisDisciplinar: 'Génesis disciplinar',
+      ConflictoYGeopolítica: 'Conflicto y geopolítica',
+      DiplomaciaCulturalYGénero: 'Diplomacia cultural y género',
+      GobernanzaYRefugiados: 'Gobernanza y refugiados',
+      NuevoOrdenSigloXXI: 'Nuevo orden del siglo XXI'
+    };
+
+    // Año y título corto que se muestran sobre la línea de tiempo
+    const marcas = {
+      1: ['1914', 'Gran Guerra y Versalles'],
+      2: ['1920', 'Sociedad de Naciones'],
+      3: ['1929', 'Gran Depresión'],
+      4: ['1939', 'II Guerra Mundial'],
+      5: ['1945', 'Creación de la ONU'],
+      6: ['1947', 'Doctrina Truman'],
+      7: ['1951', 'Convención y ACNUR'],
+      8: ['1962', 'Crisis de los misiles'],
+      9: ['1989', 'Caída del Muro'],
+      10: ['2001', 'Atentados del 11-S'],
+      11: ['2011', 'Primavera Árabe y Siria'],
+      12: ['2016', 'Desglobalización']
+    };
+
+    const hitosData = [
+      {
+        id: 1,
+        periodo: '1914 – 1919',
+        titulo: 'La I Guerra Mundial, el Tratado de Versalles y el Nacimiento de las RRII',
+        categoria: 'GénesisDisciplinar',
+        sintesis: 'La I Guerra Mundial destruyó imperios y reconfiguró Europa. El Tratado de Versalles (1919) impulsó el anhelo de investigar las causas de la guerra para institucionalizar la paz.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Treaty_of_Versailles%2C_English_version.jpg/960px-Treaty_of_Versailles%2C_English_version.jpg',
+        pie: 'Primera página de la versión en inglés del Tratado de Versalles, 1919.',
+        credito: 'Wikimedia Commons · Dominio público',
+        contexto: 'La Gran Guerra provocó alrededor de 20 millones de muertes y el colapso de los imperios alemán, austrohúngaro, otomano y ruso, evidenciando la insuficiencia de la diplomacia secreta.',
+        actores: 'Aliados (Francia, Reino Unido, Rusia hasta 1917 e Italia, con EE. UU. como potencia asociada desde 1917) frente a las Potencias Centrales; Woodrow Wilson, David Lloyd George y Georges Clemenceau.',
+        intereses: 'Francia y el Reino Unido buscaron desarmar y sancionar económicamente a Alemania; EE. UU. promovió un nuevo orden liberal basado en la autodeterminación y la seguridad colectiva (Catorce Puntos).',
+        consecuencias: 'Génesis académica de las Relaciones Internacionales en 1919 con la Cátedra Woodrow Wilson en Aberystwyth. Nacimiento de la corriente idealista o liberal.'
+      },
+      {
+        id: 2,
+        periodo: '10 de enero de 1920',
+        titulo: 'Fundación de la Sociedad de Naciones y la Red Diplomática Femenina WILPF',
+        categoria: 'DiplomaciaCulturalYGénero',
+        sintesis: 'Nace el primer organismo multilateral de seguridad colectiva. Paralelamente, redes de mujeres como la WILPF ejercen un poder blando decisivo en favor del desarme y la diplomacia pacífica.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Eerste_zitting_van_de_Volkenbond_Gen%C3%A8ve_1920%2C_SFA001004095.jpg/960px-Eerste_zitting_van_de_Volkenbond_Gen%C3%A8ve_1920%2C_SFA001004095.jpg',
+        pie: 'Primera sesión de la Asamblea de la Sociedad de Naciones, Ginebra, 1920.',
+        credito: 'Wikimedia Commons · Dominio público',
+        contexto: 'Se buscó sustituir el clásico equilibrio de poder por una gobernanza multilateral regulada por el derecho y el arbitraje institucional.',
+        actores: 'Sociedad de Naciones (SDN); Jane Addams y la Liga Internacional de Mujeres por la Paz y la Libertad (WILPF, fundada en 1915); redes de mujeres letradas y “embajadoras culturales” (Lesmes-Guerrero, 2026).',
+        intereses: 'Prevenir guerras mediante el arbitraje obligatorio; ejercer la “intradiplomacia” y el poder blando para influir en los foros internacionales.',
+        consecuencias: 'Primer experimento multilateral de la historia. Visibilización de la diplomacia cultural y de la participación femenina en la agenda internacional.'
+      },
+      {
+        id: 3,
+        periodo: '1929 – 1939',
+        titulo: 'La Gran Depresión, el Ascenso del Fascismo y la Crisis del Idealismo',
+        categoria: 'ConflictoYGeopolítica',
+        sintesis: 'La Gran Depresión hundió el libre comercio y revivió el proteccionismo. El auge del nazifascismo expuso la fragilidad de la Sociedad de Naciones y desembocó en la Segunda Guerra Mundial.',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Crowd_outside_nyse.jpg',
+        pie: 'Multitud frente a la Bolsa de Nueva York tras el crac del 29 de octubre de 1929.',
+        credito: 'Wikimedia Commons · Dominio público',
+        contexto: 'El colapso financiero de Wall Street en 1929 destruyó la estabilidad económica global y catalizó el ascenso de regímenes autoritarios.',
+        actores: 'Alemania nazi (Hitler), Italia fascista (Mussolini), EE. UU. (Franklin D. Roosevelt) y, en el plano teórico, E. H. Carr.',
+        intereses: 'Expansionismo territorial (Lebensraum) de las potencias del Eje; proteccionismo y política de apaciguamiento de las democracias occidentales.',
+        consecuencias: 'E. H. Carr publica The Twenty Years’ Crisis (1939), inaugura el Primer Debate teórico de las RRII y consolida el realismo político.'
+      },
+      {
+        id: 4,
+        periodo: '1939 – 1945',
+        titulo: 'La Segunda Guerra Mundial y la Devastación Humana Total',
+        categoria: 'ConflictoYGeopolítica',
+        sintesis: 'El conflicto más letal de la humanidad dejó más de 60 millones de muertos, arrasó Europa y generó más de 40 millones de desplazados y refugiados en el continente.',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Zerst%C3%B6rtes_K%C3%B6ln.jpg',
+        pie: 'Colonia (Alemania) en ruinas tras los bombardeos de la guerra, fotografiada en 1946.',
+        credito: 'Walter Dick · Wikimedia Commons · CC BY-SA 3.0 DE',
+        contexto: 'Guerra industrializada total, caracterizada por armas de destrucción masiva, bombardeos sistemáticos sobre ciudades y el Holocausto nazi.',
+        actores: 'Eje (Alemania, Japón, Italia) frente a los Aliados (EE. UU., URSS, Reino Unido, China).',
+        intereses: 'Dominio hegemónico continental del Eje frente a la derrota incondicional del fascismo que perseguían los Aliados.',
+        consecuencias: 'Mayor crisis de desplazados de la historia europea; ascenso de EE. UU. y la URSS como superpotencias e inicio de la era nuclear.'
+      },
+      {
+        id: 5,
+        periodo: '26 de junio de 1945',
+        titulo: 'La Conferencia de San Francisco y la Creación de la ONU',
+        categoria: 'GobernanzaYRefugiados',
+        sintesis: 'Cincuenta naciones firmaron en San Francisco la Carta de la ONU, que institucionalizó un sistema multilateral renovado, con un Consejo de Seguridad para preservar la paz y los derechos humanos.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Frank_Forde_signing_the_UN_Charter.jpg/960px-Frank_Forde_signing_the_UN_Charter.jpg',
+        pie: 'Frank Forde, delegado de Australia, firma la Carta de las Naciones Unidas en San Francisco, 26 de junio de 1945.',
+        credito: 'Departamento de Información de Australia · Wikimedia Commons · Dominio público',
+        contexto: 'Las potencias vencedoras diseñaron una arquitectura de gobernanza global capaz de prevenir nuevos genocidios y guerras mundiales.',
+        actores: '51 Estados fundadores (50 firmaron en San Francisco y Polonia lo hizo después); los “Cinco Grandes” (EE. UU., URSS, Reino Unido, Francia y China); delegadas como Bertha Lutz (Brasil), que defendió la igualdad de género en la Carta.',
+        intereses: 'Derecho de veto para las grandes potencias; garantías de soberanía, no intervención y protección de los derechos humanos para los Estados pequeños.',
+        consecuencias: 'Nacimiento de la ONU, del Consejo de Seguridad y de la Corte Internacional de Justicia, articulados con las instituciones de Bretton Woods (FMI y Banco Mundial, 1944).'
+      },
+      {
+        id: 6,
+        periodo: '12 de marzo de 1947',
+        titulo: 'La Doctrina Truman y la Institucionalización de la Guerra Fría',
+        categoria: 'ConflictoYGeopolítica',
+        sintesis: 'EE. UU. formalizó la contención del comunismo soviético y el mundo quedó dividido en dos bloques ideológicos y militares opuestos: la OTAN (1949) y el Pacto de Varsovia (1955).',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Special_Message_to_Congress_on_Greece_and_Turkey_The_Truman_Doctrine.jpg',
+        pie: 'Harry S. Truman ante el Congreso de EE. UU. presenta la ayuda a Grecia y Turquía, 12 de marzo de 1947.',
+        credito: 'Harry S. Truman Library & Museum · Wikimedia Commons · Dominio público',
+        contexto: 'Ruptura de la alianza antinazi y confrontación ideológica, política y militar entre el capitalismo occidental y el socialismo soviético.',
+        actores: 'Harry S. Truman (EE. UU.), Iósif Stalin (URSS) y George F. Kennan, autor del “Telegrama largo” (1946).',
+        intereses: 'EE. UU.: contención del comunismo (Plan Marshall, OTAN). URSS: una zona de amortiguamiento e influencia en Europa oriental.',
+        consecuencias: 'Consolidación de la bipolaridad global. Kennedy-Pipe (2000) destaca que la ideología determinó la toma de decisiones soviética.'
+      },
+      {
+        id: 7,
+        periodo: '28 de julio de 1951',
+        titulo: 'Convención de Ginebra sobre el Estatuto de los Refugiados y ACNUR',
+        categoria: 'GobernanzaYRefugiados',
+        sintesis: 'Se aprobó el tratado fundamental para proteger a las personas perseguidas: consagró el principio de no devolución (non-refoulement) y consolidó el mandato mundial del ACNUR.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Refugeeconvention.PNG/960px-Refugeeconvention.PNG',
+        pie: 'Estados parte de la Convención de 1951 o de su Protocolo de 1967 (mapa de 2007). Verde oscuro: ambos instrumentos; amarillo: solo el Protocolo; gris: ninguno.',
+        credito: 'Wikimedia Commons · Dominio público',
+        contexto: 'Hacía falta codificar un régimen internacional de asilo para responder a los millones de apátridas y refugiados europeos que dejó la Segunda Guerra Mundial.',
+        actores: 'Asamblea General de la ONU, ACNUR (creado en diciembre de 1950) y su primer Alto Comisionado, Gerrit Jan van Heuven Goedhart.',
+        intereses: 'Establecer definiciones jurídicas universales de protección e impedir la devolución forzosa de personas perseguidas.',
+        consecuencias: 'Consagración del principio de no devolución (non-refoulement). Sus límites temporales y geográficos se eliminaron con el Protocolo de 1967. Es el pilar para analizar casos de refugiados.'
+      },
+      {
+        id: 8,
+        periodo: '16 – 28 de octubre de 1962',
+        titulo: 'La Crisis de los Misiles en Cuba y el Borde de la Guerra Nuclear',
+        categoria: 'ConflictoYGeopolítica',
+        sintesis: 'La instalación de misiles nucleares soviéticos en Cuba llevó a EE. UU. y la URSS al límite de una guerra atómica y los obligó a abrir canales directos de negociación.',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/U2_Image_of_Cuban_Missile_Crisis.jpg',
+        pie: 'Fotografía de reconocimiento de un avión U-2 que reveló las rampas de misiles soviéticos en Cuba, 1962.',
+        credito: 'CIA · Wikimedia Commons · Dominio público',
+        contexto: 'Fue el punto de mayor fricción militar de la Guerra Fría, tras descubrirse rampas de misiles soviéticos a unos 150 km del territorio estadounidense.',
+        actores: 'John F. Kennedy (EE. UU.), Nikita Jrushchov (URSS) y Fidel Castro (Cuba).',
+        intereses: 'URSS: disuasión y protección de Cuba (y retiro de los misiles Júpiter de Turquía). EE. UU.: retiro inmediato de las armas atómicas mediante una cuarentena naval.',
+        consecuencias: 'Evidencia de los peligros de la Destrucción Mutua Asegurada (MAD). Instalación de la línea directa o “teléfono rojo” (1963) e inicio de la distensión (détente).'
+      },
+      {
+        id: 9,
+        periodo: '1989 – 1991',
+        titulo: 'La Caída del Muro de Berlín y la Implosión de la Unión Soviética',
+        categoria: 'NuevoOrdenSigloXXI',
+        sintesis: 'La caída del Muro de Berlín y el colapso soviético pusieron fin a la bipolaridad y abrieron paso a la hegemonía estadounidense, la globalización económica y el auge del constructivismo.',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/West_and_East_Germans_at_the_Brandenburg_Gate_in_1989.jpg',
+        pie: 'Alemanes del Este y del Oeste sobre el Muro, frente a la Puerta de Brandeburgo, 1989.',
+        credito: 'Wikimedia Commons · CC BY-SA 3.0',
+        contexto: 'Apertura de los archivos soviéticos, colapso del modelo económico oriental e insostenibilidad militar de la URSS.',
+        actores: 'Mijaíl Gorbachov (URSS), George H. W. Bush (EE. UU.) y Helmut Kohl (Alemania).',
+        intereses: 'Gorbachov: perestroika y reforma pacífica. Occidente: reunificación alemana e integración de Europa oriental en la OTAN y la UE.',
+        consecuencias: 'Fin de la Guerra Fría. Crisis del neorrealismo e irrupción del constructivismo y de la seguridad humana (Grasa, 2021).'
+      },
+      {
+        id: 10,
+        periodo: '11 de septiembre de 2001',
+        titulo: 'Atentados del 11-S y la Redefinición de la Seguridad Global',
+        categoria: 'ConflictoYGeopolítica',
+        sintesis: 'Los ataques terroristas contra EE. UU. transformaron la agenda de seguridad mundial: priorizaron la lucha contra actores no estatales violentos y desencadenaron las invasiones de Afganistán e Irak.',
+        imagen: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/National_Park_Service_9-11_Statue_of_Liberty_and_WTC_fire.jpg',
+        pie: 'Humo sobre el bajo Manhattan visto desde la Estatua de la Libertad, 11 de septiembre de 2001.',
+        credito: 'National Park Service · Wikimedia Commons · Dominio público',
+        contexto: 'Ataque asimétrico de la red transnacional Al Qaeda contra las Torres Gemelas y el Pentágono.',
+        actores: 'EE. UU. (George W. Bush), la red Al Qaeda (Osama bin Laden) y la coalición de la OTAN.',
+        intereses: 'EE. UU.: doctrina de la guerra preventiva y erradicación del terrorismo. Al Qaeda: guerra asimétrica y desestabilización.',
+        consecuencias: 'Securitización de las migraciones, controles fronterizos más estrictos e intervenciones militares con un fuerte impacto humanitario.'
+      },
+      {
+        id: 11,
+        periodo: '2011 – 2015',
+        titulo: 'La Primavera Árabe, Guerra Civil Siria y Crisis de Refugiados',
+        categoria: 'GobernanzaYRefugiados',
+        sintesis: 'Las protestas populares en Oriente Medio derivaron en guerras civiles en Siria y Libia, que forzaron el desplazamiento de millones de personas e interpelaron los regímenes de asilo europeos.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/20151030_Syrians_and_Iraq_refugees_arrive_at_Skala_Sykamias_Lesvos_Greece_2.jpg/960px-20151030_Syrians_and_Iraq_refugees_arrive_at_Skala_Sykamias_Lesvos_Greece_2.jpg',
+        pie: 'Refugiados sirios e iraquíes llegan a la isla de Lesbos (Grecia), 30 de octubre de 2015.',
+        credito: 'Ggia · Wikimedia Commons · CC BY-SA 4.0',
+        contexto: 'Los levantamientos de la Primavera Árabe degeneraron en conflictos armados complejos y desplazamientos masivos hacia Europa.',
+        actores: 'Gobierno sirio (Ásad), oposición armada, ACNUR, Unión Europea (Angela Merkel) y Turquía.',
+        intereses: 'Población civil: salvaguardar la vida. UE: contener los flujos y equilibrar los derechos humanos con la seguridad nacional.',
+        consecuencias: 'La mayor crisis de refugiados desde la Segunda Guerra Mundial y una tensión directa sobre la Convención de Ginebra de 1951. Ver el análisis de caso más abajo.'
+      },
+      {
+        id: 12,
+        periodo: '2016 – presente',
+        titulo: 'Desglobalización, Neoproteccionismo y Crisis del Multilateralismo',
+        categoria: 'NuevoOrdenSigloXXI',
+        sintesis: 'El Brexit y la política de “America First” marcaron el retroceso del libre comercio, el regreso de las fronteras nacionales y una profunda crisis de las instituciones multilaterales de posguerra.',
+        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Poll_card_from_the_UK%27s_EU_membership_referendum%2C_2016.jpg/960px-Poll_card_from_the_UK%27s_EU_membership_referendum%2C_2016.jpg',
+        pie: 'Tarjeta de votación del referendo sobre la permanencia del Reino Unido en la UE, 23 de junio de 2016.',
+        credito: 'Philip Stevens · Wikimedia Commons · CC BY-SA 4.0',
+        contexto: 'Reacción política y social en las potencias desarrolladas contra una integración económica desregulada (Ramírez y Sarmiento, 2021).',
+        actores: 'EE. UU. (Donald Trump), Reino Unido (Brexit), China (Xi Jinping) y la Unión Europea.',
+        intereses: 'Recuperar la soberanía comercial y fronteriza frente a la defensa china de un libre comercio regulado.',
+        consecuencias: 'Procesos de “desglobalización” y “desregionalización”, restricción de los marcos de asilo y fragmentación del orden global.'
+      }
+    ];
+
+    /* ---------- Utilidades ---------- */
+    const $ = (s) => document.querySelector(s);
+    const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const porId = (id) => hitosData.find((h) => h.id === id);
+
+    // Si la imagen no carga, se reemplaza por un recuadro con el título del hito
+    window.imagenFallida = function (img) {
+      const h = porId(Number(img.dataset.hito));
+      if (!h) return;
+      const figura = img.closest('figure');
+      img.outerHTML = `<div class="sin-imagen"><span>${esc(categorias[h.categoria])}</span><strong>${esc(h.titulo)}</strong></div>`;
+      figura?.querySelector('figcaption small')?.remove();
+    };
+
+    function htmlHito(h, abierto) {
+      const ejes = [['Contexto histórico', h.contexto], ['Actores principales', h.actores],
+        ['Intereses y objetivos', h.intereses], ['Consecuencias e impacto en las RRII', h.consecuencias]];
+      return `
+        <div class="hito-grid">
+          <figure class="hito-figura">
+            <img src="${h.imagen}" alt="${esc(h.pie)}" data-hito="${h.id}" referrerpolicy="no-referrer" onerror="imagenFallida(this)" />
+            <figcaption>${esc(h.pie)}<small>${esc(h.credito)}</small></figcaption>
+          </figure>
+          <div>
+            <div class="hito-meta">
+              <span class="categoria">${esc(categorias[h.categoria])}</span>
+              <span class="periodo">${esc(h.periodo)}</span>
+            </div>
+            <h3 class="hito-titulo" ${abierto ? '' : 'id="modalTitulo"'}>${esc(h.titulo)}</h3>
+            <div class="sintesis"><p>Síntesis</p><p>${esc(h.sintesis)}</p></div>
+            ${abierto ? '' : `<button class="desplegar" type="button" aria-expanded="false" aria-controls="analisis">
+              Ver análisis politológico profundo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>`}
+          </div>
+        </div>
+        <div class="analisis ${abierto ? 'abierto' : ''}" ${abierto ? '' : 'id="analisis"'}>
+          <div>
+            <div class="ejes">
+              ${ejes.map(([t, x], i) => `<div class="eje"><h4><span>${i + 1}</span>${t}</h4><p>${esc(x)}</p></div>`).join('')}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ---------- Línea de tiempo ---------- */
+    const tl = $('#tl');
+    tl.innerHTML = hitosData.map((h) => `
+      <li class="tl-item" data-id="${h.id}" data-categoria="${h.categoria}">
+        <button class="tl-boton" type="button" data-id="${h.id}" aria-label="${esc(marcas[h.id][0] + '. ' + h.titulo)}">
+          <span class="tl-tallo" aria-hidden="true"></span>
+          <span class="tl-punto" aria-hidden="true"></span>
+          <span class="tl-texto"><span class="tl-anio">${marcas[h.id][0]}</span><span class="tl-titulo">${esc(marcas[h.id][1])}</span></span>
+        </button>
+      </li>`).join('');
+
+    const filtros = $('#filtros');
+    filtros.innerHTML = [['todos', 'Todos los hitos'], ...Object.entries(categorias)]
+      .map(([k, t]) => `<button class="filtro" type="button" data-filtro="${k}" aria-pressed="${k === 'todos'}">${esc(t)}</button>`).join('');
+
+    // Versión impresa con todos los hitos desplegados
+    $('#impresion').innerHTML = hitosData.map((h) => `<article class="hito-impreso">${htmlHito(h, true)}</article>`).join('');
+
+    /* ---------- Estado ---------- */
+    let filtro = 'todos';
+    let actual = null;
+    const vistos = new Set();
+    const lista = () => hitosData.filter((h) => filtro === 'todos' || h.categoria === filtro).map((h) => h.id);
+
+    function actualizarLinea() {
+      document.querySelectorAll('.tl-item').forEach((li) => {
+        const id = Number(li.dataset.id);
+        li.classList.toggle('atenuado', !lista().includes(id));
+        li.classList.toggle('visto', vistos.has(id));
+        li.classList.toggle('actual', id === actual);
+      });
+      $('#avanceBarra').style.width = (vistos.size / hitosData.length * 100) + '%';
+      $('#avanceTexto').textContent = `${vistos.size} de ${hitosData.length} hitos explorados`;
+    }
+
+    function aplicarFiltro(k) {
+      filtro = k;
+      document.querySelectorAll('.filtro').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtro === k)));
+      $('#btnComenzar').textContent = `Comenzar por el hito ${lista()[0]} →`;
+      actualizarLinea();
+    }
+
+    /* ---------- Modal ---------- */
+    const modal = $('#modal');
+    const cuerpo = $('#modalCuerpo');
+    let origen = null;
+
+    function mostrarHito(id, direccion) {
+      const ids = lista();
+      if (!ids.includes(id)) id = ids[0];
+      actual = id;
+      vistos.add(id);
+      const h = porId(id);
+      const pos = ids.indexOf(id);
+
+      cuerpo.innerHTML = `<div class="modal-contenido" style="--desde:${direccion > 0 ? '24px' : direccion < 0 ? '-24px' : '0'}">${htmlHito(h, false)}</div>`;
+      cuerpo.scrollTop = 0;
+      $('#modalContador').textContent = `Hito ${id} de ${hitosData.length}`;
+      $('#modalFiltro').textContent = filtro === 'todos' ? '' : `· ${pos + 1} de ${ids.length} en «${categorias[filtro]}»`;
+      $('#btnAnterior').disabled = pos === 0;
+      $('#btnSiguiente').disabled = pos === ids.length - 1;
+      $('#puntos').innerHTML = hitosData.map((x) => `<button type="button" data-id="${x.id}" aria-label="Hito ${x.id}"
+        aria-current="${x.id === id}" ${ids.includes(x.id) ? '' : 'disabled'}></button>`).join('');
+      actualizarLinea();
+    }
+
+    function abrirModal(id, desde) {
+      origen = desde || document.activeElement;
+      mostrarHito(id, 0);
+      modal.showModal();
+      document.body.classList.add('modal-abierto');
+    }
+
+    function paso(delta) {
+      const ids = lista();
+      const pos = ids.indexOf(actual) + delta;
+      if (pos >= 0 && pos < ids.length) mostrarHito(ids[pos], delta);
+    }
+
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('modal-abierto');
+      origen?.focus?.();
+    });
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); }); // clic en el fondo
+    $('#btnCerrar').addEventListener('click', () => modal.close());
+    $('#btnAnterior').addEventListener('click', () => paso(-1));
+    $('#btnSiguiente').addEventListener('click', () => paso(1));
+    $('#puntos').addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (b) { const id = Number(b.dataset.id); mostrarHito(id, id > actual ? 1 : -1); }
+    });
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') paso(1);
+      if (e.key === 'ArrowLeft') paso(-1);
+    });
+    cuerpo.addEventListener('click', (e) => {
+      const b = e.target.closest('.desplegar');
+      if (!b) return;
+      const abierto = $('#analisis').classList.toggle('abierto');
+      b.setAttribute('aria-expanded', String(abierto));
+    });
+    let toqueX = null;
+    cuerpo.addEventListener('touchstart', (e) => { toqueX = e.touches[0].clientX; }, { passive: true });
+    cuerpo.addEventListener('touchend', (e) => {
+      if (toqueX === null) return;
+      const dx = e.changedTouches[0].clientX - toqueX;
+      if (Math.abs(dx) > 60) paso(dx < 0 ? 1 : -1);
+      toqueX = null;
+    });
+
+    tl.addEventListener('click', (e) => {
+      const b = e.target.closest('.tl-boton');
+      if (b) abrirModal(Number(b.dataset.id), b);
+    });
+    filtros.addEventListener('click', (e) => {
+      const b = e.target.closest('.filtro');
+      if (b) aplicarFiltro(b.dataset.filtro);
+    });
+    $('#btnComenzar').addEventListener('click', (e) => abrirModal(lista()[0], e.currentTarget));
+
+    /* ---------- Desplegar el recurso ---------- */
+    const recurso = $('#recurso');
+    function desplegar(destino) {
+      const yaAbierto = recurso.classList.contains('abierto');
+      recurso.classList.add('abierto');
+      $('#btnIniciar').setAttribute('aria-expanded', 'true');
+      setTimeout(() => document.getElementById(destino).scrollIntoView({ behavior: 'smooth' }), yaAbierto ? 0 : 120);
+    }
+    $('#btnIniciar').addEventListener('click', () => desplegar('recorrido'));
+    $('#btnCaso').addEventListener('click', () => desplegar('caso'));
+    if (['#recorrido', '#caso', '#referencias'].includes(location.hash)) desplegar(location.hash.slice(1));
+
+    /* ---------- Pestañas del caso ---------- */
+    const pestanas = [...document.querySelectorAll('.pestana')];
+    function activarPestana(i, enfocar) {
+      pestanas.forEach((p, j) => {
+        const on = i === j;
+        p.setAttribute('aria-selected', String(on));
+        p.tabIndex = on ? 0 : -1;
+        document.getElementById(p.getAttribute('aria-controls')).hidden = !on;
+        if (on && enfocar) p.focus();
+      });
+    }
+    $('#pestanas').addEventListener('click', (e) => {
+      const p = e.target.closest('.pestana');
+      if (p) activarPestana(pestanas.indexOf(p));
+    });
+    $('#pestanas').addEventListener('keydown', (e) => {
+      const i = pestanas.findIndex((p) => p.getAttribute('aria-selected') === 'true');
+      if (e.key === 'ArrowRight') activarPestana((i + 1) % pestanas.length, true);
+      if (e.key === 'ArrowLeft') activarPestana((i - 1 + pestanas.length) % pestanas.length, true);
+    });
+
+    /* ---------- PDF ---------- */
+    $('#btnPdf').addEventListener('click', () => {
+      if (modal.open) modal.close();
+      window.print();
+    });
+
+    aplicarFiltro('todos');
+  </script>
+</body>
+
+</html>
