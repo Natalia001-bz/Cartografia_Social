@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia y Teoría de las Relaciones Internacionales · UNAD</title>
   <meta name="description"
-    content="Recurso académico interactivo del curso Historia y Teoría de las Relaciones Internacionales (252005), UNAD. Línea de tiempo de trece hitos del sistema internacional desde 1914 y estudio de caso sobre la crisis venezolana y el régimen internacional de asilo." />
+    content="Recurso académico interactivo del curso Historia y Teoría de las Relaciones Internacionales (252005), UNAD. Línea de tiempo de doce hitos del sistema internacional desde 1914 y estudio de caso sobre la crisis venezolana y el régimen internacional de asilo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -109,7 +109,7 @@
 
     /* ── Línea de tiempo ── */
     .linea-tiempo { background: var(--blanco); border: 1px solid var(--linea); border-radius: 24px; padding: 8px clamp(12px, 3vw, 36px); box-shadow: 0 30px 60px -40px rgba(0, 58, 92, .35); }
-    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(13, 1fr); height: 360px; }
+    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(12, 1fr); height: 360px; }
     .tl::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: linear-gradient(90deg, transparent, var(--azul) 6%, var(--azul) 94%, transparent); opacity: .85; }
     .tl-item { position: relative; transition: opacity .3s var(--ease); }
     .tl-item.atenuado { opacity: .22; }
@@ -333,7 +333,7 @@
         <div class="regla"></div>
         <p class="intro">Del orden eurocéntrico y estatalizado que se derrumbó en 1914 al sistema internacional
           globalizado de hoy, donde los Estados comparten escena con organismos multilaterales, redes civiles y actores
-          armados no estatales. Trece hitos para entender cómo se ha estructurado el poder mundial y cómo cambió la
+          armados no estatales. Doce hitos para entender cómo se ha estructurado el poder mundial y cómo cambió la
           disciplina que lo estudia.</p>
         <div class="acciones no-imprimir">
           <button class="boton" id="btnIniciar" type="button" aria-controls="recurso" aria-expanded="false">
@@ -370,7 +370,7 @@
             <div class="encabezado">
               <div>
                 <p class="antetitulo">Línea de tiempo</p>
-                <h2 id="titulo-recorrido">Trece hitos del sistema internacional</h2>
+                <h2 id="titulo-recorrido">Doce hitos del sistema internacional</h2>
               </div>
               <p class="no-imprimir">Selecciona un año para abrir su ficha. Dentro de ella puedes avanzar al siguiente
                 hito o volver al anterior.</p>
@@ -385,7 +385,7 @@
             <div class="pie-tl no-imprimir">
               <div class="avance">
                 <div class="avance-barra"><span id="avanceBarra"></span></div>
-                <span id="avanceTexto">0 de 13 hitos explorados</span>
+                <span id="avanceTexto">0 de 12 hitos explorados</span>
               </div>
               <button class="boton-secundario" id="btnComenzar" type="button">Comenzar por el hito 1 →</button>
             </div>
@@ -585,7 +585,7 @@
   <!-- ===== Modal de hitos ===== -->
   <dialog class="modal" id="modal" aria-labelledby="modalTitulo">
     <div class="modal-cabecera">
-      <p><strong id="modalContador">Hito 1 de 13</strong> <span id="modalFiltro"></span></p>
+      <p><strong id="modalContador">Hito 1 de 12</strong> <span id="modalFiltro"></span></p>
       <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar ficha">×</button>
     </div>
     <div class="modal-cuerpo" id="modalCuerpo"></div>
@@ -619,9 +619,8 @@
       8: ['1962', 'Crisis de los misiles'],
       9: ['1989', 'Caída del Muro'],
       10: ['2001', 'Atentados del 11-S'],
-      11: ['2011', 'Primavera Árabe y Siria'],
-      12: ['2014', 'Crisis venezolana'],
-      13: ['2016', 'Desglobalización']
+      11: ['2014', 'Crisis venezolana'],
+      12: ['2016', 'Desglobalización']
     };
 
     const hitosData = [
@@ -767,20 +766,6 @@
       },
       {
         id: 11,
-        periodo: '2011 – 2015',
-        titulo: 'La Primavera Árabe, Guerra Civil Siria y Crisis de Refugiados',
-        categoria: 'GobernanzaYRefugiados',
-        sintesis: 'Las protestas populares en Oriente Medio derivaron en guerras civiles en Siria y Libia, que forzaron el desplazamiento de millones de personas e interpelaron los regímenes de asilo europeos.',
-        imagen: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/20151030_Syrians_and_Iraq_refugees_arrive_at_Skala_Sykamias_Lesvos_Greece_2.jpg/960px-20151030_Syrians_and_Iraq_refugees_arrive_at_Skala_Sykamias_Lesvos_Greece_2.jpg',
-        pie: 'Refugiados sirios e iraquíes llegan a la isla de Lesbos (Grecia), 30 de octubre de 2015.',
-        credito: 'Ggia · Wikimedia Commons · CC BY-SA 4.0',
-        contexto: 'Los levantamientos de la Primavera Árabe degeneraron en conflictos armados complejos y desplazamientos masivos hacia Europa.',
-        actores: 'Gobierno sirio (Ásad), oposición armada, ACNUR, Unión Europea (Angela Merkel) y Turquía.',
-        intereses: 'Población civil: salvaguardar la vida. UE: contener los flujos y equilibrar los derechos humanos con la seguridad nacional.',
-        consecuencias: 'La mayor crisis de refugiados desde la Segunda Guerra Mundial y una tensión directa sobre la Convención de Ginebra de 1951.'
-      },
-      {
-        id: 12,
         periodo: '2014 – presente',
         titulo: 'La Crisis Venezolana, las Sanciones Internacionales y el Éxodo Migratorio',
         categoria: 'GobernanzaYRefugiados',
@@ -794,7 +779,7 @@
         consecuencias: 'Millones de personas migraron por la región; surgieron respuestas como el Estatuto Temporal de Protección en Colombia (2021) y se evidenciaron los límites de la Convención de 1951. Es el hito elegido para el estudio de caso.'
       },
       {
-        id: 13,
+        id: 12,
         periodo: '2016 – presente',
         titulo: 'Desglobalización, Neoproteccionismo y Crisis del Multilateralismo',
         categoria: 'NuevoOrdenSigloXXI',
