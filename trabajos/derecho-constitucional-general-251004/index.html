@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derecho Constitucional General · UNAD</title>
+  <meta name="description"
+    content="Recurso académico interactivo del curso Derecho Constitucional General (251004), UNAD. Línea de tiempo de doce hitos del constitucionalismo inglés, estadounidense, francés y español, documento escrito y matriz comparativa del Estado de Derecho, el Estado Constitucional y el Estado Social de Derecho." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       Paleta institucional tomada del logo de la UNAD
+       Azul #005484 · Amarillo #FCB400
+       (misma estética del recurso de RRII 252005)
+       ========================================================= */
+    :root {
+      --azul: #005484;
+      --azul-profundo: #003a5c;
+      --azul-suave: #e8f0f6;
+      --amarillo: #fcb400;
+      --amarillo-texto: #8a6200;
+      --amarillo-suave: #fff6dc;
+      --papel: #fbfaf7;
+      --blanco: #ffffff;
+      --tinta: #1a2433;
+      --gris: #5b6675;
+      --linea: #e4e1d8;
+      --linea-fuerte: #c9cfd8;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --ancho: 1120px;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--papel); color: var(--tinta); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--amarillo); outline-offset: 3px; }
+
+    .contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
+    .antetitulo { font-size: .72rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .regla { width: 44px; height: 3px; background: var(--amarillo); border-radius: 2px; }
+
+    /* ── Barra institucional ── */
+    .barra { background: var(--blanco); border-bottom: 1px solid var(--linea); }
+    .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+    .marca { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+    .marca img { width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0; }
+    .marca span { font-size: .82rem; line-height: 1.3; color: var(--gris); }
+    .marca strong { display: block; color: var(--azul-profundo); font-weight: 600; font-size: .9rem; }
+    .barra-acciones { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .enlace-sutil { background: none; border: 0; padding: 8px 12px; border-radius: 8px; font-size: .86rem; color: var(--gris); text-decoration: none; transition: color .2s, background-color .2s; }
+    .enlace-sutil:hover { color: var(--azul); background: var(--azul-suave); }
+
+    /* ── Portada ── */
+    .portada { padding: clamp(48px, 7vw, 84px) 0 clamp(56px, 8vw, 96px); }
+    .portada .contenedor { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
+    .portada .antetitulo { color: var(--azul); }
+    .portada h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 1.08; letter-spacing: -.015em; color: var(--azul-profundo); margin: 22px 0 0; }
+    .portada h1 em { display: block; font-style: italic; font-weight: 400; color: var(--azul); font-size: .62em; line-height: 1.2; margin-top: 10px; }
+    .portada .regla { margin: 30px 0; }
+    .intro { font-size: 1.08rem; color: var(--gris); max-width: 56ch; }
+    .acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 36px; }
+    .boton {
+      display: inline-flex; align-items: center; gap: 12px; padding: 15px 28px; border: 0; border-radius: 999px;
+      background: var(--azul); color: #fff; font-weight: 600; font-size: .98rem; text-decoration: none;
+      box-shadow: 0 10px 24px -12px rgba(0, 84, 132, .7);
+      transition: background-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .boton:hover { background: var(--azul-profundo); transform: translateY(-2px); }
+    .boton .flecha { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--amarillo); color: var(--azul-profundo); font-size: .9rem; transition: transform .3s var(--ease); }
+    .boton:hover .flecha { transform: translateY(2px); }
+    .boton-texto { background: none; border: 0; font-weight: 600; font-size: .95rem; color: var(--azul); text-decoration: underline; text-decoration-color: var(--amarillo); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+    .ficha { border-top: 1px solid var(--linea-fuerte); }
+    .ficha div { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: .92rem; }
+    .ficha dt { color: var(--gris); }
+    .ficha dd { font-weight: 600; color: var(--tinta); }
+    .ra { margin-top: 28px; padding-left: 18px; border-left: 3px solid var(--amarillo); }
+    .ra p:last-child { margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.6; color: var(--tinta); }
+
+    /* ── Recurso desplegable ── */
+    .recurso { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .7s var(--ease), opacity .5s var(--ease); }
+    .recurso > div { overflow: hidden; min-width: 0; }
+    .recurso.abierto { grid-template-rows: 1fr; opacity: 1; }
+    .recurso.abierto > div { overflow: visible; }
+
+    .seccion { padding: clamp(64px, 9vw, 110px) 0; }
+    .seccion-blanca { background: var(--blanco); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+    .encabezado { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-bottom: 44px; }
+    .encabezado h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.15; color: var(--azul-profundo); margin-top: 12px; }
+    .encabezado p { color: var(--gris); max-width: 46ch; }
+
+    /* Filtros */
+    .filtros { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-bottom: 20px; }
+    .filtro { background: none; border: 0; padding: 6px 0; font-size: .86rem; color: var(--gris); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .filtro:hover { color: var(--azul); }
+    .filtro[aria-pressed="true"] { color: var(--azul-profundo); font-weight: 600; border-bottom-color: var(--amarillo); }
+
+    /* ── Línea de tiempo ── */
+    .linea-tiempo { background: var(--blanco); border: 1px solid var(--linea); border-radius: 24px; padding: 8px clamp(12px, 3vw, 36px); box-shadow: 0 30px 60px -40px rgba(0, 58, 92, .35); }
+    .tl { position: relative; list-style: none; display: grid; grid-template-columns: repeat(12, 1fr); height: 360px; }
+    .tl::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: linear-gradient(90deg, transparent, var(--azul) 6%, var(--azul) 94%, transparent); opacity: .85; }
+    .tl-item { position: relative; transition: opacity .3s var(--ease); }
+    .tl-item.atenuado { opacity: .22; }
+    .tl-item.atenuado .tl-boton { pointer-events: none; }
+    .tl-boton { position: absolute; inset: 0; background: none; border: 0; border-radius: 12px; }
+    .tl-boton:focus-visible { outline: none; }
+    .tl-punto {
+      position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; border-radius: 50%;
+      transform: translate(-50%, -50%); background: var(--blanco); border: 2px solid var(--azul);
+      transition: transform .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .tl-tallo { position: absolute; left: 50%; width: 1px; height: 30px; background: var(--linea-fuerte); }
+    .tl-texto { position: absolute; left: 50%; width: 150px; transform: translateX(-50%); text-align: center; }
+    .tl-anio { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.45rem; line-height: 1; color: var(--azul-profundo); transition: color .3s; }
+    .tl-titulo { display: block; margin-top: 8px; font-size: .8rem; line-height: 1.35; color: var(--gris); transition: color .3s; }
+    .tl-item:nth-child(odd) .tl-tallo { bottom: calc(50% + 12px); }
+    .tl-item:nth-child(odd) .tl-texto { bottom: calc(50% + 50px); }
+    .tl-item:nth-child(even) .tl-tallo { top: calc(50% + 12px); }
+    .tl-item:nth-child(even) .tl-texto { top: calc(50% + 50px); }
+    .tl-boton:hover .tl-punto, .tl-boton:focus-visible .tl-punto { transform: translate(-50%, -50%) scale(1.35); background: var(--amarillo); border-color: var(--amarillo); box-shadow: 0 0 0 8px rgba(252, 180, 0, .18); }
+    .tl-boton:hover .tl-titulo, .tl-boton:focus-visible .tl-titulo { color: var(--tinta); }
+    .tl-boton:hover .tl-anio { color: var(--azul); }
+    .tl-item.visto .tl-punto { background: var(--azul); }
+    .tl-item.actual .tl-punto { box-shadow: 0 0 0 6px rgba(252, 180, 0, .45); }
+
+    .pie-tl { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; }
+    .avance { display: flex; align-items: center; gap: 14px; font-size: .88rem; color: var(--gris); }
+    .avance-barra { width: 160px; height: 4px; border-radius: 4px; background: var(--linea); overflow: hidden; }
+    .avance-barra span { display: block; height: 100%; width: 0; background: var(--amarillo); transition: width .4s var(--ease); }
+    .boton-secundario { display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--azul); background: var(--blanco); color: var(--azul); font-weight: 600; font-size: .92rem; transition: background-color .25s, color .25s; }
+    .boton-secundario:hover { background: var(--azul); color: #fff; }
+
+    /* ── Modal del hito ── */
+    dialog.modal {
+      width: min(1080px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); inset: 0; margin: auto; padding: 0; border: 0;
+      border-radius: 22px; background: var(--blanco); color: var(--tinta); overflow: hidden;
+      box-shadow: 0 40px 80px -30px rgba(0, 26, 51, .55);
+    }
+    dialog.modal[open] { display: flex; flex-direction: column; animation: aparecer .35s var(--ease); }
+    dialog.modal::backdrop { background: rgba(0, 32, 54, .55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    @keyframes aparecer { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+
+    .modal-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--linea); }
+    .modal-cabecera p { font-size: .82rem; color: var(--gris); }
+    .modal-cabecera strong { color: var(--azul-profundo); }
+    .cerrar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--linea); background: var(--blanco); font-size: 1.3rem; line-height: 1; color: var(--gris); transition: background-color .2s, color .2s; }
+    .cerrar:hover { background: var(--azul-suave); color: var(--azul); }
+
+    .modal-cuerpo { overflow-y: auto; padding: clamp(20px, 4vw, 40px); }
+    .modal-contenido { animation: fundido .35s var(--ease); }
+    @keyframes fundido { from { opacity: 0; transform: translateX(var(--desde, 0)); } to { opacity: 1; transform: none; } }
+    .hito-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
+    .hito-figura img, .sin-imagen { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; background: var(--azul-suave); }
+    .sin-imagen { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; border: 1px solid var(--linea); }
+    .sin-imagen span { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .sin-imagen strong { font-family: var(--serif); font-weight: 600; color: var(--azul-profundo); line-height: 1.3; }
+    .hito-figura figcaption { margin-top: 12px; font-size: .78rem; line-height: 1.5; color: var(--gris); }
+    .hito-figura figcaption small { display: block; margin-top: 4px; color: #8a93a0; font-size: .74rem; }
+    .hito-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+    .categoria { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .periodo { font-size: .8rem; font-weight: 600; color: var(--amarillo-texto); background: var(--amarillo-suave); padding: 3px 12px; border-radius: 999px; }
+    .modelo { font-size: .78rem; font-weight: 500; color: var(--azul-profundo); border: 1px solid var(--linea-fuerte); padding: 2px 11px; border-radius: 999px; }
+    .hito-titulo { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.2; color: var(--azul-profundo); margin: 14px 0 20px; }
+    .sintesis { padding: 4px 0 4px 18px; border-left: 3px solid var(--amarillo); }
+    .sintesis p:first-child { font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); }
+    .sintesis p:last-child { margin-top: 6px; font-size: 1.08rem; line-height: 1.65; }
+
+    .desplegar { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--azul); background: var(--blanco); color: var(--azul); font-weight: 600; font-size: .92rem; text-align: left; transition: background-color .25s, color .25s; }
+    .desplegar:hover, .desplegar[aria-expanded="true"] { background: var(--azul); color: #fff; }
+    .desplegar svg { width: 16px; height: 16px; flex-shrink: 0; transition: transform .3s var(--ease); }
+    .desplegar[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .analisis { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+    .analisis > div { overflow: hidden; }
+    .analisis.abierto { grid-template-rows: 1fr; }
+    .ejes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; margin-top: 28px; border-top: 1px solid var(--linea); }
+    .eje { padding: 20px 0; border-bottom: 1px solid var(--linea); }
+    .eje h4 { display: flex; align-items: baseline; gap: 10px; font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .eje h4 span { font-family: var(--serif); font-size: 1rem; letter-spacing: 0; color: var(--amarillo-texto); }
+    .eje p { margin-top: 8px; font-size: .94rem; line-height: 1.65; color: var(--tinta); }
+
+    .modal-pie { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 24px; border-top: 1px solid var(--linea); background: var(--papel); }
+    .nav-hito { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--linea-fuerte); background: var(--blanco); font-size: .88rem; font-weight: 600; color: var(--azul-profundo); transition: border-color .2s, background-color .2s; }
+    .nav-hito:hover { border-color: var(--azul); background: var(--azul-suave); }
+    .nav-hito:disabled { opacity: .35; pointer-events: none; }
+    .nav-hito.principal { background: var(--azul); border-color: var(--azul); color: #fff; }
+    .nav-hito.principal:hover { background: var(--azul-profundo); }
+    .puntos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .puntos button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: var(--linea-fuerte); transition: background-color .2s, transform .2s; }
+    .puntos button:hover { background: var(--azul); }
+    .puntos button[aria-current="true"] { background: var(--amarillo); transform: scale(1.35); }
+    .puntos button:disabled { opacity: .3; pointer-events: none; }
+    body.modal-abierto { overflow: hidden; }
+
+    /* ── Documento escrito ── */
+    .documento h2 { max-width: 30ch; }
+    .doc-intro { display: grid; grid-template-columns: 1fr 1.6fr; gap: 20px 48px; align-items: start; margin-bottom: 44px; }
+    .doc-intro p:last-child { color: #2c3645; font-size: 1.02rem; }
+    .pregunta { padding: 20px 24px; border-radius: 16px; background: var(--amarillo-suave); border-left: 3px solid var(--amarillo); font-family: var(--serif); font-size: 1.12rem; line-height: 1.45; color: var(--azul-profundo); }
+    .pregunta span { display: block; margin-bottom: 8px; font-family: var(--sans); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .secuencia { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; border-top: 1px solid var(--linea-fuerte); border-bottom: 1px solid var(--linea); margin-bottom: 48px; }
+    .secuencia li { position: relative; padding: 24px 28px 24px 0; }
+    .secuencia li + li { padding-left: 28px; border-left: 1px solid var(--linea); }
+    .secuencia span { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .secuencia strong { display: block; margin-top: 8px; font-family: var(--serif); font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.15; color: var(--azul-profundo); }
+    .secuencia p { margin-top: 8px; font-size: .88rem; color: var(--gris); }
+    .secuencia li + li::before { content: "→"; position: absolute; left: -13px; top: 22px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--amarillo); color: var(--azul-profundo); font-size: .85rem; font-weight: 600; }
+
+    .pestanas { display: flex; gap: 28px; overflow-x: auto; border-bottom: 1px solid var(--linea); margin-bottom: 36px; scrollbar-width: none; }
+    .pestana { flex-shrink: 0; background: none; border: 0; padding: 12px 0; margin-bottom: -1px; font-size: .92rem; color: var(--gris); border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .pestana:hover { color: var(--azul); }
+    .pestana[aria-selected="true"] { color: var(--azul-profundo); font-weight: 600; border-bottom-color: var(--amarillo); }
+    .pestana span { font-family: var(--serif); color: var(--amarillo-texto); margin-right: 6px; }
+    .panel { max-width: 74ch; }
+    .panel[hidden] { display: none; }
+    .panel h3 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; line-height: 1.25; color: var(--azul-profundo); margin-bottom: 18px; }
+    .panel p { margin-bottom: 16px; color: #2c3645; }
+    .panel p strong { color: var(--azul-profundo); }
+    .panel h4.subtitulo { margin: 30px 0 4px; font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo-texto); }
+    .rejilla { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; margin-bottom: 24px; border-top: 1px solid var(--linea); }
+    .rejilla.tres { grid-template-columns: repeat(3, 1fr); gap: 0 28px; }
+    .rejilla div { padding: 18px 0; border-bottom: 1px solid var(--linea); }
+    .rejilla h5 { font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+    .rejilla h5 em { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0; text-transform: none; }
+    .rejilla p { margin: 6px 0 0; font-size: .94rem; }
+    .conclusiones { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: c; }
+    .conclusiones li { counter-increment: c; position: relative; padding: 18px 0 18px 48px; border-top: 1px solid var(--linea); color: #2c3645; }
+    .conclusiones li::before { content: counter(c); position: absolute; left: 0; top: 14px; font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--amarillo-texto); }
+    .tesis { margin: 0 0 8px; padding: 24px 28px; border-radius: 16px; background: var(--azul-suave); border-left: 3px solid var(--amarillo); font-family: var(--serif); font-size: 1.12rem; line-height: 1.6; color: var(--azul-profundo); }
+
+    /* ── Matriz comparativa ── */
+    .matriz-marco { background: var(--blanco); border: 1px solid var(--linea); border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px -40px rgba(0, 58, 92, .35); }
+    .matriz { width: 100%; border-collapse: collapse; font-size: .9rem; line-height: 1.6; }
+    .matriz thead th { padding: 22px 22px 20px; background: var(--azul-profundo); color: #fff; text-align: left; vertical-align: bottom; font-family: var(--serif); font-weight: 600; font-size: 1.12rem; line-height: 1.25; }
+    .matriz thead th small { display: block; margin-bottom: 6px; font-family: var(--sans); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--amarillo); }
+    .matriz thead th:first-child { width: 15%; font-family: var(--sans); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
+    .matriz thead th + th { border-left: 1px solid rgba(255, 255, 255, .14); }
+    .matriz tbody th { padding: 20px 22px; text-align: left; vertical-align: top; background: var(--azul-suave); color: var(--azul-profundo); font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; line-height: 1.4; }
+    .matriz tbody th span { display: block; margin-bottom: 4px; font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0; color: var(--amarillo-texto); }
+    .matriz td { padding: 20px 22px; vertical-align: top; color: #2c3645; border-left: 1px solid var(--linea); }
+    .matriz tbody tr + tr > * { border-top: 1px solid var(--linea); }
+    .matriz tbody tr:nth-child(even) td { background: var(--papel); }
+    .matriz td ul { padding-left: 1.1em; }
+    .matriz td li + li { margin-top: 4px; }
+    .matriz td strong { color: var(--azul-profundo); }
+    .nota-matriz { margin-top: 18px; font-size: .84rem; color: var(--gris); }
+
+    /* ── Referencias y pie ── */
+    .referencias h2 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--azul-profundo); margin-bottom: 18px; }
+    .referencias li { overflow-wrap: anywhere; list-style: none; padding-left: 2em; text-indent: -2em; margin-bottom: 10px; font-size: .92rem; color: #2c3645; }
+    .nota { margin-top: 24px; font-size: .8rem; color: var(--gris); }
+    .pie { background: var(--azul-profundo); color: rgba(255, 255, 255, .72); font-size: .86rem; }
+    .pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 28px; padding-bottom: 28px; }
+    .pie-franja { height: 4px; background: var(--amarillo); }
+
+    .nw { white-space: nowrap; }
+    .solo-impresion { display: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .portada .contenedor { grid-template-columns: 1fr; align-items: start; }
+      .hito-grid { grid-template-columns: 1fr; }
+      .doc-intro { grid-template-columns: 1fr; }
+      .rejilla.tres { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      /* Línea de tiempo vertical */
+      .linea-tiempo { padding: 16px 20px; }
+      .tl { display: block; height: auto; padding-left: 30px; }
+      .tl::before { left: 8px; right: auto; top: 12px; bottom: 12px; width: 2px; height: auto; transform: none; background: var(--azul); }
+      .tl-item { padding: 6px 0; }
+      .tl-boton { position: relative; inset: auto; display: block; width: 100%; padding: 12px 8px; text-align: left; }
+      .tl-punto { left: -22px; }
+      .tl-tallo { display: none; }
+      .tl-item .tl-texto { position: static; width: auto; transform: none; text-align: left; }
+      .tl-anio { font-size: 1.25rem; }
+      .tl-titulo { margin-top: 4px; font-size: .9rem; }
+
+      /* Secuencia de modelos en columna */
+      .secuencia { grid-template-columns: 1fr; }
+      .secuencia li, .secuencia li + li { padding: 22px 0; border-left: 0; }
+      .secuencia li + li { border-top: 1px solid var(--linea); }
+      .secuencia li + li::before { left: auto; right: 0; top: -13px; content: "↓"; }
+    }
+    @media screen and (max-width: 820px) {
+      /* Matriz en tarjetas: un criterio por bloque */
+      .matriz-marco { border-radius: 18px; }
+      .matriz, .matriz tbody, .matriz tr, .matriz th, .matriz td { display: block; width: 100%; }
+      .matriz thead { display: none; }
+      .matriz tbody tr + tr > * { border-top: 0; }
+      .matriz tbody tr + tr { border-top: 1px solid var(--linea-fuerte); }
+      .matriz tbody th { padding: 16px 18px; }
+      .matriz td { padding: 16px 18px; border-left: 0; border-top: 1px solid var(--linea); }
+      .matriz tbody tr:nth-child(even) td { background: transparent; }
+      .matriz td::before { content: attr(data-modelo); display: block; margin-bottom: 6px; font-family: var(--serif); font-weight: 600; font-size: 1rem; color: var(--azul); }
+    }
+    @media (max-width: 640px) {
+      .marca span { display: none; }
+      .marca strong { display: block; }
+      .ficha div { grid-template-columns: 1fr; gap: 2px; }
+      .ejes, .rejilla { grid-template-columns: 1fr; }
+      dialog.modal { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
+      .modal-cabecera { padding: 12px 16px; }
+      .modal-pie { padding: 12px 14px; }
+      .puntos button { width: 7px; height: 7px; }
+      .nav-hito .texto { display: none; }
+      .puntos { gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ── Informe imprimible / PDF (A4) ── */
+    @media print {
+      @page { size: A4; margin: 16mm 15mm; }
+      body { background: #fff; font-size: 10.5pt; }
+      .no-imprimir, dialog { display: none !important; }
+      .solo-impresion { display: block !important; }
+      .portada { padding: 0 0 12pt; }
+      .portada .contenedor { grid-template-columns: 1fr; gap: 14pt; }
+      .recurso { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      .recurso > div { overflow: visible !important; }
+      .seccion { padding: 12pt 0; }
+      .seccion-blanca { border: 0; }
+      .linea-tiempo { display: none; }
+      .hito-impreso { break-inside: avoid; page-break-inside: avoid; padding: 12pt 0; border-top: 1px solid var(--linea-fuerte); }
+      .hito-impreso .hito-grid { grid-template-columns: 32% 1fr; gap: 14pt; }
+      .hito-impreso img { max-height: 46mm; }
+      .hito-impreso .ejes { grid-template-columns: 1fr 1fr; margin-top: 10pt; }
+      .panel, .panel[hidden] { display: block !important; max-width: none; margin-bottom: 14pt; }
+      .pestanas { display: none; }
+      .secuencia { grid-template-columns: repeat(3, 1fr); }
+      .secuencia li + li::before { display: none; }
+      .matriz-marco { box-shadow: none; border-radius: 0; }
+      .matriz { font-size: 8.5pt; }
+      .matriz thead th, .matriz tbody th, .matriz td { padding: 6pt 7pt; }
+      .matriz thead th { font-size: 9.5pt; }
+      .matriz tr { break-inside: avoid; page-break-inside: avoid; }
+      .matriz thead th, .matriz tbody th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Barra institucional ===== -->
+  <header class="barra">
+    <div class="contenedor">
+      <a class="marca" href="#portada">
+        <img src="assets/img/logo-unad.jpg" alt="Logo de la UNAD" />
+        <span><strong>Universidad Nacional Abierta y a Distancia</strong>Escuela de Ciencias Jurídicas y Políticas · Ciencia Política</span>
+      </a>
+      <div class="barra-acciones no-imprimir">
+        <button class="enlace-sutil" id="btnPdf" type="button" title="En el diálogo de impresión elige «Guardar como PDF»">Exportar a PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Portada ===== -->
+  <section class="portada" id="portada">
+    <div class="contenedor">
+      <div>
+        <p class="antetitulo">Curso 251004 · Fase 2 · Apropiación</p>
+        <h1>Derecho Constitucional General <em>Del Estado de Derecho al Estado Social de Derecho</em></h1>
+        <div class="regla"></div>
+        <p class="intro">De la Carta Magna de 1215 a la Constitución colombiana de 1991: ocho siglos de esfuerzos por
+          someter el poder al derecho. Doce hitos de las tradiciones inglesa, estadounidense, francesa y española, y
+          un análisis crítico de los tres modelos de Estado que conviven hoy en la Carta de 1991.</p>
+        <div class="acciones no-imprimir">
+          <button class="boton" id="btnIniciar" type="button" aria-controls="recurso" aria-expanded="false">
+            Iniciar recorrido <span class="flecha" aria-hidden="true">↓</span>
+          </button>
+          <button class="boton-texto" id="btnMatriz" type="button">Ir a la matriz comparativa</button>
+        </div>
+      </div>
+
+      <div>
+        <dl class="ficha">
+          <div><dt>Estudiante</dt><dd>Natalia Berrío Zuleta</dd></div>
+          <div><dt>Directora del curso</dt><dd>Deisy Johana Rodríguez Galans</dd></div>
+          <div><dt>Código</dt><dd>251004</dd></div>
+          <div><dt>Escenario</dt><dd>2 · Matriz comparativa y línea de tiempo</dd></div>
+        </dl>
+        <div class="ra">
+          <p class="antetitulo">Resultado de aprendizaje · Fase 2</p>
+          <p>“Analizar la evolución histórica del constitucionalismo moderno y los diferentes modelos de Estado,
+            identificando sus principales características, fundamentos y transformaciones, con el fin de comprender la
+            consolidación del Estado Constitucional y del Estado Social de Derecho en los sistemas jurídicos
+            contemporáneos.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Recurso (se despliega con «Iniciar recorrido») ===== -->
+  <div class="recurso" id="recurso">
+    <div>
+      <main>
+        <!-- Línea de tiempo -->
+        <section class="seccion seccion-blanca" id="recorrido" aria-labelledby="titulo-recorrido">
+          <div class="contenedor">
+            <div class="encabezado">
+              <div>
+                <p class="antetitulo">Línea de tiempo</p>
+                <h2 id="titulo-recorrido">Doce hitos del constitucionalismo moderno</h2>
+              </div>
+              <p class="no-imprimir">Selecciona un año para abrir su ficha. Filtra por tradición constitucional y,
+                dentro de cada ficha, avanza al hito siguiente o vuelve al anterior.</p>
+            </div>
+
+            <div class="filtros no-imprimir" id="filtros" role="group" aria-label="Filtrar hitos por tradición constitucional"></div>
+
+            <div class="linea-tiempo">
+              <ol class="tl" id="tl"></ol>
+            </div>
+
+            <div class="pie-tl no-imprimir">
+              <div class="avance">
+                <div class="avance-barra"><span id="avanceBarra"></span></div>
+                <span id="avanceTexto">0 de 12 hitos explorados</span>
+              </div>
+              <button class="boton-secundario" id="btnComenzar" type="button">Comenzar por el hito 1 →</button>
+            </div>
+
+            <!-- Versión para imprimir: todos los hitos con su análisis completo -->
+            <div class="solo-impresion" id="impresion"></div>
+          </div>
+        </section>
+
+        <!-- Documento escrito -->
+        <section class="seccion documento" id="documento" aria-labelledby="titulo-documento">
+          <div class="contenedor">
+            <div class="encabezado">
+              <div>
+                <p class="antetitulo">Documento escrito · Modelos de Estado</p>
+                <h2 id="titulo-documento">Estado de Derecho, Estado Constitucional y Estado Social de Derecho en
+                  Colombia</h2>
+              </div>
+            </div>
+
+            <div class="doc-intro">
+              <p class="pregunta"><span>Pregunta orientadora</span>¿Cuáles son las principales diferencias entre el Estado
+                de Derecho, el Estado Constitucional y el Estado Social de Derecho, y cómo se reflejan estos modelos en la
+                organización del Estado colombiano?</p>
+              <p>Este documento analiza críticamente la trayectoria, los principios, las coincidencias y las divergencias
+                de tres modelos de organización estatal, con el ordenamiento jurídico de la Constitución Política de 1991
+                como eje de análisis.</p>
+            </div>
+
+            <ol class="secuencia" aria-label="Secuencia de los modelos de Estado">
+              <li><span>Siglo XIX</span><strong>Estado de Derecho</strong><p>La ley formal como límite del poder.</p></li>
+              <li><span>Posguerra · siglo XX</span><strong>Estado Constitucional</strong><p>La Constitución como norma de normas.</p></li>
+              <li><span>Siglo XX</span><strong>Estado Social de Derecho</strong><p>Derechos, justicia material e intervención estatal.</p></li>
+            </ol>
+
+            <div class="pestanas no-imprimir" role="tablist" aria-label="Apartados del documento escrito" id="pestanas">
+              <button class="pestana" role="tab" id="pestana-1" aria-controls="panel-1" aria-selected="true"><span>1</span>Introducción</button>
+              <button class="pestana" role="tab" id="pestana-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span>2</span>Estado de Derecho</button>
+              <button class="pestana" role="tab" id="pestana-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span>3</span>Estado Constitucional</button>
+              <button class="pestana" role="tab" id="pestana-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span>4</span>Estado Social de Derecho</button>
+              <button class="pestana" role="tab" id="pestana-5" aria-controls="panel-5" aria-selected="false" tabindex="-1"><span>5</span>Conclusiones</button>
+            </div>
+
+            <article class="panel" id="panel-1" role="tabpanel" aria-labelledby="pestana-1" tabindex="0">
+              <h3>Introducción</h3>
+              <p>El estudio del Derecho Constitucional General exige comprender que el Estado no es una entidad estática
+                ni ahistórica, sino un fenómeno dogmático e institucional en constante transformación (Clavero Salvador,
+                1981). La transición del Estado de Derecho liberal del siglo XIX hacia el Estado Constitucional y el
+                Estado Social de Derecho del siglo XX responde a la necesidad histórica de limitar el arbitrio del poder
+                político, superar el formalismo legalista y garantizar la dignidad humana y la equidad social en la vida
+                cotidiana (Angarita Úsuga, 2021).</p>
+              <p>El propósito de este documento es analizar críticamente la trayectoria, los principios, las
+                coincidencias y las divergencias de estos tres modelos de organización estatal, con el ordenamiento
+                jurídico instaurado por la Constitución Política de 1991 como eje de análisis. A través de esta revisión se
+                examina cómo la Carta de 1991 articuló las garantías formales del liberalismo clásico con la supremacía
+                material de la Constitución y el mandato prestacional de la justicia social, y cómo erigió la acción de
+                tutela y al juez constitucional en garantes directos del mínimo vital y de la vida digna.</p>
+            </article>
+
+            <article class="panel" id="panel-2" role="tabpanel" aria-labelledby="pestana-2" tabindex="0" hidden>
+              <h3>El Estado de Derecho: imperio de la ley formal y límites al poder</h3>
+              <p>El Estado de Derecho (<em>Rechtsstaat</em>) se consolidó en el siglo XIX como una victoria del liberalismo
+                burgués frente al absolutismo monárquico, orientada a someter el ejercicio del poder público al imperio de
+                la ley formal expedida por el Parlamento (Naranjo Mesa, 2014). En este modelo, el Estado asume un papel
+                abstencionista, de «gendarme»: se limita a proteger la seguridad jurídica, la propiedad privada y las
+                libertades individuales bajo el principio de no interferencia en la autonomía de los particulares
+                (Angarita Úsuga, 2021).</p>
+              <p>En su organización institucional, el Estado de Derecho se funda en la división clásica de funciones
+                formulada por Montesquieu para evitar la concentración del mando. En Colombia, este legado liberal se
+                preserva en el artículo 113 de la Constitución Política, que consagra la separación de las ramas del poder
+                público y la existencia de órganos autónomos que colaboran armónicamente para cumplir los fines del
+                Estado. El principio de legalidad de la administración se positiviza en el artículo 121: ninguna autoridad
+                del Estado podrá ejercer funciones distintas de las que le atribuyen la Constitución y la ley
+                (Constitución Política de Colombia [C.&nbsp;P.], 1991).</p>
+              <p>En cuanto al régimen de responsabilidad, el artículo 6 fija una regla garantista propia del
+                constitucionalismo liberal: los particulares solo responden ante las autoridades por infringir la
+                Constitución y las leyes, mientras que los servidores públicos responden por esa misma causa y por omisión
+                o extralimitación en el ejercicio de sus funciones.</p>
+              <p>Sin embargo, el Estado de Derecho decimonónico tuvo una falla estructural: su positivismo y su formalismo
+                abstracto. Al suponer que toda ley aprobada por el órgano representativo era justa por el solo hecho de
+                cumplir el procedimiento, el sistema confundió la legalidad con la justicia (Angarita Úsuga, 2021). Ese
+                abstencionismo fue incapaz de responder a las desigualdades de la sociedad industrial y permitió que, en el
+                siglo XX, regímenes totalitarios cometieran atrocidades amparados en la legalidad formal vigente.</p>
+              <h4 class="subtitulo">Pervivencia en la Carta de 1991</h4>
+              <div class="rejilla">
+                <div><h5>Artículo 1</h5><p>Colombia se organiza como una república bajo el imperio del derecho.</p></div>
+                <div><h5>Artículo 6</h5><p>Régimen diferenciado de responsabilidad para particulares y servidores públicos.</p></div>
+                <div><h5>Artículo 113</h5><p>Separación y colaboración armónica de las ramas del poder público.</p></div>
+                <div><h5>Artículo 121</h5><p>Ninguna autoridad ejerce funciones distintas de las que le asignan la Constitución y la ley.</p></div>
+              </div>
+            </article>
+
+            <article class="panel" id="panel-3" role="tabpanel" aria-labelledby="pestana-3" tabindex="0" hidden>
+              <h3>El Estado Constitucional: supremacía material y reformulación del poder</h3>
+              <p>Tras la Segunda Guerra Mundial y la experiencia de los regímenes autoritarios, que actuaron amparados en
+                la estricta validez procedimental de las leyes, la doctrina advirtió que la neutralidad formal no bastaba
+                para evitar la injusticia. Nace así el Estado Constitucional, que traslada el centro de gravedad del
+                ordenamiento desde la soberanía del Parlamento hacia la supremacía formal y material de la Constitución
+                (del Rosario Rodríguez, 2011).</p>
+              <p>Este modelo reconfigura la concepción del poder político. Como sistematiza Michelangelo Bovero (como se
+                citó en Flórez Eusse, 2023), la actuación pública debe someterse a tres exigencias:</p>
+              <div class="rejilla tres">
+                <div><h5><em>Per leges</em></h5><p>El poder se ejerce mediante normas generales y abstractas, no mediante mandatos arbitrarios.</p></div>
+                <div><h5><em>Sub lege</em></h5><p>Las autoridades actúan dentro de los límites de competencia que fija la Constitución.</p></div>
+                <div><h5><em>Sub iuribus</em></h5><p>La validez del sistema y la actuación del legislador se subordinan al respeto de los derechos fundamentales.</p></div>
+              </div>
+              <p>La supremacía constitucional opera en dos vertientes. La <strong>supremacía formal</strong> se apoya en
+                la rigidez y en el procedimiento de reforma, que protegen a la norma fundamental de cambios motivados por
+                intereses políticos coyunturales. La <strong>supremacía material o axiológica</strong> entiende la
+                Constitución no como un simple texto orgánico de competencias, sino como depositaria de los valores y
+                principios fundamentales de la sociedad. Por eso la validez de las leyes no depende solo de no contradecir
+                el texto explícito, sino de armonizar con esos principios mediante la interpretación del caso concreto
+                (del Rosario Rodríguez, 2011).</p>
+              <p>La supremacía material se amplía, además, mediante el bloque de constitucionalidad, que integra a la
+                norma suprema los tratados internacionales de derechos humanos ratificados por el Estado (C.&nbsp;P., 1991,
+                art.&nbsp;93). En Colombia, el modelo se consagra en el artículo 4: «La Constitución es norma de normas». En la
+                Sentencia <span class="nw">SU-747</span> de 1998, la Corte Constitucional afirmó que Colombia es un «Estado constitucional de
+                derecho», de modo que la legitimidad y validez de toda la actividad estatal se ciñen al marco normativo y
+                axiológico de la Carta (Corte Constitucional de Colombia, 1998).</p>
+              <p>Por último, el Estado Constitucional resuelve la tensión entre democracia (la fuerza de la mayoría) y
+                constitucionalismo (el límite normativo) mediante la democracia constitucional: protege un «coto vedado»
+                de derechos que ninguna mayoría, por amplia que sea, puede derogar o menoscabar (Flórez Eusse, 2023).</p>
+            </article>
+
+            <article class="panel" id="panel-4" role="tabpanel" aria-labelledby="pestana-4" tabindex="0" hidden>
+              <h3>El Estado Social de Derecho: procura existencial, igualdad material y emancipación</h3>
+              <p>El Estado Social de Derecho se consolidó en el siglo XX como respuesta histórica a la crisis del modelo
+                liberal abstencionista, a las guerras mundiales, a las grandes depresiones económicas y a las luchas
+                populares. Formulado teóricamente por Hermann Heller a finales de la década de 1920, este modelo busca
+                integrar la estructura de libertades del Estado de Derecho con una intervención estatal activa orientada
+                a la equidad y la redistribución (Angarita Úsuga, 2021).</p>
+              <p>Frente a la insuficiencia de las libertades formales, este modelo incorpora al texto constitucional los
+                <strong>derechos económicos, sociales y culturales</strong> (DESC o derechos de segunda generación). A
+                diferencia de las libertades civiles, que exigen la abstención del Estado, los DESC tienen un carácter
+                positivo y prestacional: obligan al Estado a proveer salud, educación, vivienda, trabajo y seguridad
+                social. Esta función responde al concepto de procura existencial (<em>Daseinsvorsorge</em>) de Ernst
+                Forsthoff, que obliga a la administración a garantizar las condiciones materiales indispensables para una
+                existencia digna (Márquez Buitrago, 2005).</p>
+              <p>Según Márquez Buitrago (2005), la incidencia del Estado Social de Derecho en la organización
+                sociopolítica colombiana se comprende desde dos dimensiones complementarias:</p>
+              <div class="rejilla">
+                <div><h5>Dimensión cuantitativa</h5><p>El Estado de bienestar: el aparato público actúa como motor de la dinámica social para cumplir los fines esenciales del Estado. Se refleja en la prioridad del gasto público social (C.&nbsp;P., 1991, art.&nbsp;366).</p></div>
+                <div><h5>Dimensión cualitativa</h5><p>El Estado constitucional democrático: la legitimidad se funda en la igualdad material, mediante acciones afirmativas a favor de grupos discriminados o en debilidad manifiesta (C.&nbsp;P., 1991, art.&nbsp;13).</p></div>
+              </div>
+              <p>En Colombia, el artículo 1 de la Constitución de 1991 consagra el Estado Social de Derecho fundado en el
+                respeto de la dignidad humana, el trabajo, la solidaridad de las personas y la prevalencia del interés
+                general. En la Sentencia <span class="nw">T-406</span> de 1992 (M. P. Ciro Angarita Barón), la Corte Constitucional precisó que la
+                cláusula «social» no es una muletilla retórica, sino la naturaleza misma del Estado, que exige lograr la
+                justicia material en cada caso concreto (Corte Constitucional de Colombia, 1992a; 1992b). Así, la acción de
+                tutela (art.&nbsp;86) se consolida como el mecanismo preferente y sumario con el que el juez constitucional
+                ampara directamente la dignidad humana y el mínimo vital.</p>
+              <p>Finalmente, en el contexto del nuevo constitucionalismo latinoamericano, la participación popular directa
+                y la democratización económica permiten disputar de forma continua el sentido del Estado. Se establece así
+                una relación dialéctica permanente entre el poder constituyente y el poder constituido, que transforma al
+                Estado de aparato de control burocrático en herramienta para mejorar las condiciones materiales de vida y
+                para la emancipación social (González Cadenas, 2012).</p>
+            </article>
+
+            <article class="panel" id="panel-5" role="tabpanel" aria-labelledby="pestana-5" tabindex="0" hidden>
+              <h3>Conclusiones</h3>
+              <blockquote class="tesis">
+                Ley → Constitución → derechos, justicia material e intervención estatal: la Carta de 1991 no sustituyó un
+                modelo por otro, sino que los integró en un solo orden centrado en la dignidad humana.
+              </blockquote>
+              <ol class="conclusiones">
+                <li>La evolución del Estado de Derecho liberal hacia el Estado Constitucional y el Estado Social de Derecho
+                  muestra un tránsito histórico desde el formalismo legalista y abstencionista del siglo XIX hacia un modelo
+                  centrado en la persona, en el que la validez procedimental de las leyes queda supeditada a la supremacía
+                  de la Constitución y al logro de la justicia material.</li>
+                <li>La Constitución Política de 1991 no descartó las garantías formales del Estado de Derecho (separación de
+                  poderes en el artículo 113, legalidad de las competencias en el artículo 121 y régimen de responsabilidad
+                  en el artículo 6), sino que las subordinó a la supremacía material de la Carta (artículo 4) y las
+                  reorientó al cumplimiento de los fines sociales del Estado.</li>
+                <li>La cláusula social y el principio de igualdad material (artículo 13) redefinieron la función judicial en
+                  Colombia: el juez de tutela se convirtió en un garante activo de la dignidad humana, del mínimo vital y de
+                  la protección de las personas en situación de debilidad manifiesta.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- Matriz comparativa -->
+        <section class="seccion seccion-blanca" id="matriz" aria-labelledby="titulo-matriz">
+          <div class="contenedor">
+            <div class="encabezado">
+              <div>
+                <p class="antetitulo">Matriz comparativa crítica</p>
+                <h2 id="titulo-matriz">Tres modelos de Estado frente a frente</h2>
+              </div>
+              <p>Seis criterios de análisis: concepto, características, semejanzas, diferencias, evolución histórica y
+                aplicación en Colombia.</p>
+            </div>
+
+            <div class="matriz-marco">
+              <table class="matriz">
+                <thead>
+                  <tr>
+                    <th scope="col">Criterio de análisis</th>
+                    <th scope="col"><small>Siglo XIX</small>Estado de Derecho</th>
+                    <th scope="col"><small>Posguerra · siglo XX</small>Estado Constitucional</th>
+                    <th scope="col"><small>Siglo XX</small>Estado Social de Derecho</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><span>1</span>Concepto</th>
+                    <td data-modelo="Estado de Derecho">Modelo de organización política del siglo XIX basado en el imperio de
+                      la ley formal expedida por el Parlamento. Busca limitar el poder absoluto y garantizar la seguridad
+                      jurídica mediante la protección de las libertades individuales y la no interferencia estatal
+                      (Angarita Úsuga, 2021).</td>
+                    <td data-modelo="Estado Constitucional">Modelo contemporáneo en el que la Constitución es norma de
+                      normas, con fuerza vinculante formal y material. Condiciona la validez de todo el ordenamiento y
+                      subordina al propio legislador a los principios y derechos fundamentales (<em>sub iuribus</em>)
+                      (del Rosario Rodríguez, 2011).</td>
+                    <td data-modelo="Estado Social de Derecho">Modelo intervencionista del siglo XX que integra el Estado de
+                      Derecho y la supremacía constitucional con el deber estatal de garantizar la dignidad humana, el
+                      mínimo vital, la equidad y la justicia material (Márquez Buitrago, 2005).</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span>2</span>Características principales</th>
+                    <td data-modelo="Estado de Derecho">
+                      <ul>
+                        <li>Imperio de la ley formal.</li>
+                        <li>División de poderes (art.&nbsp;113 C.&nbsp;P.).</li>
+                        <li>Competencias tasadas (art.&nbsp;121 C.&nbsp;P.).</li>
+                        <li>Responsabilidad de las autoridades (art.&nbsp;6 C.&nbsp;P.).</li>
+                        <li>Libertades civiles y políticas de carácter negativo.</li>
+                        <li>Igualdad formal ante la ley.</li>
+                      </ul>
+                    </td>
+                    <td data-modelo="Estado Constitucional">
+                      <ul>
+                        <li>Supremacía constitucional formal y material.</li>
+                        <li>Poder ejercido <em>per leges</em>, <em>sub lege</em> y <em>sub iuribus</em>.</li>
+                        <li>Protección del núcleo esencial de los derechos.</li>
+                        <li>Prevalencia de principios y ponderación en el caso concreto.</li>
+                        <li>Bloque de constitucionalidad (art.&nbsp;93 C.&nbsp;P.).</li>
+                      </ul>
+                    </td>
+                    <td data-modelo="Estado Social de Derecho">
+                      <ul>
+                        <li>Centralidad de la dignidad humana (art.&nbsp;1 C.&nbsp;P.).</li>
+                        <li>Derechos económicos, sociales y culturales de carácter prestacional.</li>
+                        <li>Intervención estatal para garantizar condiciones de vida digna.</li>
+                        <li>Igualdad material y acciones afirmativas (art.&nbsp;13 C.&nbsp;P.).</li>
+                        <li>Prioridad del gasto público social (art.&nbsp;366 C.&nbsp;P.).</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span>3</span>Semejanzas</th>
+                    <td data-modelo="Estado de Derecho">Es la matriz histórica de la estatalidad moderna. Comparte con los
+                      demás modelos la limitación del poder público, la organización mediante normas jurídicas, la
+                      separación de funciones y la responsabilidad de los gobernantes.</td>
+                    <td data-modelo="Estado Constitucional">Conserva las garantías del Estado de Derecho, como la separación
+                      de poderes, la legalidad y la protección de las libertades, pero sitúa a la Constitución como centro
+                      de validez del orden jurídico.</td>
+                    <td data-modelo="Estado Social de Derecho">Integra la estructura y las garantías del Estado de Derecho y
+                      la supremacía constitucional, y las orienta hacia el bienestar colectivo, la igualdad material y la
+                      justicia social.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span>4</span>Diferencias sustanciales</th>
+                    <td data-modelo="Estado de Derecho"><strong>Abstencionista y formalista:</strong> prioriza la legalidad y
+                      la igualdad formal, al punto de confundir legalidad con justicia. El Estado interviene de forma
+                      limitada en la esfera individual.</td>
+                    <td data-modelo="Estado Constitucional"><strong>Sustancial e interpretativo:</strong> la validez de las
+                      leyes no depende solo del procedimiento, sino de su conformidad con los principios, valores y derechos
+                      constitucionales. Supera la neutralidad del positivismo formalista.</td>
+                    <td data-modelo="Estado Social de Derecho"><strong>Intervencionista y prestacional:</strong> supera la
+                      mera no interferencia y establece deberes activos para garantizar derechos, intervenir en la economía y
+                      mejorar las condiciones materiales de vida.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span>5</span>Evolución histórica</th>
+                    <td data-modelo="Estado de Derecho">Se desarrolla doctrinalmente en el siglo XIX, con antecedentes en el
+                      iusnaturalismo racionalista y en autores como Locke, Montesquieu y Kant. Robert von Mohl difunde el
+                      término <em>Rechtsstaat</em> en la década de 1830, y el modelo se consolida con las revoluciones
+                      liberales.</td>
+                    <td data-modelo="Estado Constitucional">Se desarrolla sobre todo en el siglo XX, después de la Segunda
+                      Guerra Mundial, como respuesta a la insuficiencia de una legalidad meramente formal frente a los
+                      abusos del poder y a la crisis de la neutralidad procedimental.</td>
+                    <td data-modelo="Estado Social de Derecho">Hermann Heller lo formula teóricamente a finales de la década
+                      de 1920. Responde a la industrialización, las luchas sociales y la crisis del capitalismo. Antecedentes:
+                      Constitución de Querétaro (1917), Constitución de Weimar (1919) y New Deal (1933).</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span>6</span>Aplicación e impacto en Colombia</th>
+                    <td data-modelo="Estado de Derecho">Tiene antecedentes en la Constitución de 1886, de corte legalista,
+                      confesional y centralista (Zuluaga Gil, 2010). En la Carta de 1991 se refleja en los artículos 6, 113
+                      y 121: responsabilidad, separación de funciones y competencias de las autoridades.</td>
+                    <td data-modelo="Estado Constitucional">Se fundamenta en el artículo 4 C.&nbsp;P., que establece la
+                      Constitución como norma de normas, y se consolida mediante la Corte Constitucional y su jurisprudencia
+                      sobre el Estado constitucional de derecho, como la Sentencia <span class="nw">SU-747</span> de 1998.</td>
+                    <td data-modelo="Estado Social de Derecho">Está consagrado expresamente en el artículo 1 C.&nbsp;P. Se
+                      desarrolla mediante la acción de tutela (art.&nbsp;86), las acciones afirmativas (art.&nbsp;13) y la prioridad
+                      del gasto social (art.&nbsp;366). Sentencias relevantes: <span class="nw">T-406</span> de 1992 y <span class="nw">C-575</span> de 1992.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="nota-matriz">C.&nbsp;P.: Constitución Política de Colombia de 1991.</p>
+          </div>
+        </section>
+
+        <!-- Referencias -->
+        <section class="seccion referencias" id="referencias">
+          <div class="contenedor">
+            <h2>Referencias</h2>
+            <ul>
+              <li>Angarita Úsuga, J. P. (2021). Estado de Derecho y Estado Social de Derecho: Evolución histórica entre el
+                siglo XIX y XX. <em>Ratio Juris, 16</em>(33), 503–519. https://doi.org/10.24142/raju.v16n33a7</li>
+              <li>Clavero Salvador, B. (1981). Institución política y derecho: Acerca del concepto historiográfico de
+                «Estado moderno». <em>Revista de Estudios Políticos</em>, (19), 43–58.
+                https://dialnet.unirioja.es/servlet/articulo?codigo=26645</li>
+              <li>Constitución de la República Española. (1931, 9 de diciembre). <em>Gaceta de Madrid</em>, (344).</li>
+              <li>Constitución Española. (1978, 27 de diciembre). <em>Boletín Oficial del Estado</em>, (311).</li>
+              <li>Constitución Política de Colombia [C.&nbsp;P.]. (1991). Asamblea Nacional Constituyente. Departamento
+                Administrativo de la Función Pública.
+                https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4125</li>
+              <li>Corte Constitucional de Colombia. (1992a, 5 de junio). <em>Sentencia <span class="nw">T-406</span>/92</em> (Ciro Angarita Barón,
+                M. P.). https://www.corteconstitucional.gov.co/relatoria/1992/<span class="nw">T-406</span>-92.htm</li>
+              <li>Corte Constitucional de Colombia. (1992b, 29 de octubre). <em>Sentencia <span class="nw">C-575</span>/92</em> (Alejandro Martínez
+                Caballero, M. P.). https://www.corteconstitucional.gov.co/relatoria/1992/<span class="nw">C-575</span>-92.htm</li>
+              <li>Corte Constitucional de Colombia. (1998, 2 de diciembre). <em>Sentencia <span class="nw">SU-747</span>/98</em> (Eduardo Cifuentes
+                Muñoz, M. P.). https://www.corteconstitucional.gov.co/relatoria/1998/SU747-98.htm</li>
+              <li>del Rosario Rodríguez, M. F. (2011). La supremacía constitucional: Naturaleza y alcances.
+                <em>Díkaion, 20</em>(1), 97–117. https://dikaion.unisabana.edu.co/index.php/dikaion/article/view/1960</li>
+              <li>Flórez Eusse, Y. I. (2023). Tensión entre democracia y constitucionalismo: Hacia una democracia
+                constitucional enmarcada en el diálogo y el consenso argumentativo. <em>Revista Filosofía UIS, 22</em>(2),
+                293–314. https://doi.org/10.18273/revfil.v22n2-2023012</li>
+              <li>González Cadenas, D. (2012). El poder constituyente en el nuevo constitucionalismo latinoamericano. En
+                <em>XV Encuentro de Latinoamericanistas Españoles</em> (pp. 609–614).
+                https://halshs.archives-ouvertes.fr/halshs-00874642/document</li>
+              <li>Márquez Buitrago, M. (2005). Aproximación al concepto de Estado Social de Derecho. <em>Jurídicas,
+                  2</em>(1), 67–79. https://revistasojs.ucaldas.edu.co/index.php/juridicas/article/view/6441</li>
+              <li>Naranjo Mesa, V. (2014). <em>Teoría constitucional e instituciones políticas</em> (12.ª ed.). Temis.</li>
+              <li>Varela Suanzes-Carpegna, J. (2017). Constitucionalismo antiguo y moderno. <em>Revista Española de Derecho
+                  Constitucional</em>, (110), 337–346.</li>
+              <li>Zuluaga Gil, R. (2010). <em>Historia del constitucionalismo en Colombia: Una introducción</em>.
+                Universidad de Medellín.</li>
+            </ul>
+            <p class="nota">Imágenes: Wikimedia Commons (dominio público y licencias Creative Commons; autoría indicada
+              en cada pie de foto).</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="pie">
+    <div class="pie-franja"></div>
+    <div class="contenedor">
+      <p>Natalia Berrío Zuleta · Derecho Constitucional General (251004)</p>
+      <p>UNAD · ECJP · Ciencia Política · 2026</p>
+    </div>
+  </footer>
+
+  <!-- ===== Modal de hitos ===== -->
+  <dialog class="modal" id="modal" aria-labelledby="modalTitulo">
+    <div class="modal-cabecera">
+      <p><strong id="modalContador">Hito 1 de 12</strong> <span id="modalFiltro"></span></p>
+      <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar ficha">×</button>
+    </div>
+    <div class="modal-cuerpo" id="modalCuerpo"></div>
+    <div class="modal-pie">
+      <button class="nav-hito" id="btnAnterior" type="button">← <span class="texto">Anterior</span></button>
+      <div class="puntos" id="puntos" aria-label="Ir a un hito"></div>
+      <button class="nav-hito principal" id="btnSiguiente" type="button"><span class="texto">Siguiente</span> →</button>
+    </div>
+  </dialog>
+
+  <script>
+    'use strict';
+
+    const categorias = {
+      inglesa: 'Tradición inglesa',
+      estadounidense: 'Tradición estadounidense',
+      francesa: 'Tradición francesa',
+      espanola: 'Tradición española',
+      colombiana: 'Colombia'
+    };
+
+    // Año y título corto que se muestran sobre la línea de tiempo
+    const marcas = {
+      1: ['1215', 'Carta Magna'],
+      2: ['1689', 'Bill of Rights'],
+      3: ['1701', 'Act of Settlement'],
+      4: ['1776', 'Independencia de EE.\u00a0UU.'],
+      5: ['1787', 'Constitución de Filadelfia'],
+      6: ['1789', 'Derechos del Hombre'],
+      7: ['1793', 'Constitución jacobina'],
+      8: ['1803', 'Marbury v. Madison'],
+      9: ['1812', 'Constitución de Cádiz'],
+      10: ['1931', 'II República Española'],
+      11: ['1978', 'Constitución Española'],
+      12: ['1991', 'Constitución de Colombia']
+    };
+
+    const hitosData = [
+      {
+        id: 1,
+        periodo: '15 de junio de 1215',
+        titulo: 'La Carta Magna',
+        categoria: 'inglesa',
+        modelo: 'Antecedente del Estado de Derecho',
+        sintesis: 'Presionado por los barones, Juan Sin Tierra acepta el primer documento escrito que limita el poder del monarca y anticipa la garantía del debido proceso.',
+        imagen: 'assets/img/01-carta-magna.jpg',
+        pie: 'Ejemplar de la Carta Magna conservado en la British Library (Cotton MS Augustus II.106).',
+        credito: 'British Library · Wikimedia Commons · Dominio público',
+        constitucional: 'Es el primer antecedente escrito de limitación formal del poder monárquico. Recoge la distinción, sistematizada después por Henry de Bracton, entre el gubernaculum (el poder discrecional de mando para mantener la paz) y la iurisdictio (el ámbito de la justicia, tutelado por el common law). La cláusula 39 consagra el prototipo del debido proceso: ningún hombre libre podrá ser detenido ni despojado de sus bienes sino por juicio legal de sus pares o por la ley del reino (Varela Suanzes-Carpegna, 2017).',
+        politologico: 'Es un pacto estamental y feudal entre el rey Juan I («Juan Sin Tierra») y los barones del reino. Todavía no expresa la soberanía popular ni la igualdad universal ante la ley: es una contención aristocrática de los abusos fiscales y patrimoniales de la Corona (Naranjo Mesa, 2014).'
+      },
+      {
+        id: 2,
+        periodo: '16 de diciembre de 1689',
+        titulo: 'The Bill of Rights',
+        categoria: 'inglesa',
+        modelo: 'Antecedente del Estado de Derecho',
+        sintesis: 'Tras la Revolución Gloriosa, el Parlamento impone a Guillermo III y María II una carta de derechos que somete la Corona a la ley y al consentimiento parlamentario.',
+        imagen: 'assets/img/02-bill-of-rights.jpg',
+        pie: 'Texto original del Bill of Rights inglés de 1689.',
+        credito: 'Parlamento de Inglaterra · Wikimedia Commons · Dominio público',
+        constitucional: 'Convierte en ley la Declaración de Derechos presentada en febrero de 1689 y se vuelve piedra angular de la monarquía parlamentaria. Traslada el centro de gravedad constitucional de la prerrogativa regia a la soberanía del Parlamento (King in Parliament): el rey no puede suspender las leyes, imponer tributos ni mantener un ejército en tiempo de paz sin consentimiento parlamentario, y se reconoce el derecho de petición (Naranjo Mesa, 2014).',
+        politologico: 'Expresa el triunfo de la burguesía mercantil, aliada con la gentry, sobre el absolutismo de derecho divino de los Estuardo. La máxima «The King can do no wrong» se reinterpreta: como el rey no puede obrar mal, sus actos ilegales se imputan a la responsabilidad de sus ministros.'
+      },
+      {
+        id: 3,
+        periodo: '12 de junio de 1701',
+        titulo: 'The Act of Settlement',
+        categoria: 'inglesa',
+        modelo: 'Antecedente del Estado de Derecho',
+        sintesis: 'La ley que fija la sucesión protestante de la Corona asegura, además, la independencia de los jueces frente al rey, pieza clave del rule of law.',
+        imagen: 'assets/img/03-act-of-settlement.jpg',
+        pie: 'Ejemplar del Act of Settlement encabezado con el retrato de Guillermo III.',
+        credito: 'Torsten Bätge · Wikimedia Commons · CC BY-SA 3.0',
+        constitucional: 'Consolida el rule of law al garantizar la independencia judicial frente al ejecutivo: los jueces dejan de servir a voluntad del rey (durante bene placito) y pasan a ejercer el cargo mientras observen buena conducta (quamdiu se bene gesserint); solo pueden ser removidos a solicitud de ambas cámaras del Parlamento (Varela Suanzes-Carpegna, 2017).',
+        politologico: 'Fija la sucesión protestante de la Corona en la casa de Hannover y amplía el control parlamentario sobre el gobierno del rey, lo que sienta las bases de la responsabilidad de sus consejeros y afirma la supremacía del órgano representativo sobre la dinastía.'
+      },
+      {
+        id: 4,
+        periodo: '4 de julio de 1776',
+        titulo: 'Declaración de Independencia de los Estados Unidos',
+        categoria: 'estadounidense',
+        modelo: 'Antecedente del Estado de Derecho',
+        sintesis: 'Las trece colonias rompen con Gran Bretaña y proclaman que todo gobierno legítimo existe para proteger derechos inalienables.',
+        imagen: 'assets/img/04-declaracion-independencia.jpg',
+        pie: 'John Trumbull, «La Declaración de Independencia» (1819), Capitolio de los Estados Unidos.',
+        credito: 'John Trumbull · Wikimedia Commons · Dominio público',
+        constitucional: 'Funda el derecho público en el iusnaturalismo racionalista: proclama derechos inalienables, como la vida, la libertad y la búsqueda de la felicidad, anteriores y superiores a cualquier gobierno, cuya legitimidad depende del consentimiento de los gobernados (Naranjo Mesa, 2014).',
+        politologico: 'Materializa la teoría del contrato social de John Locke, adoptada por el Segundo Congreso Continental reunido en Filadelfia. Legitima la ruptura colonial mediante el derecho de resistencia: cuando un gobierno destruye los fines para los que fue instituido, el pueblo puede sustituirlo.'
+      },
+      {
+        id: 5,
+        periodo: '17 de septiembre de 1787',
+        titulo: 'Constitución de Filadelfia',
+        categoria: 'estadounidense',
+        modelo: 'Antecedente del Estado Constitucional',
+        sintesis: 'Nace la constitución escrita nacional más antigua aún vigente, modelo de norma suprema y rígida para el constitucionalismo moderno.',
+        imagen: 'assets/img/05-constitucion-filadelfia.jpg',
+        pie: 'Primera impresión de la Constitución de los Estados Unidos, realizada por Dunlap y Claypoole en 1787.',
+        credito: 'Dunlap & Claypoole · Wikimedia Commons · Dominio público',
+        constitucional: 'Inaugura el concepto racional-normativo de constitución: un texto escrito, rígido y supremo. Introduce la república presidencialista, la separación estricta de poderes con frenos y contrapesos y la forma federal de Estado para articular a las antiguas colonias (Naranjo Mesa, 2014).',
+        politologico: 'Sustituye la legitimidad dinástica por la soberanía popular originaria, expresada en el preámbulo: «We the People». El pueblo, como poder constituyente, dota de validez y rigidez al texto y lo convierte en barrera frente a cualquier pretensión absolutista.'
+      },
+      {
+        id: 6,
+        periodo: '26 de agosto de 1789',
+        titulo: 'Declaración de los Derechos del Hombre y del Ciudadano',
+        categoria: 'francesa',
+        modelo: 'Fundamento del Estado de Derecho',
+        sintesis: 'La Asamblea Nacional proclama los derechos naturales del hombre y fija la fórmula moderna de constitución: garantía de derechos y separación de poderes.',
+        imagen: 'assets/img/06-declaracion-derechos-1789.jpg',
+        pie: 'Jean-Jacques-François Le Barbier, Declaración de los Derechos del Hombre y del Ciudadano (1789).',
+        credito: 'Museo Carnavalet · Wikimedia Commons · Dominio público',
+        constitucional: 'Es el documento cumbre del constitucionalismo liberal: los hombres nacen y permanecen libres e iguales en derechos. Su artículo 16 establece el axioma de la modernidad: «Toda sociedad en la cual no esté establecida la garantía de los derechos, ni determinada la separación de los poderes, carece de Constitución».',
+        politologico: 'Traslada la soberanía del monarca a la nación, entendida como sujeto abstracto. La ley expedida por la asamblea pasa a ser expresión de la voluntad general, base ideológica del Estado de Derecho del siglo XIX (Naranjo Mesa, 2014).'
+      },
+      {
+        id: 7,
+        periodo: '24 de junio de 1793',
+        titulo: 'Constitución jacobina de 1793 y los derechos sociales',
+        categoria: 'francesa',
+        modelo: 'Antecedente del Estado Social de Derecho',
+        sintesis: 'La Convención aprueba una constitución democrática radical que reconoce derechos sociales, aunque nunca llegó a aplicarse.',
+        imagen: 'assets/img/07-constitucion-1793.jpg',
+        pie: 'Edición de la Constitución francesa de 1793 precedida de la Declaración de Derechos.',
+        credito: 'Bibliothèque nationale de France (Gallica) · Wikimedia Commons · Dominio público',
+        constitucional: 'Es el antecedente radical del constitucionalismo social: declara que los socorros públicos son una «deuda sagrada», obliga a la sociedad a procurar trabajo o subsistencia a quienes carecen de recursos y reconoce la instrucción como una necesidad de todos. Sus artículos 33 a 35 consagran la resistencia a la opresión y el derecho a la insurrección. Su aplicación fue suspendida por el gobierno revolucionario y nunca entró en vigor.',
+        politologico: 'Expresa la tensión entre el radicalismo democrático de los sans-culottes y la institucionalidad liberal restringida. Plantea que la libertad formal es ilusoria sin condiciones materiales de equidad, idea que el Estado Social retomará en el siglo XX.'
+      },
+      {
+        id: 8,
+        periodo: '24 de febrero de 1803',
+        titulo: 'Caso Marbury v. Madison',
+        categoria: 'estadounidense',
+        modelo: 'Fundamento del Estado Constitucional',
+        sintesis: 'La Corte Suprema, presidida por John Marshall, declara que una ley contraria a la Constitución es nula y que los jueces deben inaplicarla.',
+        imagen: 'assets/img/08-marbury-john-marshall.jpg',
+        pie: 'Henry Inman, retrato de John Marshall, presidente de la Corte Suprema de los Estados Unidos (1832).',
+        credito: 'Henry Inman · Wikimedia Commons · Dominio público',
+        constitucional: 'Establece el control judicial de constitucionalidad (judicial review). La sentencia, redactada por el presidente de la Corte, John Marshall, afirma que una ley contraria a la Constitución es nula y que los jueces tienen el deber de aplicar la norma superior por encima de la ordinaria.',
+        politologico: 'Convierte a la judicatura en contrapeso efectivo de las ramas políticas y consolida la supremacía constitucional: las mayorías legislativas coyunturales no pueden alterar el pacto fundamental (del Rosario Rodríguez, 2011).'
+      },
+      {
+        id: 9,
+        periodo: '19 de marzo de 1812',
+        titulo: 'Constitución de Cádiz («La Pepa»)',
+        categoria: 'espanola',
+        modelo: 'Estado de Derecho en el mundo hispánico',
+        sintesis: 'En plena invasión napoleónica, las Cortes de Cádiz promulgan la primera constitución del mundo hispánico.',
+        imagen: 'assets/img/09-cadiz-1812.jpg',
+        pie: 'Salvador Viniegra, «La promulgación de la Constitución de 1812» (1912), Museo de las Cortes de Cádiz.',
+        credito: 'Salvador Viniegra · Wikimedia Commons · CC BY-SA 4.0',
+        constitucional: 'Es el primer texto constitucional del mundo hispánico que limita el absolutismo de Fernando VII. Consagra la soberanía de la nación española, definida como «la reunión de todos los españoles de ambos hemisferios», la separación de poderes y la libertad de imprenta.',
+        politologico: 'Fue referente directo de los primeros reglamentos y cartas constitucionales de las nacientes repúblicas hispanoamericanas, incluida la Nueva Granada (Zuluaga Gil, 2010).'
+      },
+      {
+        id: 10,
+        periodo: '9 de diciembre de 1931',
+        titulo: 'Constitución de la Segunda República Española',
+        categoria: 'espanola',
+        modelo: 'Constitucionalismo social',
+        sintesis: 'La Segunda República adopta una constitución democrática y social que reconoce derechos laborales y crea un tribunal constitucional.',
+        imagen: 'assets/img/10-republica-1931.jpg',
+        pie: 'Celebración en Madrid por la proclamación de la Segunda República, 14 de abril de 1931.',
+        credito: 'Bundesarchiv, Bild 102-11543 · Wikimedia Commons · CC BY-SA 3.0 DE',
+        constitucional: 'Texto pionero del constitucionalismo de entreguerras: define a España como «una República democrática de trabajadores de toda clase» (Constitución de la República Española, 1931, art. 1). Crea el Tribunal de Garantías Constitucionales y constitucionaliza los derechos laborales, la laicidad del Estado y la función social de la propiedad.',
+        politologico: 'Marca la transición hacia el Estado Social, al integrar las demandas del movimiento obrero en el marco democrático. Su catálogo de derechos influyó en la posterior codificación constitucional de Iberoamérica.'
+      },
+      {
+        id: 11,
+        periodo: '6 de diciembre de 1978',
+        titulo: 'Constitución Española de 1978 y el Estado social',
+        categoria: 'espanola',
+        modelo: 'Estado Social de Derecho',
+        sintesis: 'Aprobada en referendo tras la dictadura franquista, define a España como un Estado social y democrático de derecho.',
+        imagen: 'assets/img/11-espana-1978.jpg',
+        pie: 'Ejemplar original de la Constitución de 1978, con la disposición final y las firmas, en el Congreso de los Diputados.',
+        credito: 'Barcex · Wikimedia Commons · CC BY-SA 4.0',
+        constitucional: 'Su artículo 1.1 proclama que «España se constituye en un Estado social y democrático de Derecho, que propugna como valores superiores de su ordenamiento jurídico la libertad, la justicia, la igualdad y el pluralismo político» (Constitución Española, 1978). Crea el Tribunal Constitucional y fue referente del constitucionalismo latinoamericano posterior, incluido el colombiano de 1991.',
+        politologico: 'Es fruto del consenso de la transición democrática tras casi cuatro décadas de dictadura franquista. Articula la seguridad jurídica liberal, la intervención prestacional del Estado social y la autonomía de las comunidades territoriales.'
+      },
+      {
+        id: 12,
+        periodo: '4 de julio de 1991',
+        titulo: 'Constitución Política de Colombia de 1991',
+        categoria: 'colombiana',
+        modelo: 'Estado Social de Derecho',
+        sintesis: 'La Asamblea Nacional Constituyente, impulsada por la Séptima Papeleta, define a Colombia como un Estado social de derecho.',
+        imagen: 'assets/img/12-colombia-1991.jpg',
+        pie: 'Edición de la Constitución Política de Colombia de 1991 publicada por la Presidencia de la República.',
+        credito: 'MariaU3 · Wikimedia Commons · CC BY-SA 3.0',
+        constitucional: 'Promulgada por la Asamblea Nacional Constituyente convocada tras la movilización estudiantil y ciudadana de la «Séptima Papeleta». Consagra en el artículo 1 la fórmula del Estado social de derecho fundado en la dignidad humana; en el artículo 4, la supremacía constitucional, y en el artículo 86, la acción de tutela como amparo preferente de los derechos fundamentales (C.\u00a0P., 1991).',
+        politologico: 'Supone una ruptura democrática con el modelo legalista, confesional y centralista de la Constitución de 1886. Recompone la legitimidad mediante un pacto pluralista, participativo e incluyente que hace del juez constitucional garante directo de la justicia material y del mínimo vital (Zuluaga Gil, 2010).'
+      }
+    ];
+
+    /* ---------- Utilidades ---------- */
+    const $ = (s) => document.querySelector(s);
+    const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const porId = (id) => hitosData.find((h) => h.id === id);
+
+    // Si la imagen no carga, se reemplaza por un recuadro con el título del hito
+    window.imagenFallida = function (img) {
+      const h = porId(Number(img.dataset.hito));
+      if (!h) return;
+      const figura = img.closest('figure');
+      img.outerHTML = `<div class="sin-imagen"><span>${esc(categorias[h.categoria])}</span><strong>${esc(h.titulo)}</strong></div>`;
+      figura?.querySelector('figcaption small')?.remove();
+    };
+
+    function htmlHito(h, abierto) {
+      const ejes = [['Importancia constitucional', h.constitucional], ['Lectura politológica y de poder', h.politologico]];
+      return `
+        <div class="hito-grid">
+          <figure class="hito-figura">
+            <img src="${h.imagen}" alt="${esc(h.pie)}" data-hito="${h.id}" onerror="imagenFallida(this)" />
+            <figcaption>${esc(h.pie)}<small>${esc(h.credito)}</small></figcaption>
+          </figure>
+          <div>
+            <div class="hito-meta">
+              <span class="categoria">${esc(categorias[h.categoria])}</span>
+              <span class="periodo">${esc(h.periodo)}</span>
+              <span class="modelo">${esc(h.modelo)}</span>
+            </div>
+            <h3 class="hito-titulo" ${abierto ? '' : 'id="modalTitulo"'}>${esc(h.titulo)}</h3>
+            <div class="sintesis"><p>Síntesis</p><p>${esc(h.sintesis)}</p></div>
+            ${abierto ? '' : `<button class="desplegar" type="button" aria-expanded="false" aria-controls="analisis">
+              Ver análisis constitucional y politológico
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>`}
+          </div>
+        </div>
+        <div class="analisis ${abierto ? 'abierto' : ''}" ${abierto ? '' : 'id="analisis"'}>
+          <div>
+            <div class="ejes">
+              ${ejes.map(([t, x], i) => `<div class="eje"><h4><span>${i + 1}</span>${t}</h4><p>${esc(x)}</p></div>`).join('')}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ---------- Línea de tiempo ---------- */
+    const tl = $('#tl');
+    tl.innerHTML = hitosData.map((h) => `
+      <li class="tl-item" data-id="${h.id}" data-categoria="${h.categoria}">
+        <button class="tl-boton" type="button" data-id="${h.id}" aria-label="${esc(marcas[h.id][0] + '. ' + h.titulo)}">
+          <span class="tl-tallo" aria-hidden="true"></span>
+          <span class="tl-punto" aria-hidden="true"></span>
+          <span class="tl-texto"><span class="tl-anio">${marcas[h.id][0]}</span><span class="tl-titulo">${esc(marcas[h.id][1])}</span></span>
+        </button>
+      </li>`).join('');
+
+    const filtros = $('#filtros');
+    filtros.innerHTML = [['todos', 'Todos los hitos'], ...Object.entries(categorias)]
+      .map(([k, t]) => `<button class="filtro" type="button" data-filtro="${k}" aria-pressed="${k === 'todos'}">${esc(t)}</button>`).join('');
+
+    // Versión impresa con todos los hitos desplegados
+    $('#impresion').innerHTML = hitosData.map((h) => `<article class="hito-impreso">${htmlHito(h, true)}</article>`).join('');
+
+    /* ---------- Estado ---------- */
+    let filtro = 'todos';
+    let actual = null;
+    const vistos = new Set();
+    const lista = () => hitosData.filter((h) => filtro === 'todos' || h.categoria === filtro).map((h) => h.id);
+
+    function actualizarLinea() {
+      document.querySelectorAll('.tl-item').forEach((li) => {
+        const id = Number(li.dataset.id);
+        li.classList.toggle('atenuado', !lista().includes(id));
+        li.classList.toggle('visto', vistos.has(id));
+        li.classList.toggle('actual', id === actual);
+      });
+      $('#avanceBarra').style.width = (vistos.size / hitosData.length * 100) + '%';
+      $('#avanceTexto').textContent = `${vistos.size} de ${hitosData.length} hitos explorados`;
+    }
+
+    function aplicarFiltro(k) {
+      filtro = k;
+      document.querySelectorAll('.filtro').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtro === k)));
+      $('#btnComenzar').textContent = `Comenzar por el hito ${lista()[0]} →`;
+      actualizarLinea();
+    }
+
+    /* ---------- Modal ---------- */
+    const modal = $('#modal');
+    const cuerpo = $('#modalCuerpo');
+    let origen = null;
+
+    function mostrarHito(id, direccion) {
+      const ids = lista();
+      if (!ids.includes(id)) id = ids[0];
+      actual = id;
+      vistos.add(id);
+      const h = porId(id);
+      const pos = ids.indexOf(id);
+
+      cuerpo.innerHTML = `<div class="modal-contenido" style="--desde:${direccion > 0 ? '24px' : direccion < 0 ? '-24px' : '0'}">${htmlHito(h, false)}</div>`;
+      cuerpo.scrollTop = 0;
+      $('#modalContador').textContent = `Hito ${id} de ${hitosData.length}`;
+      $('#modalFiltro').textContent = filtro === 'todos' ? '' : `· ${pos + 1} de ${ids.length} en «${categorias[filtro]}»`;
+      $('#btnAnterior').disabled = pos === 0;
+      $('#btnSiguiente').disabled = pos === ids.length - 1;
+      $('#puntos').innerHTML = hitosData.map((x) => `<button type="button" data-id="${x.id}" aria-label="Hito ${x.id}"
+        aria-current="${x.id === id}" ${ids.includes(x.id) ? '' : 'disabled'}></button>`).join('');
+      actualizarLinea();
+    }
+
+    function abrirModal(id, desde) {
+      origen = desde || document.activeElement;
+      mostrarHito(id, 0);
+      modal.showModal();
+      document.body.classList.add('modal-abierto');
+    }
+
+    function paso(delta) {
+      const ids = lista();
+      const pos = ids.indexOf(actual) + delta;
+      if (pos >= 0 && pos < ids.length) mostrarHito(ids[pos], delta);
+    }
+
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('modal-abierto');
+      origen?.focus?.();
+    });
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); }); // clic en el fondo
+    $('#btnCerrar').addEventListener('click', () => modal.close());
+    $('#btnAnterior').addEventListener('click', () => paso(-1));
+    $('#btnSiguiente').addEventListener('click', () => paso(1));
+    $('#puntos').addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (b) { const id = Number(b.dataset.id); mostrarHito(id, id > actual ? 1 : -1); }
+    });
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') paso(1);
+      if (e.key === 'ArrowLeft') paso(-1);
+    });
+    cuerpo.addEventListener('click', (e) => {
+      const b = e.target.closest('.desplegar');
+      if (!b) return;
+      const abierto = $('#analisis').classList.toggle('abierto');
+      b.setAttribute('aria-expanded', String(abierto));
+    });
+    let toqueX = null;
+    cuerpo.addEventListener('touchstart', (e) => { toqueX = e.touches[0].clientX; }, { passive: true });
+    cuerpo.addEventListener('touchend', (e) => {
+      if (toqueX === null) return;
+      const dx = e.changedTouches[0].clientX - toqueX;
+      if (Math.abs(dx) > 60) paso(dx < 0 ? 1 : -1);
+      toqueX = null;
+    });
+
+    tl.addEventListener('click', (e) => {
+      const b = e.target.closest('.tl-boton');
+      if (b) abrirModal(Number(b.dataset.id), b);
+    });
+    filtros.addEventListener('click', (e) => {
+      const b = e.target.closest('.filtro');
+      if (b) aplicarFiltro(b.dataset.filtro);
+    });
+    $('#btnComenzar').addEventListener('click', (e) => abrirModal(lista()[0], e.currentTarget));
+
+    /* ---------- Desplegar el recurso ---------- */
+    const recurso = $('#recurso');
+    function desplegar(destino) {
+      const yaAbierto = recurso.classList.contains('abierto');
+      recurso.classList.add('abierto');
+      $('#btnIniciar').setAttribute('aria-expanded', 'true');
+      setTimeout(() => document.getElementById(destino).scrollIntoView({ behavior: 'smooth' }), yaAbierto ? 0 : 120);
+    }
+    $('#btnIniciar').addEventListener('click', () => desplegar('recorrido'));
+    $('#btnMatriz').addEventListener('click', () => desplegar('matriz'));
+    if (['#recorrido', '#documento', '#matriz', '#referencias'].includes(location.hash)) desplegar(location.hash.slice(1));
+
+    /* ---------- Pestañas del documento ---------- */
+    const pestanas = [...document.querySelectorAll('.pestana')];
+    function activarPestana(i, enfocar) {
+      pestanas.forEach((p, j) => {
+        const on = i === j;
+        p.setAttribute('aria-selected', String(on));
+        p.tabIndex = on ? 0 : -1;
+        document.getElementById(p.getAttribute('aria-controls')).hidden = !on;
+        if (on && enfocar) p.focus();
+      });
+    }
+    $('#pestanas').addEventListener('click', (e) => {
+      const p = e.target.closest('.pestana');
+      if (p) activarPestana(pestanas.indexOf(p));
+    });
+    $('#pestanas').addEventListener('keydown', (e) => {
+      const i = pestanas.findIndex((p) => p.getAttribute('aria-selected') === 'true');
+      if (e.key === 'ArrowRight') activarPestana((i + 1) % pestanas.length, true);
+      if (e.key === 'ArrowLeft') activarPestana((i - 1 + pestanas.length) % pestanas.length, true);
+    });
+
+    /* ---------- PDF ---------- */
+    $('#btnPdf').addEventListener('click', () => {
+      if (modal.open) modal.close();
+      window.print();
+    });
+
+    aplicarFiltro('todos');
+  </script>
+</body>
+
+</html>
