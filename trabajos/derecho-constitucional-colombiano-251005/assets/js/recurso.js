@@ -8,6 +8,14 @@
 const $ = (sel, raiz = document) => raiz.querySelector(sel);
 const $$ = (sel, raiz = document) => [...raiz.querySelectorAll(sel)];
 
+// Tras una selección, acerca el panel de resultado si quedó fuera de la pantalla.
+function acercar(el) {
+  const r = el.getBoundingClientRect();
+  if (r.top < 70 || r.top > innerHeight * 0.6) {
+    scrollTo({ top: r.top + scrollY - 76, behavior: 'smooth' });
+  }
+}
+
 /* ---------- Matriz dogmática: artículos de la Constitución ---------- */
 const grupos = [
   { id: 'principios', nombre: 'Principios y valores del Estado social de derecho' },
@@ -286,9 +294,11 @@ function iniciarVisor() {
   function mostrarArticulo(a, boton) {
     $$('.articulo').forEach(x => x.setAttribute('aria-expanded', String(x === boton)));
     ficha.hidden = false;
+    boton.closest('.grupo').after(ficha);
     ficha.innerHTML = `<h4>Artículo ${a.n} · ${a.nombre}</h4>
       <p><b>Qué establece.</b> ${a.dice}</p>
       <p><b>Relación con el caso.</b> ${a.caso}</p>`;
+    if (ficha.getBoundingClientRect().bottom > innerHeight) ficha.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
   function pintarEtapa(i) {
@@ -313,7 +323,9 @@ function iniciarVisor() {
     }
     if (Number(rango.value) < h.etapa - 1) { rango.value = h.etapa - 1; pintarEtapa(h.etapa - 1); }
     detalle.innerHTML = `<h3>${h.titulo}</h3><p>${h.texto}</p>
-      <p class="normas">Normas que se activan: arts. ${h.arts.join(', ')} C. P.</p>`;
+      <p class="normas">Normas que se activan: arts. ${h.arts.join(', ')} C. P.</p>
+      <p class="no-imprimir"><a class="boton-texto" href="#matrizTitulo">Ver estas normas en la matriz ↓</a></p>`;
+    if (matchMedia('(max-width: 900px)').matches) acercar(detalle);
   }
 
   hechos.forEach(h => {
@@ -440,7 +452,7 @@ function iniciarAudiencia() {
   const panel = $('#alegato');
   const oidos = new Set();
 
-  function mostrar(a) {
+  function mostrar(a, porClic) {
     oidos.add(a.id);
     $$('.actor', lista).forEach(b => b.setAttribute('aria-selected', String(b.dataset.actor === a.id)));
     panel.innerHTML = `<p class="antetitulo">${a.rol}</p>
@@ -450,6 +462,7 @@ function iniciarAudiencia() {
       <h4>Normas en juego</h4><p>${a.normas}</p>
       <span class="sello ${a.sello}">${a.lectura}</span>`;
     $('#oidos').textContent = `Intervenciones escuchadas: ${oidos.size} de ${actores.length}`;
+    if (porClic) acercar(panel);
   }
 
   actores.forEach(a => {
@@ -460,7 +473,7 @@ function iniciarAudiencia() {
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', 'false');
     b.innerHTML = `<i aria-hidden="true">${a.icono}</i><span><b>${a.nombre}</b><small>${a.rol}</small></span>`;
-    b.addEventListener('click', () => mostrar(a));
+    b.addEventListener('click', () => mostrar(a, true));
     lista.append(b);
   });
   mostrar(actores[0]);
@@ -491,12 +504,13 @@ function iniciarAudiencia() {
 function iniciarRuta() {
   const lista = $('#necesidades');
   const panel = $('#via');
-  function mostrar(v, boton) {
+  function mostrar(v, boton, porClic) {
     $$('.necesidad', lista).forEach(b => b.setAttribute('aria-selected', String(b === boton)));
     panel.innerHTML = `<p class="antetitulo">Vía recomendada</p><h3>${v.nombre}</h3>
       <p class="nota">${v.base}</p>
       <dl>${v.filas.map(f => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>
       <p class="alerta"><b>Ten en cuenta.</b> ${v.alerta}</p>`;
+    if (porClic) acercar(panel);
   }
   vias.forEach((v, i) => {
     const b = document.createElement('button');
@@ -505,7 +519,7 @@ function iniciarRuta() {
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', 'false');
     b.textContent = v.necesidad;
-    b.addEventListener('click', () => mostrar(v, b));
+    b.addEventListener('click', () => mostrar(v, b, true));
     lista.append(b);
     if (i === 0) mostrar(v, b);
   });
@@ -514,13 +528,14 @@ function iniciarRuta() {
 /* ----- Navegación, impresión y conteo ----- */
 function iniciarPagina() {
   const enlaces = $$('.indice a');
+  const barra = $('.indice ol');
   const observador = new IntersectionObserver(entradas => {
     entradas.forEach(e => {
       if (!e.isIntersecting) return;
       enlaces.forEach(a => {
         const actual = a.getAttribute('href') === `#${e.target.id}`;
         a.classList.toggle('actual', actual);
-        if (actual) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+        if (actual) barra.scrollTo({ left: a.offsetLeft - (barra.clientWidth - a.offsetWidth) / 2, behavior: 'instant' });
       });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
