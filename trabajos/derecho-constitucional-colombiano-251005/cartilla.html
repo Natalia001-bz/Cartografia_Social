@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartilla · Mecanismos de participación ciudadana en Colombia</title>
+  <meta name="description" content="Guía breve para la ciudadanía: mecanismos de participación y de protección de derechos en Colombia, con la norma que los respalda y la ruta de acción de cada uno." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/img/logo-unad.png" />
+  <style>
+    :root { --azul: #005484; --hondo: #003a5c; --suave: #e8f0f6; --ambar: #fcb400; --ambar-s: #fff6dc; --ambar-t: #8a6200; --verde: #2f7d4f; --verde-s: #e6f3ea; --tinta: #1a2433; --gris: #5b6675; --linea: #e4e1d8; --papel: #fbfaf7;
+      --serif: 'Source Serif 4', Georgia, serif; --sans: 'Inter', system-ui, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--papel); color: var(--tinta); font-family: var(--sans); font-size: 15.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .hoja { max-width: 860px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px) 60px; }
+    .barra { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px clamp(16px, 4vw, 36px); background: #fff; border-bottom: 1px solid var(--linea); font-size: .86rem; }
+    .barra a { color: var(--gris); }
+    .barra button { font: inherit; font-weight: 600; padding: 9px 18px; border: 0; border-radius: 999px; background: var(--azul); color: #fff; cursor: pointer; }
+    .portada { display: grid; grid-template-columns: 1fr 240px; gap: 32px; align-items: center; padding: 44px 0 36px; border-bottom: 3px solid var(--ambar); }
+    .portada img.logo { width: 76px; border-radius: 50%; margin-bottom: 18px; }
+    .portada img.arte { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 40px -20px rgba(0, 58, 92, .6); }
+    .ante { font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ambar-t); }
+    h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.08; color: var(--hondo); margin: 10px 0 14px; text-wrap: balance; }
+    .portada p { color: var(--gris); max-width: 52ch; }
+    .credito { margin-top: 16px; font-size: .82rem; }
+    h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--hondo); margin: 44px 0 6px; padding-top: 8px; break-after: avoid; }
+    h2 span { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 10px; border-radius: 50%; background: var(--ambar); color: var(--hondo); font-size: 1rem; vertical-align: 3px; }
+    .intro-s { break-after: avoid; color: var(--gris); margin-bottom: 16px; max-width: 70ch; }
+    .guia { break-inside: avoid; display: grid; gap: 0; border: 1px solid var(--linea); border-radius: 14px; overflow: hidden; background: #fff; margin-top: 18px; }
+    .guia div { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 11px 16px; border-top: 1px solid var(--linea); font-size: .92rem; }
+    .guia div:first-child { border-top: 0; background: var(--hondo); color: #fff; font-weight: 600; font-size: .8rem; }
+    .guia b { color: var(--azul); }
+    .m { background: #fff; border: 1px solid var(--linea); border-radius: 14px; padding: 18px 20px; margin-top: 12px; break-inside: avoid; }
+    .m h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--hondo); }
+    .m .norma { display: inline-block; margin: 6px 0 10px; padding: 3px 10px; border-radius: 999px; background: var(--suave); color: var(--azul); font-size: .76rem; font-weight: 600; }
+    .m p { font-size: .94rem; }
+    .m p + p { margin-top: 6px; }
+    .m .ruta { margin-top: 10px; padding: 12px 14px 12px 34px; border-radius: 10px; background: var(--verde-s); font-size: .9rem; }
+    .m .ruta li + li { margin-top: 3px; }
+    .m .ruta::before { content: "Ruta de acción"; display: block; margin: 0 0 4px -20px; font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--verde); }
+    .m .ojo { margin-top: 8px; padding: 9px 12px; border-radius: 10px; background: var(--ambar-s); font-size: .86rem; }
+    .cierre { margin-top: 44px; padding: 20px 22px; border-left: 4px solid var(--ambar); background: var(--ambar-s); border-radius: 0 14px 14px 0; font-size: .92rem; }
+    .fuentes { margin-top: 28px; font-size: .84rem; color: var(--gris); }
+    .fuentes li { margin: 0 0 4px 18px; }
+    @media (max-width: 640px) { .portada { grid-template-columns: 1fr; } .portada img.arte { max-width: 220px; } .guia div { grid-template-columns: 1fr; gap: 2px; } }
+    @media print {
+      @page { size: A4; margin: 15mm 14mm; }
+      body { background: #fff; font-size: 10.5pt; }
+      .barra { display: none; }
+      .hoja { max-width: none; padding: 0; }
+      .portada { padding-top: 0; }
+      h2 { margin-top: 22pt; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="barra">
+    <a href="juego.html">← Volver al recorrido</a>
+    <button type="button" onclick="window.print()">Guardar como PDF</button>
+  </div>
+
+  <div class="hoja">
+    <header class="portada">
+      <div>
+        <img class="logo" src="assets/img/logo-unad.png" alt="Logo de la UNAD" />
+        <p class="ante">Cartilla ciudadana</p>
+        <h1>Mecanismos de participación ciudadana en Colombia</h1>
+        <p>Qué son, qué norma los respalda y cómo dar el primer paso. Una guía breve para que cualquier persona o comunidad sepa a qué herramienta acudir cuando sus derechos o su territorio están en riesgo.</p>
+        <p class="credito">Elaborada por Natalia Berrío Zuleta como parte del recurso «El caso de la vereda El Encanto» · Derecho Constitucional Colombiano I (251005) · UNAD · 2026</p>
+      </div>
+      <img class="arte" src="assets/juego/img/cartilla-portada.jpg" alt="Manos de distintas personas sostienen juntas un libro abierto frente a un río" />
+    </header>
+
+    <h2><span>0</span>Antes de empezar: ¿qué necesito?</h2>
+    <p class="intro-s">La Constitución de 1991 define a Colombia como una democracia participativa (arts. 1, 2, 40 y 103). Eso significa que la ciudadanía no solo vota: también pide, vigila, decide y reclama ante los jueces. Ubica tu situación en la primera columna y busca el mecanismo en esta cartilla.</p>
+    <div class="guia">
+      <div><span>Si lo que necesitas es…</span><span>Acude a…</span></div>
+      <div><span>Información, documentos o una respuesta de una entidad</span><span><b>Derecho de petición</b> (sección 1)</span></div>
+      <div><span>Vigilar cómo se gasta la plata pública o cómo se ejecuta una obra</span><span><b>Veeduría ciudadana</b> y <b>rendición de cuentas</b> (sección 1)</span></div>
+      <div><span>Que te protejan ya un derecho fundamental (salud, agua, vida, educación)</span><span><b>Acción de tutela</b> (sección 2)</span></div>
+      <div><span>Proteger algo que es de todos: el ambiente, el espacio público, la salubridad</span><span><b>Acción popular</b> (sección 2)</span></div>
+      <div><span>Que una autoridad cumpla lo que la ley le ordena</span><span><b>Acción de cumplimiento</b> (sección 2)</span></div>
+      <div><span>Que indemnicen a un grupo de personas por el mismo daño</span><span><b>Acción de grupo</b> (sección 2)</span></div>
+      <div><span>Opinar o decidir sobre un proyecto que afecta el ambiente o el territorio</span><span><b>Participación ambiental</b> (sección 3)</span></div>
+      <div><span>Incidir en decisiones políticas del municipio, el departamento o el país</span><span><b>Mecanismos de participación política</b> (sección 4)</span></div>
+    </div>
+
+    <h2><span>1</span>Pedir, informarse y vigilar</h2>
+    <p class="intro-s">Son el punto de partida de casi cualquier reclamo: sirven para obtener pruebas y dejar constancia de lo que la autoridad hizo o dejó de hacer.</p>
+
+    <article class="m">
+      <h3>Derecho de petición</h3>
+      <span class="norma">Art. 23 C. P. · Ley 1755 de 2015</span>
+      <p>Toda persona puede presentar solicitudes respetuosas a las autoridades, y en ciertos casos a particulares, y obtener una respuesta de fondo, clara y oportuna. No requiere abogado ni formato especial, y es gratuito.</p>
+      <ol class="ruta">
+        <li>Escribe qué pides y por qué; identifícate y da una dirección o correo para la respuesta.</li>
+        <li>Radícalo en la entidad (ventanilla, correo o sede electrónica) y guarda la constancia con fecha.</li>
+        <li>Espera el plazo: 15 días hábiles por regla general, 10 para documentos e información y 30 para consultas.</li>
+        <li>Si no responden, o responden con evasivas, puedes interponer una acción de tutela.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Veeduría ciudadana</h3>
+      <span class="norma">Art. 270 C. P. · Ley 850 de 2003</span>
+      <p>Grupo de ciudadanos u organizaciones que vigila la gestión pública: contratos, obras, programas y servicios. Puede pedir información, hacer recomendaciones y denunciar irregularidades ante los órganos de control.</p>
+      <ol class="ruta">
+        <li>Reúnan a las personas interesadas y elijan democráticamente a los veedores.</li>
+        <li>Levanten un acta de constitución con el objeto de la vigilancia, los integrantes y su duración.</li>
+        <li>Inscríbanla ante la personería municipal o la cámara de comercio.</li>
+        <li>Soliciten la información por derecho de petición y presenten informes a la comunidad.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Rendición de cuentas y audiencias públicas</h3>
+      <span class="norma">Ley 489 de 1998, arts. 32 y 33 · Ley 1757 de 2015</span>
+      <p>Las entidades públicas deben explicar periódicamente su gestión a la ciudadanía. Las organizaciones y comunidades pueden pedir audiencias públicas para discutir políticas y programas que las afectan.</p>
+      <ol class="ruta">
+        <li>Consulta el calendario de rendición de cuentas de la alcaldía, la gobernación o la entidad.</li>
+        <li>Inscribe tus preguntas con anticipación y pide el informe previo.</li>
+        <li>Deja constancia de los compromisos y haz seguimiento con derechos de petición.</li>
+      </ol>
+    </article>
+
+    <h2><span>2</span>Acudir a los jueces</h2>
+    <p class="intro-s">Las acciones constitucionales convierten los derechos en órdenes judiciales. Elegir bien la acción es la mitad del camino.</p>
+
+    <article class="m">
+      <h3>Acción de tutela</h3>
+      <span class="norma">Art. 86 C. P. · Decreto 2591 de 1991</span>
+      <p>Protege de manera inmediata los derechos fundamentales cuando una autoridad, o en ciertos casos un particular, los vulnera o amenaza. Es informal, gratuita y no exige abogado.</p>
+      <ol class="ruta">
+        <li>Relata los hechos, indica qué derecho se afecta y quién lo afecta; anexa las pruebas que tengas.</li>
+        <li>Preséntala ante cualquier juez del lugar donde ocurre la vulneración; puede hacerse por escrito o verbalmente.</li>
+        <li>El juez debe fallar en un máximo de 10 días. El fallo se puede impugnar dentro de los 3 días siguientes.</li>
+        <li>Si la orden no se cumple, solicita al mismo juez que abra un incidente de desacato.</li>
+      </ol>
+      <p class="ojo"><b>Ten en cuenta.</b> Es subsidiaria: procede cuando no hay otro medio de defensa eficaz, o para evitar un perjuicio irremediable. Debe presentarse en un tiempo razonable desde los hechos.</p>
+    </article>
+
+    <article class="m">
+      <h3>Acción popular</h3>
+      <span class="norma">Art. 88 C. P. · Ley 472 de 1998 · Ley 1437 de 2011, art. 144</span>
+      <p>Protege los derechos e intereses colectivos: ambiente sano, salubridad y seguridad públicas, espacio público, patrimonio público y moralidad administrativa, entre otros. Cualquier persona puede presentarla, sin abogado.</p>
+      <ol class="ruta">
+        <li>Pide primero a la autoridad que adopte las medidas de protección. Si no responde en 15 días o se niega, puedes demandar. Este paso se omite si hay peligro inminente de perjuicio irremediable.</li>
+        <li>Presenta la demanda ante el juez administrativo si el responsable es una entidad pública, o ante el juez civil si es un particular.</li>
+        <li>Solicita medidas cautelares para que cese de inmediato la actividad que causa el daño.</li>
+        <li>Asiste a la audiencia de pacto de cumplimiento, donde las partes pueden acordar cómo proteger el derecho.</li>
+        <li>Si hay sentencia favorable, participa en el comité que verifica su cumplimiento.</li>
+      </ol>
+      <p class="ojo"><b>Ten en cuenta.</b> El juez puede ordenar todo lo necesario para proteger el derecho, pero no puede anular actos administrativos ni contratos por esta vía.</p>
+    </article>
+
+    <article class="m">
+      <h3>Acción de grupo</h3>
+      <span class="norma">Art. 88 C. P. · Ley 472 de 1998</span>
+      <p>Permite a un conjunto de al menos veinte personas que sufrieron perjuicios por una misma causa reclamar juntas la indemnización.</p>
+      <ol class="ruta">
+        <li>Identifiquen al grupo afectado y la causa común del daño.</li>
+        <li>Busquen un abogado: esta acción sí lo exige. La Defensoría del Pueblo puede orientar.</li>
+        <li>Presenten la demanda dentro de los dos años siguientes al daño o al cese de la acción que lo causó.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Acción de cumplimiento</h3>
+      <span class="norma">Art. 87 C. P. · Ley 393 de 1997</span>
+      <p>Sirve para que un juez ordene a una autoridad cumplir un deber claro y expreso contenido en una ley o en un acto administrativo.</p>
+      <ol class="ruta">
+        <li>Solicita por escrito a la autoridad que cumpla la norma. Si se ratifica en el incumplimiento o no contesta en 10 días, queda constituida la renuencia.</li>
+        <li>Presenta la demanda ante el juez administrativo, con la prueba de la renuencia.</li>
+      </ol>
+      <p class="ojo"><b>Ten en cuenta.</b> No procede para proteger derechos que pueden defenderse con tutela, ni cuando existe otro medio judicial para lograr el cumplimiento, ni para normas que establezcan gastos.</p>
+    </article>
+
+    <article class="m">
+      <h3>Otras acciones que conviene conocer</h3>
+      <span class="norma">Arts. 15, 30, 40 y 241 C. P.</span>
+      <p><b>Habeas corpus</b> (Ley 1095 de 2006): protege la libertad de quien fue detenido ilegalmente; cualquier juez debe resolverlo en 36 horas.</p>
+      <p><b>Habeas data</b> (Leyes 1266 de 2008 y 1581 de 2012): permite conocer, actualizar y corregir la información personal que reposa en bases de datos.</p>
+      <p><b>Acción pública de inconstitucionalidad</b> (Decreto 2067 de 1991): cualquier ciudadano puede demandar ante la Corte Constitucional una ley que considere contraria a la Constitución.</p>
+      <p><b>Nulidad</b> (Ley 1437 de 2011, art. 137): cualquier persona puede pedir a la jurisdicción contencioso administrativa que anule un acto administrativo general contrario a las normas superiores. La Ley 99 de 1993 (art. 73) la extiende a los actos que otorgan o modifican licencias ambientales.</p>
+    </article>
+
+    <h2><span>3</span>Participar en las decisiones ambientales</h2>
+    <p class="intro-s">El artículo 79 de la Constitución garantiza la participación de la comunidad en las decisiones que puedan afectar el ambiente. La Ley 99 de 1993 la desarrolla.</p>
+
+    <article class="m">
+      <h3>Intervención en los trámites ambientales</h3>
+      <span class="norma">Ley 99 de 1993, arts. 69, 70 y 74</span>
+      <p>Cualquier persona, sin demostrar interés jurídico, puede intervenir en los trámites de permisos y licencias ambientales, pedir información sobre ellos y ser notificada de las decisiones.</p>
+      <ol class="ruta">
+        <li>Averigua ante la autoridad ambiental qué trámite existe sobre el proyecto.</li>
+        <li>Presenta un escrito pidiendo que te reconozcan como tercero interviniente.</li>
+        <li>Solicita copia del expediente y presenta observaciones y pruebas.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Audiencia pública ambiental</h3>
+      <span class="norma">Ley 99 de 1993, art. 72 · Decreto 1076 de 2015</span>
+      <p>Espacio para que la comunidad conozca un proyecto, sus impactos y las medidas previstas, y para que la autoridad reciba opiniones y pruebas antes de decidir o durante la ejecución, cuando se incumplen las obligaciones ambientales.</p>
+      <ol class="ruta">
+        <li>Reúnan la solicitud de al menos cien personas o de tres organizaciones sin ánimo de lucro. También pueden pedirla el alcalde, el gobernador, el Defensor del Pueblo o el Procurador.</li>
+        <li>Radiquen la solicitud ante la autoridad ambiental que tramita o vigila la licencia.</li>
+        <li>Inscríbanse para intervenir y lleven sus pruebas: fotos, análisis de agua, testimonios.</li>
+      </ol>
+      <p class="ojo"><b>Ten en cuenta.</b> La audiencia no es una votación ni decide por sí misma, pero la autoridad debe tener en cuenta lo que allí se diga al motivar su decisión.</p>
+    </article>
+
+    <article class="m">
+      <h3>Consulta previa</h3>
+      <span class="norma">Art. 330 (parágrafo) C. P. · Convenio 169 de la OIT (Ley 21 de 1991)</span>
+      <p>Derecho fundamental de los pueblos indígenas, las comunidades negras, afrocolombianas, raizales y palenqueras y el pueblo rom a ser consultados antes de adoptar medidas o autorizar proyectos que los afecten directamente.</p>
+      <p class="ojo"><b>Ten en cuenta.</b> Las comunidades campesinas no étnicas no son titulares de la consulta previa, pero sí de todos los demás mecanismos de participación ambiental y de la protección especial del artículo 64 de la Constitución.</p>
+    </article>
+
+    <h2><span>4</span>Incidir en las decisiones políticas</h2>
+    <p class="intro-s">El artículo 103 de la Constitución enumera los mecanismos de participación del pueblo en ejercicio de su soberanía. Los regulan las Leyes 134 de 1994 y 1757 de 2015.</p>
+
+    <article class="m">
+      <h3>Cabildo abierto</h3>
+      <span class="norma">Art. 103 C. P. · Ley 1757 de 2015</span>
+      <p>Reunión pública del concejo municipal, la asamblea departamental o la junta administradora local en la que los habitantes discuten directamente asuntos de interés para la comunidad. Las autoridades deben dar respuesta a lo planteado.</p>
+      <ol class="ruta">
+        <li>Reúnan firmas de al menos el cinco por mil del censo electoral del municipio o localidad.</li>
+        <li>Presenten la solicitud a la secretaría de la corporación, indicando el tema.</li>
+        <li>Inscríbanse para intervenir y exijan la sesión de respuesta a los compromisos.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Consulta popular, referendo, iniciativa popular y revocatoria</h3>
+      <span class="norma">Arts. 40, 103 a 106, 155 y 259 C. P. · Leyes 134 de 1994 y 1757 de 2015</span>
+      <p><b>Consulta popular:</b> el presidente, un gobernador, un alcalde o la ciudadanía somete una pregunta de interés general a votación; la decisión del pueblo es obligatoria.</p>
+      <p><b>Referendo:</b> el pueblo aprueba o rechaza un proyecto de norma, o deroga una norma vigente.</p>
+      <p><b>Iniciativa popular normativa:</b> los ciudadanos presentan proyectos de ley, ordenanza o acuerdo para que la corporación pública los discuta.</p>
+      <p><b>Revocatoria del mandato:</b> los ciudadanos dan por terminado el mandato de un alcalde o gobernador. Puede promoverse cuando ha transcurrido un año de gobierno y falta más de un año para que termine el periodo.</p>
+      <p><b>Plebiscito:</b> el presidente convoca al pueblo para que apoye o rechace una decisión del Ejecutivo.</p>
+      <ol class="ruta">
+        <li>Conformen un comité promotor e inscríbanlo en la Registraduría.</li>
+        <li>Recojan los apoyos ciudadanos en los formularios oficiales y dentro del plazo.</li>
+        <li>Entréguenlos a la Registraduría para su verificación y sigan el trámite que corresponda a cada mecanismo.</li>
+      </ol>
+    </article>
+
+    <article class="m">
+      <h3>Organización comunal</h3>
+      <span class="norma">Art. 38 C. P. · Ley 2166 de 2021</span>
+      <p>Las juntas de acción comunal son la forma más extendida de organización vecinal en veredas y barrios. Gestionan proyectos, representan a la comunidad ante las autoridades y administran bienes comunes, como muchos acueductos veredales.</p>
+      <ol class="ruta">
+        <li>Afíliate a la junta de tu vereda o barrio y participa en la asamblea.</li>
+        <li>Propón comités de trabajo: ambiente, agua, salud, conciliación.</li>
+        <li>Usen la personería jurídica de la junta para presentar peticiones, acciones populares y solicitudes de audiencia.</li>
+      </ol>
+    </article>
+
+    <div class="cierre">
+      <p><b>¿Dónde pedir orientación gratuita?</b> En la personería municipal, la Defensoría del Pueblo y los consultorios jurídicos de las universidades. Esta cartilla es una guía general con fines educativos: no reemplaza la asesoría de un profesional frente a un caso concreto, y las normas pueden cambiar, así que conviene verificar su vigencia.</p>
+    </div>
+
+    <ul class="fuentes">
+      <li>Constitución Política de Colombia (1991).</li>
+      <li>Leyes 99 de 1993, 134 de 1994, 393 de 1997, 472 de 1998, 489 de 1998, 850 de 2003, 1095 de 2006, 1266 de 2008, 1437 de 2011, 1581 de 2012, 1755 de 2015, 1757 de 2015 y 2166 de 2021.</li>
+      <li>Decretos 2067 y 2591 de 1991 y Decreto 1076 de 2015.</li>
+    </ul>
+  </div>
+</body>
+
+</html>

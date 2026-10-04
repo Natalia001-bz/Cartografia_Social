@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Encanto: la defensa del territorio · Recorrido interactivo</title>
+  <meta name="description"
+    content="Recorrido interactivo del caso de la vereda El Encanto: cinco niveles para comprender, desde la Constitución de 1991, un conflicto ambiental y las vías para defender a la comunidad. Derecho Constitucional Colombiano I (251005), UNAD." />
+  <meta name="theme-color" content="#04161f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" href="assets/img/logo-unad.png" />
+  <link rel="stylesheet" href="assets/juego/juego.css" />
+</head>
+
+<body data-modo="portada">
+  <div id="fondo" aria-hidden="true"></div>
+
+  <!-- Tablero: personaje, energía, semillas, ayudas e insignias -->
+  <header id="hud" hidden>
+    <div class="hud-yo">
+      <img id="hudRetrato" alt="" />
+      <div><b id="hudNombre"></b><span id="hudNivel"></span></div>
+    </div>
+    <div class="energia" id="hudEnergia" role="img"></div>
+    <div class="semillas" title="Semillas: se ganan acertando y se cambian en el consultorio">🌱 <span id="hudSemillas">0</span></div>
+    <div class="ayudas" id="hudAyudas" aria-label="Ayudas disponibles"></div>
+    <button class="hud-btn" id="btnInsignias" type="button" title="Insignias y morral">🏅 <b id="hudInsignias">0</b></button>
+    <button class="hud-btn" id="btnTienda" type="button" title="Consultorio jurídico">⚖️ <span class="txt">Consultorio</span></button>
+    <button class="hud-btn" id="btnCamino" type="button" title="Menú: salir del nivel, saltarlo o volver al inicio">☰ <span class="txt">Menú</span></button>
+    <button class="hud-btn" id="btnSonido" type="button" title="Efectos de sonido" aria-pressed="true">🔊</button>
+    <button class="hud-btn" id="btnMusica" type="button" title="Música" aria-pressed="true">🎵</button>
+  </header>
+
+  <main id="escenario">
+    <section class="marco" aria-label="Escena">
+      <img id="escenaImg" alt="" />
+      <video id="escenaVideo" muted playsinline preload="none"></video>
+      <div id="capa"></div>
+      <p id="rotulo" hidden></p>
+      <button id="saltarNivel" class="saltar" type="button" hidden></button>
+    </section>
+    <aside id="panel" aria-live="polite"></aside>
+  </main>
+
+  <div id="modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-caja" id="modalCaja"></div>
+  </div>
+  <div id="avisos" aria-live="polite"></div>
+
+  <noscript>Este recorrido necesita JavaScript. Puedes leer el análisis completo en <a href="index.html">la página del caso</a>.</noscript>
+  <script src="assets/juego/datos.js"></script>
+  <script src="assets/juego/juego.js"></script>
+</body>
+
+</html>

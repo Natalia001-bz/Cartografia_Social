@@ -525,7 +525,7 @@ function iniciarRuta() {
   });
 }
 
-/* ----- Navegación, impresión y conteo ----- */
+/* ----- Navegación e impresión ----- */
 function iniciarPagina() {
   const enlaces = $$('.indice a');
   const barra = $('.indice ol');
@@ -549,8 +549,6 @@ function iniciarPagina() {
   });
   window.addEventListener('afterprint', () => $$('details').forEach(d => d.open = abiertas.includes(d)));
 
-  const palabras = $$('#ensayo p:not(.conteo)').map(p => p.textContent).join(' ').trim().split(/\s+/).length;
-  $('#conteo').textContent = `Extensión de la explicación escrita: ${palabras.toLocaleString('es-CO')} palabras.`;
 }
 
 iniciarVisor();

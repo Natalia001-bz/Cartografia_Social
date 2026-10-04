@@ -27,7 +27,6 @@
         <span><strong>Universidad Nacional Abierta y a Distancia</strong>Escuela de Ciencias Jurídicas y Políticas</span>
       </a>
       <div class="barra-acciones no-imprimir">
-        <a class="enlace-sutil" href="../../index.html">Portafolio</a>
         <button class="enlace-sutil" id="btnPdf" type="button" title="En el diálogo de impresión elige «Guardar como PDF»">Exportar a PDF</button>
       </div>
     </div>
@@ -46,6 +45,7 @@
           proteger a la comunidad.</p>
         <div class="acciones no-imprimir">
           <a class="boton" href="#caso">Abrir el expediente <span class="flecha" aria-hidden="true">↓</span></a>
+          <a class="boton boton-juego" href="#recorrido">▶ Recorrido interactivo</a>
           <a class="boton-texto" href="#documento">Ir a la explicación escrita</a>
         </div>
       </div>
@@ -65,6 +65,38 @@
             axiológicas, con el fin de comprender su alcance como marco de organización del Estado y garantía de
             derechos.”</p>
         </div>
+      </div>
+    </div>
+    <a class="bajar no-imprimir" href="#recorrido" aria-label="Bajar al recorrido interactivo"><span>Descubre el recorrido interactivo</span><i aria-hidden="true">↓</i></a>
+  </section>
+
+  <!-- ===== Invitación al recorrido interactivo ===== -->
+  <section class="invitacion no-imprimir" id="recorrido" aria-labelledby="t-recorrido">
+    <div class="contenedor">
+      <div class="inv-texto">
+        <p class="antetitulo">Recorrido interactivo · cinco niveles</p>
+        <h2 id="t-recorrido">El Encanto: la defensa del territorio</h2>
+        <p>Vive el caso desde adentro. Elige un personaje de la vereda, camina el territorio, arma el problema
+          jurídico, pondera los principios en la balanza, ocupa el estrado del juez y decide con tu comunidad qué
+          mecanismos usar. Al final te llevas una cartilla de participación ciudadana.</p>
+        <ul class="inv-niveles">
+          <li><span>1</span>El territorio habla</li>
+          <li><span>2</span>El archivo de la Constitución</li>
+          <li><span>3</span>La balanza</li>
+          <li><span>4</span>La audiencia</li>
+          <li><span>5</span>La ruta de la comunidad</li>
+        </ul>
+        <div class="inv-acciones">
+          <a class="inv-boton" href="juego.html">▶ Iniciar el recorrido interactivo</a>
+          <a class="inv-enlace" href="#caso">Prefiero seguir leyendo la página ↓</a>
+        </div>
+        <p class="inv-nota">Unos 20 minutos · con efectos de sonido y música opcional · funciona en computador y celular</p>
+      </div>
+      <div class="inv-personajes" aria-hidden="true">
+        <img src="assets/juego/img/avatar-campesina.jpg" alt="" />
+        <img src="assets/juego/img/avatar-adulto-mayor.jpg" alt="" />
+        <img src="assets/juego/img/avatar-lideresa.jpg" alt="" />
+        <img src="assets/juego/img/avatar-campesino.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -132,7 +164,7 @@
       <div class="contenedor">
         <div class="encabezado">
           <div>
-            <p class="antetitulo">2 · Elementos constitucionales <span class="etiqueta-recurso">Recurso 1</span></p>
+            <p class="antetitulo">2 · Elementos constitucionales</p>
             <h2 id="t-territorio">Del territorio a la Constitución</h2>
           </div>
           <p class="no-imprimir">Recorre las etapas del conflicto y selecciona un hecho o una zona del mapa: la matriz
@@ -267,9 +299,6 @@
 
           <div class="visor-lado">
             <div class="panel detalle-hecho no-imprimir" id="detalleHecho" aria-live="polite"></div>
-            <p class="nota">El mapa es una representación esquemática elaborada para este recurso; el caso no
-              describe la geografía exacta de la vereda. Las etapas ordenan los hechos tal como los narra la guía, sin
-              atribuirles fechas.</p>
           </div>
         </div>
 
@@ -286,7 +315,7 @@
       <div class="contenedor">
         <div class="encabezado">
           <div>
-            <p class="antetitulo">3 · Formulación <span class="etiqueta-recurso">Recurso 2</span></p>
+            <p class="antetitulo">3 · Formulación</p>
             <h2 id="t-problema">Constructor del problema jurídico</h2>
           </div>
           <p class="no-imprimir">Un buen problema jurídico dice quién, qué hizo y qué norma está en juego. Arma el del
@@ -318,7 +347,7 @@
       <div class="contenedor">
         <div class="encabezado">
           <div>
-            <p class="antetitulo">4 · Fundamentos axiológicos <span class="etiqueta-recurso">Recurso 3</span></p>
+            <p class="antetitulo">4 · Fundamentos axiológicos</p>
             <h2 id="t-ponderacion">La balanza: licencia formal frente a garantía sustancial</h2>
           </div>
           <p class="no-imprimir">A la izquierda está lo que invocan la empresa y las autoridades. Agrega a la derecha
@@ -366,8 +395,6 @@
             </div>
             <h3 class="no-imprimir" style="margin-top:22px">Agrega al platillo de la comunidad</h3>
             <div class="pesas no-imprimir" id="pesas"></div>
-            <p class="nota" style="margin-top:14px">La balanza es una metáfora didáctica: ponderar no es sumar
-              fichas, sino justificar qué principio debe prevalecer en las circunstancias del caso.</p>
           </div>
         </div>
 
@@ -392,7 +419,7 @@
       <div class="contenedor">
         <div class="encabezado">
           <div>
-            <p class="antetitulo">5 · Las voces del conflicto <span class="etiqueta-recurso">Recurso 4</span></p>
+            <p class="antetitulo">5 · Las voces del conflicto</p>
             <h2 id="t-audiencia">Audiencia pública simulada</h2>
           </div>
           <p class="no-imprimir">Asume el lugar del juez constitucional. Escucha a cada interviniente, revisa el
@@ -406,8 +433,6 @@
           </div>
           <div class="panel alegato" id="alegato" role="tabpanel" aria-live="polite"></div>
         </div>
-        <p class="nota no-imprimir" style="margin-top:14px">Las intervenciones son una recreación pedagógica construida a partir de las
-          posturas que describe el caso; no corresponden a declaraciones reales.</p>
 
         <div class="fallo">
           <h3>Su decisión, señor juez o señora jueza</h3>
@@ -423,7 +448,7 @@
       <div class="contenedor">
         <div class="encabezado">
           <div>
-            <p class="antetitulo">6 · Mecanismos de protección <span class="etiqueta-recurso">Recurso 5</span></p>
+            <p class="antetitulo">6 · Mecanismos de protección</p>
             <h2 id="t-ruta">Ruta judicial: ¿qué necesita la comunidad?</h2>
           </div>
           <p class="no-imprimir">No hay una sola acción para todo. Elige la necesidad y el recurso indica la vía, ante
@@ -579,7 +604,6 @@
             los derechos dejan de ser fórmulas cuando se pregunta si una familia puede beber sin riesgo el agua de
             su vereda. La licencia puede seguir vigente; lo que la Constitución no admite es que su vigencia sirva
             de excusa para no proteger.</p>
-          <p class="conteo" id="conteo"></p>
         </article>
       </div>
     </section>
@@ -807,7 +831,7 @@
     <div class="pie-franja"></div>
     <div class="contenedor">
       <p>Natalia Berrío Zuleta · Derecho Constitucional Colombiano I (251005)</p>
-      <p>UNAD · ECJP · 2026 · <a class="no-imprimir" href="../../index.html">Volver al portafolio</a></p>
+      <p>UNAD · ECJP · 2026</p>
     </div>
   </footer>
 

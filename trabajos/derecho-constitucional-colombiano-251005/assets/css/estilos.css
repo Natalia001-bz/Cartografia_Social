@@ -61,7 +61,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .indice a.actual { color: #fff; font-weight: 600; border-bottom-color: var(--amarillo); }
 
 /* ── Portada ── */
-.portada { padding: clamp(44px, 7vw, 80px) 0 clamp(52px, 8vw, 88px); }
+.portada { padding: clamp(44px, 7vw, 80px) 0 clamp(96px, 10vw, 120px); }
 .portada .contenedor { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(40px, 7vw, 88px); align-items: center; }
 .portada .antetitulo { color: var(--azul); }
 .portada h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.2rem, 5.2vw, 3.8rem); line-height: 1.08; letter-spacing: -.015em; color: var(--azul-profundo); margin: 22px 0 0; text-wrap: balance; }
@@ -77,6 +77,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .boton:hover { background: var(--azul-profundo); transform: translateY(-2px); }
 .boton .flecha { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--amarillo); color: var(--azul-profundo); font-size: .9rem; }
+.boton-juego { background: var(--amarillo); color: var(--azul-profundo); box-shadow: 0 10px 24px -12px rgba(252, 180, 0, .9); }
+.boton-juego:hover { background: #ffc93a; }
 .boton-texto { background: none; border: 0; font-weight: 600; font-size: .95rem; color: var(--azul); text-decoration: underline; text-decoration-color: var(--amarillo); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
 .ficha { border-top: 1px solid var(--linea-fuerte); }
@@ -85,6 +87,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ficha dd { font-weight: 600; color: var(--tinta); }
 .ra { margin-top: 26px; padding-left: 18px; border-left: 3px solid var(--amarillo); }
 .ra p:last-child { margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 1rem; line-height: 1.6; color: var(--tinta); }
+
+/* ── Invitación al recorrido interactivo ── */
+.portada { position: relative; }
+.bajar { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: grid; justify-items: center; gap: 6px; text-decoration: none; font-size: .78rem; font-weight: 600; letter-spacing: .08em; color: var(--azul); }
+.bajar i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--amarillo); color: var(--azul-profundo); font-style: normal; font-size: 1.1rem; animation: rebota 1.8s ease-in-out infinite; box-shadow: 0 10px 22px -10px rgba(0, 58, 92, .7); }
+@keyframes rebota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+.invitacion { position: relative; overflow: hidden; color: #eef4f7; background: #04161f url("../juego/img/fondo-portada.jpg") center / cover no-repeat; padding: clamp(56px, 8vw, 96px) 0; }
+.invitacion::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(4, 22, 31, .96) 0%, rgba(4, 22, 31, .88) 48%, rgba(4, 22, 31, .45) 100%); }
+.invitacion .contenedor { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.invitacion .antetitulo { color: var(--amarillo); }
+.invitacion h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.08; margin: 14px 0 16px; text-wrap: balance; }
+.inv-texto > p { color: #cfdde6; max-width: 58ch; }
+.inv-niveles { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 26px; }
+.inv-niveles li { display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; border: 1px solid rgba(252, 180, 0, .3); background: rgba(4, 22, 31, .6); font-size: .84rem; }
+.inv-niveles span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--amarillo); color: #1b1300; font-weight: 700; font-size: .78rem; }
+.inv-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.inv-boton { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 14px; background: linear-gradient(180deg, #ffc93a, var(--amarillo)); color: #1b1300; font-weight: 700; text-decoration: none; box-shadow: 0 0 0 0 rgba(252, 180, 0, .6), 0 16px 34px -14px rgba(252, 180, 0, .9); animation: late 2s infinite; transition: transform .25s var(--ease); }
+.inv-boton:hover { transform: translateY(-3px) scale(1.02); }
+@keyframes late { 0%, 100% { box-shadow: 0 0 0 0 rgba(252, 180, 0, .55), 0 16px 34px -14px rgba(252, 180, 0, .9); } 60% { box-shadow: 0 0 0 14px rgba(252, 180, 0, 0), 0 16px 34px -14px rgba(252, 180, 0, .9); } }
+.inv-enlace { color: #cfdde6; font-size: .92rem; text-underline-offset: 5px; }
+.inv-nota { margin-top: 18px; font-size: .8rem; color: #9fb4c2 !important; }
+.inv-personajes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; transform: rotate(2deg); }
+.inv-personajes img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 20%; border-radius: 18px; border: 2px solid rgba(252, 180, 0, .5); box-shadow: 0 20px 40px -18px #000; }
+.inv-personajes img:nth-child(odd) { transform: translateY(14px); }
 
 /* ── Secciones ── */
 .seccion { padding: clamp(60px, 8vw, 100px) 0; }
@@ -281,9 +307,35 @@ input[type="range"] { width: 100%; accent-color: var(--azul); }
 .pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 22px; padding-bottom: 22px; }
 .pie a { color: #fff; }
 
+/* ── Escritorio: la portada y la invitación ocupan exactamente la ventana ── */
+@media (min-width: 901px) {
+  .portada { min-height: calc(100svh - 77px); display: flex; align-items: center; padding: clamp(8px, 2.4vh, 40px) 0 clamp(70px, 12vh, 110px); }
+  .portada .contenedor { gap: clamp(32px, 5vw, 80px); }
+  .portada h1 { font-size: clamp(1.9rem, min(5vw, 6.9vh), 3.8rem); margin-top: clamp(8px, 2vh, 22px); }
+  .portada h1 em { font-size: .54em; margin-top: clamp(4px, 1.2vh, 12px); }
+  .portada .regla { margin: clamp(12px, 2.6vh, 28px) 0; }
+  .intro { font-size: clamp(.92rem, 2.25vh, 1.08rem); line-height: 1.6; }
+  .acciones { margin-top: clamp(14px, 3vh, 34px); }
+  .boton { padding: clamp(10px, 1.8vh, 14px) 24px; }
+  .ficha div { padding: clamp(6px, 1.45vh, 13px) 0; }
+  .ra { margin-top: clamp(12px, 2.6vh, 26px); }
+  .ra p:last-child { font-size: clamp(.84rem, 1.95vh, 1rem); line-height: 1.5; }
+  .bajar { bottom: clamp(8px, 1.8vh, 16px); }
+  .bajar i { width: clamp(32px, 5vh, 40px); height: clamp(32px, 5vh, 40px); }
+  .invitacion { scroll-margin-top: -76px; min-height: 100svh; display: flex; align-items: center; padding: clamp(24px, 5vh, 80px) 0; }
+  .invitacion h2 { font-size: clamp(1.8rem, min(4.4vw, 7vh), 3.2rem); margin: clamp(8px, 1.8vh, 14px) 0 clamp(8px, 2vh, 16px); }
+  .inv-texto > p { font-size: clamp(.92rem, 2.2vh, 1rem); }
+  .inv-niveles { margin: clamp(12px, 2.6vh, 22px) 0 clamp(14px, 3vh, 26px); }
+  .inv-boton { padding: clamp(12px, 2.2vh, 16px) 28px; }
+  .inv-personajes { width: min(100%, 62vh); justify-self: center; }
+}
+
 /* ── Adaptación ── */
 @media (max-width: 900px) {
-  .portada .contenedor, .caso-rejilla, .visor, .balanza, .audiencia, .ruta { grid-template-columns: 1fr; }
+  .portada .contenedor, .caso-rejilla, .visor, .balanza, .audiencia, .ruta, .invitacion .contenedor { grid-template-columns: 1fr; }
+  .inv-personajes { grid-template-columns: repeat(4, 1fr); transform: none; }
+  .inv-personajes img:nth-child(odd) { transform: none; }
+  .portada { padding-bottom: 110px; }
   .constructor, .subproblemas { grid-template-columns: 1fr; }
   .visor-lado { display: contents; }
   .visor-lado .detalle-hecho { order: -1; }
